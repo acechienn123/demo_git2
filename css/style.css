@@ -1,0 +1,369 @@
+/********** Template CSS **********/
+:root {
+    --primary: red;
+    --secondary: #FFD33C;
+    --light: #F3F3F3;
+    --dark: #212121;
+}
+
+
+.btn {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: .5s;
+}
+
+.btn-primary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 36px;
+    height: 36px;
+}
+
+.btn-sm-square {
+    width: 28px;
+    height: 28px;
+}
+
+.btn-lg-square {
+    width: 46px;
+    height: 46px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    margin-left: 30px;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--dark);
+    outline: none;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 10px 0;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+
+
+
+.btn-play {
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    width: 16px;
+    height: 26px;
+    border-radius: 100%;
+    border: none;
+    outline: none !important;
+    padding: 18px 20px 20px 28px;
+    background: #a5aba5;
+}
+
+.btn-play:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 100%;
+}
+
+.btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 100%;
+    transition: all 200ms;
+}
+
+.btn-play span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    left: -1px;
+    border-left: 16px solid var(--primary);
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+        opacity: 0;
+    }
+}
+#dangKi .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+}
+
+#dangKi .modal-body {
+    position: relative;
+    padding: 0px;
+}
+
+#dangKi .close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    top: -30px;
+    z-index: 999;
+    font-size: 30px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background: #000000;
+    opacity: 1;
+}
+ /* Video */
+#videoModal .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+}
+
+#videoModal .modal-body {
+    position: relative;
+    padding: 0px;
+}
+
+#videoModal .close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    top: -30px;
+    z-index: 999;
+    font-size: 30px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background: #000000;
+    opacity: 1;
+}
+
+.service-item{
+    width: 400px;
+    margin-right: 40px;
+    border-radius: 5px;
+}
+.service-item:hover{
+    background-color: #7c58d3 !important;
+}
+.service-item:hover p,h5{
+    color: white !important;
+}
+.service-item img{
+    position: relative;
+    top: -6px;
+}
+
+
+.product-item {
+    border: 2px solid #eee;
+    border-radius: 5px;
+    width: 100%;
+    padding: 30px;
+    height: 240px;
+}
+
+.product-item .btn-action {
+    position: relative;
+    width: 100%;
+    height: 55px;
+    top: -57px;
+    left: 60px;
+    opacity: 0;
+    transition: .5s;
+}
+
+.product-item:hover .btn-action {
+    opacity: 1;
+}
+
+.product-carousel .owl-nav {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.product-carousel .owl-nav .owl-prev{
+    left: -437px;
+}
+.product-carousel .owl-nav .owl-next{
+    left: 438px;
+}
+.product-carousel .owl-nav .owl-prev,
+.product-carousel .owl-nav .owl-next{
+    position: relative;
+    top: -190px;
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: #8ec24f;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.product-carousel .owl-nav .owl-prev:hover,
+.product-carousel .owl-nav .owl-next:hover {
+    color: var(--dark);
+}
+
+
+
+@media (min-width: 576px) {
+    .blog-item .row {
+        height: 300px;
+    }
+}
+
+.blog-item a i {
+    position: relative;
+    padding-left: 20px;
+    transition: .3s;
+}
+
+.blog-item a:hover i {
+    padding-left: 50px;
+}
+
+.blog-item a i::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 2px;
+    top: 50%;
+    left: 10px;
+    margin-top: -1px;
+    background: var(--primary);
+    transition: .3s;
+}
+
+.blog-item a:hover i::after {
+    width: 50px;
+}
+
+.hero-header{
+    background-image: url(img/shape_banner_bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:30ch;
+}
+#services_home{
+    margin: 0px 40px;
+    width: 100px;
+    height: 350px;
+}
+.carousel-control-prev, .carousel-control-next{
+    position: absolute;
+    top: -75px;
+}
+.login__input {
+    background: none; /* Xóa màu nền của input */
+    border: none; /* Xóa viền của input */
+    width: calc(100% - 20px); /* Độ rộng input, trừ đi khoảng cách padding */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.login__input::placeholder {
+    color: white;
+}
+.login__input:focus {
+    border-color: transparent; /* Thiết lập viền thành trong suốt */
+    outline: none; /* Loại bỏ đường viền xung quanh input */
+}
+.login__box{
+    display: flex;
+    border: .1rem solid #eee;
+     border-radius: 20px;
+     width: 330px;
+     height: 50px;
+     margin-bottom: 20px;
+     position: relative;
+}
+.error {
+    display: none;
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    top: 100%;
+    left: 10px;
+}
+.login__box i{
+    color: white;
+    font-size: 20px;
+    top: 13px;
+    left: -10px;
+    position: relative;
+}
+#dangNhap {
+    border-radius: 20px;
+    border: 2px solid red;
+}
+#user:hover .dropdown-menu{
+    display: block;
+}
+.profile-img {
+    position: relative;
+    left: -13px;
+    top: -5px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.thuCung-img{
+    position: relative;
+    left: -13px;
+    top: -5px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 50%;
+}

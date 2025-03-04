@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin PetCare</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Chỉnh kích thước của biểu đồ tròn */
+        #petTypesChart {
+            max-width: 400px;
+            max-height: 400px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="lni lni-grid-alt"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="thongke.html">Admin </a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="thongke.html" class="sidebar-link">
+                        <i class="lni lni-cog"></i>
+                        <span>Thống kê</span>
+                    </a>
+                </li>
+
+                <!-- <li class="sidebar-item">
+                    <a href="hangtonkho.html" class="sidebar-link">
+                        <i class="lni lni-agenda"></i>
+                        <span>Hàng tồn kho</span>
+                    </a>
+                </li> -->
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                        <i class="lni lni-protection"></i>
+                        <span>Quản lý</span>
+                    </a>
+                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="quanlynguoidung.html" class="sidebar-link">Người dùng</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlydichvu.html" class="sidebar-link">Dịch vụ</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlysanpham.html" class="sidebar-link">Sản phẩm</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlydonhang.html" class="sidebar-link">Đơn hàng</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlylichhen.html" class="sidebar-link">Lịch hẹn</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlythucung.html" class="sidebar-link">Thú cưng</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="hotrokhachhang.html" class="sidebar-link">
+                        <i class="lni lni-popup"></i>
+                        <span>Hỗ trợ khách hàng</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" data-bs-toggle="modal" data-bs-target="#userAccountModal">
+                        <i class="lni lni-user"></i>
+                        <span>Thông tin tài khoản</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="index_test.html" class="sidebar-link">
+                        <i class="lni lni-exit"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </div> -->
+        </aside>
+        <div class="main">
+            <nav class="navbar navbar-expand px-4 py-3">
+                <form action="#" class="d-none d-sm-inline-block">
+                    <div class="input-group ">
+                        <input type="text" class="form-control" placeholder="Nhập để tìm kiếm">
+                        <a href="#"> <span class="input-group-text bg-primary text-white">Tìm kiếm</span></a>
+                    </div>
+                </form>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div>
+                                <a type="button" class=" position-relative" style="margin-right: 20px;">
+                                    <i class="fa-solid fa-message fs-5"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        10+
+                                    </span>
+                                </a>
+                                <a type="button" class=" position-relative" style="margin-right: 20px;">
+                                    <i class="fa-solid fa-bell fs-5"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        10+
+                                    </span>
+                                </a>
+                                <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                    <img src="account.png" class="avatar img-fluid" alt="">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end rounded">
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#activityLogModal">Lịch sử hoạt động</a>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#changePasswordModal">Đổi mật khẩu</a>
+                                </div>
+                            </div>
+
+
+                        </li>
+                    </ul>
+                </div>
+               
+                <!-- Activity Log Modal -->
+                <div class="modal fade" id="activityLogModal" tabindex="-1" aria-labelledby="activityLogModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="activityLogModalLabel">Lịch sử hoạt động</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Dữ liệu mẫu cho lịch sử hoạt động -->
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Thời gian</th>
+                                            <th>Hoạt động</th>
+                                            <th>Chi tiết</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2024-06-01 10:00</td>
+                                            <td>Đăng nhập</td>
+                                            <td>Admin đã đăng nhập vào hệ thống</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-06-01 10:15</td>
+                                            <td>Thêm người dùng mới</td>
+                                            <td>Admin đã thêm người dùng Bùi Tiến Đạt</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-06-01 11:00</td>
+                                            <td>Thay đổi mật khẩu</td>
+                                            <td>Admin đã thay đổi mật khẩu của mình</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-06-01 11:30</td>
+                                            <td>Xóa người dùng</td>
+                                            <td>Admin đã xóa người dùng Nguyễn Ngọc Vũ</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Change Password Modal -->
+                <div class="modal fade" id="changePasswordModal" tabindex="-1"
+                    aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="changePasswordModalLabel">Đổi mật khẩu</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Form đổi mật khẩu -->
+                                <form id="changePasswordForm">
+                                    <div class="mb-3">
+                                        <label for="currentPassword" class="form-label">Mật khẩu hiện tại</label>
+                                        <input type="password" class="form-control" id="currentPassword" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="newPassword" class="form-label">Mật khẩu mới</label>
+                                        <input type="password" class="form-control" id="newPassword" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmNewPassword" class="form-label">Xác nhận mật khẩu mới</label>
+                                        <input type="password" class="form-control" id="confirmNewPassword" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+            <div class="modal fade" id="userAccountModal" tabindex="-1" aria-labelledby="userAccountModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="userAccountModalLabel">Thông tin tài khoản</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="userAccountForm">
+                                <div class="mb-3">
+                                    <label for="userName" class="form-label">Tên người dùng</label>
+                                    <input type="text" class="form-control" id="userName" value="Nguyễn Thế An"
+                                        readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="userEmail"
+                                        value="annguyenthe2003@gmail.com" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userPhone" class="form-label">Số điện thoại</label>
+                                    <input type="text" class="form-control" id="userPhone" value="0123456789" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userAddress" class="form-label">Địa chỉ</label>
+                                    <input type="text" class="form-control" id="userAddress"
+                                        value="123 Đường ABC, Phường XYZ, Hà Nội" readonly>
+                                </div>
+                                <div id="editButtons" class="d-none">
+                                    <button type="button" class="btn btn-primary" onclick="saveUserInfo()">Lưu</button>
+                                    <button type="button" class="btn btn-secondary"
+                                        onclick="toggleEdit(false)">Hủy</button>
+                                </div>
+                                <div id="viewButton">
+                                    <button type="button" class="btn btn-warning" onclick="toggleEdit(true)">Chỉnh
+                                        sửa</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <main>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md bg-primary text-white pt-3" style="border-radius: 20px; margin-left: 10px;">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5>100.1K </h5>
+                                    <strong>Lượt truy cập</strong>
+                                    <p>Tăng 3% so với tháng trước</p>
+                                </div>
+                                <div class="col-3">
+                                    <i class="fa-solid fa-download fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md bg-warning text-white pt-3" style="border-radius: 20px; margin-left: 10px;">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5>59.3K </h5>
+                                    <strong>Lượt mua</strong>
+                                    <p>Tăng 4,5% so với tháng trước</p>
+                                </div>
+                                <div class="col-3">
+                                    <i class="fa-solid fa-cart-shopping fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md bg-success text-white pt-3" style="border-radius: 20px; margin-left: 10px;">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5>45.3K </h5>
+                                    <strong>Người dùng</strong>
+                                    <p>Tăng 9% so với tháng trước</p>
+                                </div>
+                                <div class="col-3">
+                                    <i class="fa-solid fa-user fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md bg-info text-white pt-3" style="border-radius: 20px; margin-left: 10px;">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5>10.2K</h5>
+                                    <strong>Sản phẩm tồn kho</strong>
+                                    <p>Giảm 6% so với tháng trước</p>
+                                </div>
+                                <div class="col-3">
+                                    <i class="fa-solid fa-shop fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-5">
+                    <div style="display: flex;">
+                        <h1>Thống kê Petcare</h1>
+                        <!-- Nút tải xuống và in báo cáo -->
+                        <div style="margin-left: 700px;">
+                            <button class="btn btn-primary" onclick="downloadReport()"><i
+                                    class="fa-solid fa-circle-down fs-5"></i> </button>
+                            <button class="btn btn-secondary" onclick="printReport()"><i
+                                    class="fa-solid fa-print fs-5"></i> </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <!-- Biểu đồ cột -->
+                            <div class="my-4">
+                                <h3>Doanh thu và Lợi nhuận</h3>
+                                <canvas id="revenueProfitChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Biểu đồ tròn -->
+                            <div class="my-4">
+                                <h3>Số lượng loại thú cưng đã chăm sóc</h3>
+                                <canvas id="petTypesChart" style="width: 400px;height: 200px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+            </main>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                // Dữ liệu biểu đồ cột
+                const revenueProfitData = {
+                    labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6'],
+                    datasets: [
+                        {
+                            label: 'Doanh thu',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1,
+                            data: [12000, 15000, 10000, 17000, 14000, 20000],
+                        },
+                        {
+                            label: 'Lợi nhuận',
+                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                            borderColor: 'rgba(153, 102, 255, 1)',
+                            borderWidth: 1,
+                            data: [3000, 4000, 2000, 5000, 4500, 6000],
+                        }
+                    ]
+                };
+
+                // Cấu hình biểu đồ cột
+                const configRevenueProfit = {
+                    type: 'bar',
+                    data: revenueProfitData,
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                };
+
+                // Tạo biểu đồ cột
+                const revenueProfitChart = new Chart(
+                    document.getElementById('revenueProfitChart'),
+                    configRevenueProfit
+                );
+
+                // Dữ liệu biểu đồ tròn
+                const petTypesData = {
+                    labels: ['Chó', 'Mèo', 'Khác'],
+                    datasets: [
+                        {
+                            label: 'Số lượng thú cưng',
+                            data: [120, 90, 30],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+
+                            ],
+                            borderWidth: 1
+                        }
+                    ]
+                };
+
+                // Cấu hình biểu đồ tròn
+                const configPetTypes = {
+                    type: 'doughnut',
+                    data: petTypesData
+                };
+
+                // Tạo biểu đồ tròn
+                const petTypesChart = new Chart(
+                    document.getElementById('petTypesChart'),
+                    configPetTypes
+                );
+
+                // Hàm tải xuống báo cáo
+                function downloadReport() {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.download = 'PetcareReport.pdf';
+                    link.click();
+                }
+
+                // Hàm in báo cáo
+                function printReport() {
+                    window.print();
+                }
+            </script>
+        </div>
+    </div>
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

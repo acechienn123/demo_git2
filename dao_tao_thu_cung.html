@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đào tạo thú cưng</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+    <!-- Icon-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!--Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <img src="img/logo.png" style="width: 180px; margin-left: 20px;" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav py-0" style="margin-left: 160px;">
+                <a href="index.html" class="nav-item nav-link ">Trang chủ</a>
+                <a href="service.html" class="nav-item nav-link active">Dịch vụ</a>
+                <a href="product.html" class="nav-item nav-link">Cửa hàng</a>
+                <a href="get_service.html" class="nav-item nav-link">Đặt lịch nhanh</a>
+                
+            </div>
+            <a href="contact.html"  class="btn btn-primary btn-rounded" style="margin-left: 30px;">Liên hệ <i class="bi bi-arrow-right"></i></a>
+            <div  class="nav-link dropdown" style="margin-left: 50px;">
+                <button class="cart_btn border-1 btn-danger" type="button" id="cart_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <small style="margin-left: 20px;" class="cart_counter">0</small>
+                    <span><small>Sản phẩm</small></span>
+                </button>
+                <div class="cart_dropdown dropdown-menu"  style="width: 320px; position: absolute; left: 16px; background-color: whitesmoke; border-radius: 5px;">
+                    
+                    <hr>
+                    <div class="total_price" style="text-align: center;">
+                        <span>Tổng tiền</span>
+                        <strong>$70.51</strong>
+                    </div>
+                    <hr>
+                    <a style="display: flex; justify-content: center; align-items: center; width: 200px; margin-bottom: 5px; margin-left: 50px;" class="btn btn-danger" href="cart_detail.html">Xem giỏ hàng</a>
+                    <a style="display: flex; justify-content: center; width: 200px; margin-left: 50px;" class="btn btn-success" href="cart_detail.html">Thanh toán</a>
+                </div>
+            </div>
+            <div id="user" class="dropdown dropstart" style="margin-left: 220px;">
+                <button  type="button" class="border-0 bg-white" data-bs-toggle="dropdown">
+                    <i style="font-size: 30px; color: rgb(71, 68, 68);" class="fa-solid fa-user"></i>
+                </button>
+                <ul class="dropdown-menu" style="padding: 0; position: absolute; left: -155px; top: 0;">
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="profile.html">Xem hồ sơ</a></li>
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="index_test.html">Đăng xuất</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <div class="container-fluid" style="margin-top: 30px;">
+        <div class="container">
+                <div class="row">   
+                    <div class="d-flex">
+                        <a href="service.html">Dịch vụ </a>
+                        <p>/</p>
+                        <a href="service_details_2.html">DỊCH VỤ ĐÀO TẠO THÚ CƯNG</a>
+                    </div>
+                    <h2 style="color: rgb(142, 194, 79);" class="border-start border-5 border-primary ps-5 mb-5">DỊCH VỤ ĐÀO TẠO THÚ CƯNG</h2>
+                    <div style="
+                                /* border-style: dotted;
+                                border-width: 1px 0px 1px 0px;
+                                border-color: #afafaf; */
+                                " >
+                        <div>
+                            <div class="d-flex">
+                                <i style=" color: black; font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-solid fa-phone-volume"></i>
+                                <p class="text-dark">0795267718</p>
+                            </div>
+                            <div  class="d-flex text-dark">
+                                <i style="font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-regular fa-pen-to-square"></i>
+                                <p>26 Tháng 5 2024 </p>
+                            </div>
+                            <div  class="d-flex text-dark">
+                                <i style="font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-regular fa-clock"></i>
+                                <p>3:06</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" style="border: .1rem solid #eee;
+                                    border-radius: 10px;">
+                        <div class="container section-title-container">
+                            <h2 style="margin-left: -20px; margin-top: 10px; text-align: center;">DỊCH VỤ ĐÀO TẠO THÚ CƯNG
+                            </h2>
+                        </div>
+                        <p>Đến với dịch vụ huấn luyện chó tại PetCare sẽ đưa ra giáo trình chuẩn quốc tế cũng cách huấn luyện chó phù hợp để chó của
+                            quý khách sớm tiếp thu 1 cách nhanh và hiệu quả nhất chúng tôi luôn coi những chú chó như những đứa con của mình. Đủ tính nghiêm khắc nhưng cũng đầy lòng yêu thương.
+                        </p>
+                        <p>Với đội ngũ huấn luyện viên dày dặn kinh nghiệm, được đào tạo bài bản, chính quy trong quân đội, là trung được xây dựng theo tiêu chuẩn quốc tế, 
+                            mặt bằng rộng rãi, có nhiều cây xanh bóng mát, rất phù hợp cho công tác huấn luyện chó nghiệp vụ dân sự, và huấn luyện chó cảnh.
+                        </p>
+                        <p>
+                            PetCare tự tin là trung tâm đi đầu trong việc huấn luyện chó cho đa dạng mục đích: huấn luyện chó cảnh cho cá nhân,
+                             hộ gia đình; chó nghiệp vụ cho công ty, tổ chức có nhu cầu về chó nghiệp vụ , dịch vụ đào tạo huấn luyện viên chó chuyên nghiệp.
+                        </p>
+                        <div class="">
+                            <h6>GIÁO TRÌNH HUẤN LUYỆN CHÓ</h6>
+                            <p>
+                                Các khẩu lệnh và nội dung huấn luyện chó tại PetCare trên giáo trình tiên tiến và quy chuẩn bậc nhất hiện nay được tổng hợp và biên soạn để phù hợp với từng đối tượng chó huấn luyện.
+
+                            </p>
+                            <p>
+                                Các bé được thư giãn sau những buổi huấn luyện thể lực và những ngày trời oi bức. Đặc biệt luôn được đội ngũ chăm sóc kiểm tra thường xuyên nên tuyệt đối an toàn cho sức khoẻ của chó cưng.
+                            </p>
+                            <table>
+                                <style>
+                                    table {
+                                        width: 100%;
+                                        margin-bottom: 1em;
+                                        border-color: #ececec;
+                                        border-spacing: 0;
+                                    }
+                                </style>
+                                <tbody>
+                                    <tr>
+                                        <th><font size="4">STT</font></th>
+                                        <th><font size="4">KHẨU LỆNH VÀ NỘI DUNG HUẤN LUYỆN</font></th>
+                                        <th><font size="4">STT</font></th>
+                                        <th><font size="4">KHẨU LỆNH VÀ NỘI DUNG HUẤN LUYỆN</font></th>
+                                    </tr>
+                                    <tr>
+                                        <td><font size="4">1</font></td>
+                                        <td><font size="4">Đứng – Đứng yên tại chỗ</font></td>
+                                        <td><font size="4">10</font></td>
+                                        <td><font size="4">Chào – Đứng chào tại chỗ</font></td>
+                                    </tr>
+                                    <tr>
+                                        <td><font size="4">2</font></td>
+                                        <td><font size="4">Ngồi – Ngồi yên tại chỗ</font></td>
+                                        <td><font size="4">11</font></td>
+                                        <td><font size="4">Bắt tay phải (trái) chào</font></td>
+                                    </tr>
+                                    <tr>
+                                        <td><font size="4">3</font></td>
+                                        <td><font size="4">Nằm – Nằm yên tại chỗ</font></td>
+                                        <td><font size="4">12</font></td>
+                                        <td><font size="4">Kêu (sủa) – Làm toán</font></td>
+                                    </tr>
+                                    <tr>
+                                        <td><font size="4">4</font></td>
+                                        <td><font size="4">Đi cạnh chủ</font></td>
+                                        <td><font size="4">13</font></td>
+                                        <td><font size="4">Bảo vệ chủ – Bảo vệ mục tiêu</font></td>
+                                    </tr>
+                                    <tr>
+                                        <td><font size="4">5</font></td>
+                                        <td><font size="4">Bò – Bò lại chủ</font></td>
+                                        <td><font size="4">14</font></td>
+                                        <td><font size="4">Bảo vệ tài sản</font></td>
+                                    </tr>
+                                    <tr>
+                                        <td><font size="4">6</font></td>
+                                        <td><font size="4">Cắp vật mang lại</font></td>
+                                        <td><font size="4">15</font></td>
+                                        <td><font size="4">Chống ăn bả thuốc</font></td>
+                                    </tr>
+                                    <tr>
+                                        <td><font size="4">7</font></td>
+                                        <td><font size="4">Lăn trái, lăn phải</font></td>
+                                        <td><font size="4">16</font></td>
+                                        <td><font size="4">Vệ sinh đúng giờ, đúng chỗ</font></td>
+                                    </tr>
+                                    <tr>
+                                        <td><font size="4">8</font></td>
+                                        <td><font size="4">Huấn luyện chó tự do đi lại</font></td>
+                                        <td><font size="4">17</font></td>
+                                        <td><font size="4">Huấn luyện chó dữ, bất trị thành hiền</font></td>
+                                    </tr>
+                                    <tr>
+                                        <td><font size="4">9</font></td>
+                                        <td><font size="4">Vượt chướng ngại vật</font></td>
+                                        <td><font size="4">18</font></td>
+                                        <td><font size="4">Phân biệt người lạ và tấn công khi có hiệu lệnh</font></td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                        </div>
+
+                        <div class="">
+                            <h6>BẢNG GIÁ DỊCH VỤ</h6>
+                            <p>
+                                Chi phí huấn luyện huấn luyện:
+                            </p>
+                            <div class="row">
+                                <div class="col" >
+                                    <div class="row">
+                                        <h6 style="text-align: center;">GÓI HUẤN LUYỆN 3 THÁNG</h6>
+                                    </div>
+
+                                        <style>
+                                            table tbody tr td{
+                                                padding-left: 20px;
+                                            }
+                                        </style>
+                                        <table border="0" width="300px" cellspacing="0" cellpadding="0" class="table-bordered" style="margin-left: 40px;">
+                                            <colgroup><col width="365"><col width="141"></colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="xl65" width="365" height="67"><span style="color: #282828;"><strong>GIỐNG CHÓ NHỎ (GIỐNG CHÓ LỚN + 500.000-1.000.000đ)</strong></span></td>
+                                                    <td class="xl67" width="141"><strong><span style="color: #282828;">GIÁ TIỀN/THÁNG</span></strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="xl66"><span style="color: #282828;">Huấn luyện Chó Poodl</span></td>
+                                                    <td class="xl66"><span style="color: #282828;">3.000.000</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="xl66" height="24"><span style="color: #282828;">Huấn luyện Chó Phốc Sóc</span></td>
+                                                    <td class="xl66"><span style="color: #282828;">3.000.000</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="xl66" height="24"><span style="color: #282828;">Huấn luyện Chó Chihuahua</span></td>
+                                                    <td class="xl66"><span style="color: #282828;">3.000.000</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="xl66" height="24"><span style="color: #282828;">Huấn luyện Chó Bichon Frise</span></td>
+                                                    <td class="xl66"><span style="color: #282828;">3.000.000</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="xl66" height="24"><span style="color: #282828;">Huấn luyện Chó Boo</span></td>
+                                                    <td class="xl66"><span style="color: #282828;">3.000.000</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="xl66" height="24"><span style="color: #282828;">Huấn luyện Chó Bắc Kinh</span></td>
+                                                    <td class="xl66"><span style="color: #282828;">3.000.000</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="xl66" height="24"><span style="color: #282828;">Huấn luyện Chó Nhật</span></td>
+                                                    <td class="xl66"><span style="color: #282828;">3.000.000</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="xl66" height="24"><span style="color: #282828;">Huấn luyện Chó Maltese</span></td>
+                                                    <td class="xl66"><span style="color: #282828;">3.000.000</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="xl66" height="24"><span style="color: #282828;">Huấn luyện Chó Yorkshire Terrier</span></td>
+                                                    <td class="xl66"><span style="color: #282828;">3.000.000</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="xl66" height="24"><span style="color: #282828;">Huấn luyện Chó Cỏ Việt</span></td>
+                                                    <td class="xl66"><span style="color: #282828;">3.000.000</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    
+                                </div>
+                                
+                            
+                            </div>
+                        </div>
+                        <div class="row">
+                            <a class="btn btn-success btn-rounded" style="border-radius: 20px; margin-top: 10px;" href="get_service.html">Đặt Lịch Ngay</a>
+                        </div>
+                        <div class="row">
+                            <a class="btn btn-danger btn-rounded" style="border-radius: 20px; margin-top: 10px; margin-bottom: 10px;" href="contact.html">Tư vấn hỗ trợ</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+        </div>
+    </div>
+    <div class="container-fluid py-5" style="margin-left: 30px;">
+        <div class="container" >
+            <div  class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px; margin-left: -30px;" >
+                <h2 style="color: rgb(142, 194, 79);">DỊCH VỤ KHÁC</h2>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-4 service-item bg-light  p-4">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-2">
+                                <img width="100%" height="100%" src="img/logo_service/car-34714_1280.png" alt="">
+                            </div>
+                            <div class="col">
+                                <h5 class="text-uppercase text-dark" >Taxi thú cưng</h5>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="row">    
+                        <p style="height: 80px;">Vận chuyển thú cưng an toàn và tiện lợi, giúp thú cưng của bạn đến bất kỳ đâu.</p>
+                        <a class="text-primary" style="font-size: 14px;" href="service_detail_1.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 service-item bg-light p-4">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-2">
+                                <img width="100%" height="100%" src="img/logo_service/icon_pet_training.svg" alt="">
+                            </div>
+                            <div class="col">
+                                <h5 class="text-uppercase  text-dark" >Đạo tạo thú cưng</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p style="height: 80px;">Huấn luyện thú cưng giúp thú cưng của bạn nghe lời và thông minh hơn.</p>
+                            <a class="text-primary" style="font-size: 14px;" href="service_detail_4.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 service-item bg-light p-4">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-2">
+                                <img width="100%" height="100%" src="img/logo_service/icon_pet_grooming.svg" alt="">
+                            </div>
+                            <div class="col">
+                                <h5 class="text-uppercase  text-dark">Chăm sóc thú cưng</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p style="height: 80px;">Chăm sóc và làm đẹp kỹ lưỡng cho thú cưng, từ tắm rửa đến cắt tỉa lông</p>
+                            <a class="text-primary" style="font-size: 14px;" href="service_detail_2.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark" style="opacity: 70%;">
+        <div class="container ">
+            <div class="row g-2 ">
+                <div class="col-lg-6 col-md-6 text-white">
+                        <h5 class="text-uppercase  text-white">PETCARE</h5>
+                        <p class="mb-4">Chúng tôi luôn cố gắng cung cấp dịch vụ tốt nhất cho các thành viên bốn chân của bạn. Chất lượng và sự hài lòng là những gì chúng tôi cam kết.</p>
+                        <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>263 QL32, Lai Xá, Hoài Đức, Hà Nội, Việt Nam</p>
+                        <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>acechienn123@gmail.com</p>
+                        <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0795267718</p>
+                    </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">Liên kết nhanh</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                            <a class="text-body mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Trang chủ</a>
+                            <a class="text-body mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Dịch vụ</a>
+                            <a class="text-body mb-2" href="product.html"><i class="bi bi-arrow-right text-primary me-2"></i>Cửa hàng</a>
+                            <a class="text-body mb-2" href="get_service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Đặt lịch nhanh</a>
+                            <a class="text-body mb-2" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Liên hệ</a>
+                        </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">BẢN TIN</h5>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Email của bạn">
+                            <button class="btn btn-primary">Gửi</button>
+                        </div>
+                    </form>
+                    <h6 class="text-uppercase mt-4 mb-3" style="color: white;">Theo giõi</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>  
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>  
+</html>

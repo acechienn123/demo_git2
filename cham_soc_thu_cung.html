@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chăm sóc thú cưng</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+    
+    <!-- Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <img src="img/logo.png" style="width: 180px; margin-left: 20px;" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav py-0" style="margin-left: 160px;">
+                <a href="index.html" class="nav-item nav-link ">Trang chủ</a>
+                <a href="service.html" class="nav-item nav-link active">Dịch vụ</a>
+                <a href="product.html" class="nav-item nav-link">Cửa hàng</a>
+                <a href="get_service.html" class="nav-item nav-link">Đặt lịch nhanh</a>
+                
+            </div>
+            <a href="contact.html"  class="btn btn-primary btn-rounded" style="margin-left: 30px;">Liên hệ <i class="bi bi-arrow-right"></i></a>
+            <div  class="nav-link dropdown" style="margin-left: 50px;">
+                <button class="cart_btn border-1 btn-danger" type="button" id="cart_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <small style="margin-left: 20px;" class="cart_counter">0</small>
+                    <span><small>Sản phẩm</small></span>
+                </button>
+                <div class="cart_dropdown dropdown-menu"  style="width: 320px; position: absolute; left: 16px; background-color: whitesmoke; border-radius: 5px;">
+                    
+                    <hr>
+                    <a style="display: flex; justify-content: center; align-items: center; width: 200px; margin-bottom: 5px; margin-left: 50px;" class="btn btn-danger" href="cart_detail.html">Xem giỏ hàng</a>
+                    <a style="display: flex; justify-content: center; width: 200px; margin-left: 50px;" class="btn btn-success" href="cart_detail.html">Thanh toán</a>
+                </div>
+            </div>
+            <div id="user" class="dropdown dropstart" style="margin-left: 220px;">
+                <button  type="button" class="border-0 bg-white" data-bs-toggle="dropdown">
+                    <i style="font-size: 30px; color: rgb(71, 68, 68);" class="fa-solid fa-user"></i>
+                </button>
+                <ul class="dropdown-menu" style="padding: 0; position: absolute; left: -155px; top: 0;">
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="profile.html">Xem hồ sơ</a></li>
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="index_test.html">Đăng xuất</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+<div class="container-fluid" style="margin-top: 30px;">
+    <div class="container">
+        <div class="row">   
+            <div class="d-flex">
+                <a href="service.html">Dịch vụ </a>
+                <p>/</p>
+                <a href="service_details_2.html">Dịch vụ Chăm sóc thú cưng </a>
+            </div>
+            <h2 style="color: rgb(142, 194, 79);" class="border-start border-5 border-primary ps-5 mb-5">DỊCH VỤ CHĂM SÓC THÚ CƯNG</h2>
+            <div style="
+                        /* border-style: dotted;
+                        border-width: 1px 0px 1px 0px;
+                        border-color: #afafaf; */
+                        " >
+                <div>
+                    <div class="d-flex">
+                        <i style=" color: black; font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-solid fa-phone-volume"></i>
+                        <p class="text-dark">0795267718</p>
+                    </div>
+                    <div  class="d-flex text-dark">
+                        <i style="font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-regular fa-pen-to-square"></i>
+                        <p>26 Tháng 5 2024 </p>
+                    </div>
+                    <div  class="d-flex text-dark">
+                        <i style="font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-regular fa-clock"></i>
+                        <p>3:06</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="container-flui">
+    <div class="container">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col" style="border: .1rem solid #eee;
+                                    border-radius: 10px;">
+                <div class="container section-title-container">
+                    <h2 style="margin-left: -20px; margin-top: 10px; text-align: center;">🐕 Địa chỉ làm đẹp thú cưng tốt nhất Việt Nam
+                    </h2>
+                </div>
+                <p>Chúng tôi hiểu rằng cơ thể sạch sẽ là một phần quan trọng giúp bảo vệ sức khỏe của thú cưng. Quy trình 
+                    chăm sóc chuyên nghiệp tại <strong> PetCare </strong> được đội ngũ chuyên viên giàu kinh nghiệm của chúng tôi 
+                    là những người được đào tạo bài bản tại các trung tâm hàng đầu tại Hà Nội thực hiện.
+                     Họ không chỉ là những người yêu thú cưng mà còn là những chuyên gia trong việc chăm sóc và làm đẹp cho các bé.
+                    <br>
+                    <br>
+                    Từ việc vệ sinh, tắm gội, cắt tỉa lông đến làm móng, mỗi dịch vụ đều được thực hiện kỹ lưỡng với sự tận tâm và chuyên nghiệp. Chúng tôi cam kết sẽ mang lại cho thú cưng của bạn không chỉ là vẻ ngoài sạch sẽ, xinh xắn mà còn là tinh thần thư thái và hạnh phúc. Đến với Tropicpet, bạn sẽ hoàn toàn yên tâm và hài lòng với dịch vụ chăm sóc thú cưng cao cấp dành cho thú cưng của bạn.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contaier-fluid">
+    <div class="container">
+        <div class="row d-flex justify-content-between" style="margin-top: 50px;">
+            <div class="col-3" style="background-color: whitesmoke; height: 500px;" >
+                <div style="background-color:  #037e85;;
+                            width: 100px;
+                            height: 40px;
+                            text-align: center; align-items: center; justify-content: center; display: flex;
+                            position: relative;
+                            left: -50px;
+                            top: 30px;
+                            color:white;">
+                            
+                    CHỈ TỪ 100K
+                </div>
+                <div  class="border-bottom border-1 border-infor " style="padding-top: x; text-align: center; width: 300px; ">
+                    <h5 style="color: black !important;">COMBO TẮM</h5>
+                    <p>Gói combo tắm làm sạch 8 bước:</p>
+                </div>
+                
+                <div class="row">
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Đón tiếp, xin thông tin và tư vấn</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Kiểm tra sức khỏe lâm sàng</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Nhổ lông tai, vệ sinh tai</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Cắt móng, mài móng</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Vắt tuyến hôi
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Tắm sạch sẽ & Massage
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Sấy khô, vệ sinh tai lại, chải lông
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Xịt nước hoa, dưỡng lông
+                        </p>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center" style="margin-top: 20px;">
+                    <a class="btn btn-primary" style="width: 200px;" href="contact.html">Liên hệ tư vấn</a>
+                </div>
+            </div>
+            <div class="col-3" style="background-color: whitesmoke; height: 550px;" >
+                
+                <div  class="border-bottom border-1 border-infor " style="text-align: center; width: 300px; ">
+                    <div style="background-color:  #037e85;;
+                            width: 100px;
+                            height: 40px;
+                            text-align: center; align-items: center; justify-content: center; display: flex;
+                            position: relative;
+                            left: -50px;
+                            top: 30px;
+                            color: white;">
+                            
+                    CHỈ TỪ 150K
+                </div>
+                    <h5 style="color: black !important;">COMBO CẠO TẮM</h5>
+                    <p>Gói combo tắm làm sạch 8 bước:</p>
+                </div>
+                
+                <div class="row">
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Đón tiếp, xin thông tin và tư vấn</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Kiểm tra sức khỏe lâm sàng</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Nhổ lông tai, vệ sinh tai</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Cắt móng, mài móng</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Cạo theo yêu cầu
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Vắt tuyến hôi
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Tắm sạch sẽ & Massage
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Sấy khô, vệ sinh tai lại, chải lông
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Xịt nước hoa, dưỡng lông
+                        </p>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center" style="margin-top: 30px;">
+                    <a class="btn btn-primary" style="width: 200px;" href="contact.html">Liên hệ tư vấn</a>
+                </div>
+            </div>
+            <div class="col-3" style="background-color: whitesmoke; height: 600px;" >
+                <div style="background-color:  #037e85;;
+                            width: 100px;
+                            height: 40px;
+                            text-align: center; align-items: center; justify-content: center; display: flex;
+                            position: relative;
+                            left: -50px;
+                            top: 30px;
+                            color: white;">
+                            
+                    CHỈ TỪ 250K
+                </div>
+                <div  class="border-bottom border-1 border-infor " style="text-align: center; width: 300px; ">
+                    <h5 style="color: black !important;">COMBO CẮT TỈA</h5>
+                    <p>Gói combo tắm làm sạch 8 bước:</p>
+                </div>
+                
+                <div class="row">
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Đón tiếp, xin thông tin và tư vấn</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Kiểm tra sức khỏe lâm sàng</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Nhổ lông tai, vệ sinh tai, cạo bàn</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Cắt móng, mài móng</p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Chải & làm bông lông
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Vắt tuyến hôi
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Tắm sạch sẽ & Massage
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Sấy khô, vệ sinh tai lại, đánh bông
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Cắt tạo kiểu theo yêu cầu
+                        </p>
+                    </div>
+                    <div class="d-flex">
+                        <i style="color: #05a955;margin-top: 4px; margin-right: 10px;" class="fa-solid fa-circle-check"></i>
+                        <p>Xịt nước hoa, dưỡng lông
+                        </p>
+                </div>
+                <div class="row d-flex justify-content-center" style="margin-top: 40px; margin-left: 1px;">
+                    <a class="btn btn-primary" style="width: 200px;" href="contact.html">Liên hệ tư vấn</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid">
+    <div class="container" style="border: .1rem solid #eee;
+                                border-radius: 20px;
+                                margin-top: 50px;
+                                padding-top: 10px;
+                                ">
+        <div class="row" >
+            <h4>👍 3 ĐIỀU LUÔN CAM KẾT VỚI KHÁCH HÀNG</h4>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col text-white" style="margin-left: 10px; margin-bottom: 20px; border: .1rem solid #eee;
+                                                border-radius: 20px; background-color: #00205b;">
+                <div class="row">
+                    <h4 style="text-align: center; color: white; margin-top: 10px;">❣️ HẾT MÌNH VÌ CÔNG VIỆC</h4>
+                </div>
+                <div class="row">
+                    <p class="">Chúng tôi làm việc hết mình với chữ tâm, trách nhiệm và lòng yêu mến nghề. Thú cưng khỏe mạnh là niềm hạnh phúc của chúng tôi.</p>
+                </div>
+            </div>
+            <div class="col text-white" style="margin-left: 10px; margin-bottom: 20px; border: .1rem solid #eee;
+                                                border-radius: 20px; background-color: #00205b;">
+                <div class="row">
+                    <h4 style="text-align: center; color: white; margin-top: 10px;">✅ GIÁ DỊCH VỤ RẺ NHẤT</h4>
+                </div>
+                <div class="row">
+                    <p class="">Chúng tôi cam kết đưa ra mức giá ưu đãi nhất trên thị trường để tất cả thú cưng đều có cơ hội được trải nghiệm dịch vụ của chúng tôi.</p>
+                </div>
+            </div>
+            <div class="col text-white" style="margin-left: 10px; margin-right: 10px; margin-bottom: 20px; border: .1rem solid #eee;
+                                                border-radius: 20px; background-color: #00205b;">
+                <div class="row">
+                    <h4 style="text-align: center; color: white; margin-top: 10px;">🥇 CHẤT LƯỢNG HÀNG ĐẦU</h4>
+                </div>
+                <div class="row">
+                    <p class="">Chúng tôi không ngừng nâng cao phát triển trình độ kỹ năng của nhân sự để phục vụ thú cưng đem đến kết quả tốt nhất.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row">
+             <div class="col" style="border: .1rem solid #eee;
+                                    border-radius: 10px;">
+                <div class="container section-title-container">
+                    <h4 style="margin-top: 10px;">⚠️ LƯU Ý KHI SỬ DỤNG DỊCH VỤ
+                    </h4>
+                </div>
+                <p><strong>PetCare </strong>không tiếp nhận vật nuôi đang mang thai, đang điều trị bệnh,
+                     mới phẫu thuật, có tiểu sử bệnh hen, co giật hoặc các bệnh lý khác khiến
+                     thú nuôi không có khả năng tự chủ.
+                </p>
+
+                <p>Để đảm bảo an toàn cho sức khỏe khi đưa đến làm dịch vụ cắt tỉa lông chó mèo: 
+                    <strong>Không để thú cưng quá đói, hoặc ăn quá no và chạy nhảy quá sức trước khi đến cửa hàng.</strong>
+                     Có kế hoạch che nắng mưa trước khi 
+                    đến và sau khi về. Nếu thú cưng có những biểu hiện bất thường về sức
+                     khỏe xin vui lòng liên hệ PetCare để được trợ giúp.
+                </p>
+                <p><strong>Vui lòng kiểm tra kỹ thú cưng khi đến đón thú cưng sau khi làm dịch vụ.</strong> 
+                     Quy trình này đảm bảo nhân viên của PetCare đã thực hiện đúng yêu cầu 
+                     và bạn hài lòng với chất lượng dịch vụ.
+                </p>
+            </div>
+            <div class="col" style=" margin-left: 10px; width: 600px; margin-top: 10px;">
+                <div class="row">
+                    <h4>📮 ĐÁNH GIÁ CỦA KHÁCH HÀNG</h4>
+                    <hr>
+                </div>
+                <div class="row" style=" ">
+                    <div class="rpi-info" style="border: .1rem solid #eee;
+                    border-radius: 10px; ">
+                        <p style="color: rgb(1, 13, 247);"><i class="fa-brands fa-facebook"></i> <strong>Khoa Yến</strong></p>
+                        <p style="font-size: 13px; margin-top: -18px;"> Đã đem cún đến sân chơi của cửa hàng nhiều lần rồi ,đến để đi dạo sau đó tắm cho nó luôn ,nó thích nhìn vui lắm,cứ cuối tuần lại được đi chơi.</p>
+                        <div class="rpi-body" style="margin-top: -18px; float: right;">
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                        </div>
+                        <div style="margin-top: -18px;">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                            <i style="margin-left: 5px;top: 1px; position: relative;" class="fa-solid fa-thumbs-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style=" ">
+                    <div class="rpi-info" style="border: .1rem solid #eee;
+                    border-radius: 10px; ">
+                        <p style="color: rgb(1, 13, 247);"><i class="fa-brands fa-facebook"></i> <strong>Hồ Phước Lộc</strong></p>
+                        <p style="font-size: 13px; margin-top: -18px;"> Nhân viên nhiệt tình, chuyên nghiệp 5 sao cho thái độ phục vụ của nhân viên thêm nữa dịch vụ tắm, spa, cắt tỉa lông cún mèo ở đây cũng rất okla luôn.</p>
+                        <div class="rpi-body" style="margin-top: -18px; float: right;">
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                        </div>
+                        <div style="margin-top: -18px;">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                            <i style="margin-left: 5px;top: 1px; position: relative;" class="fa-solid fa-thumbs-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style=" ">
+                    <div class="rpi-info" style="border: .1rem solid #eee;
+                    border-radius: 10px; ">
+                        <p style="color: rgb(1, 13, 247);"><i class="fa-brands fa-facebook"></i> <strong>Dương Hải Quỳnh</strong></p>
+                        <p style="font-size: 13px; margin-top: -18px;">Tuần nào cũng ghé thì sao mà giàu nổi đây shop ơi, shop gì mà toàn hàng xinh mà xịn thế này, chất lượng tốt lắm ạ.</p>
+                        <div class="rpi-body" style="margin-top: -18px; float: right;">
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                        </div>
+                        <div style="margin-top: -18px;">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                            <i style="margin-left: 5px;top: 1px; position: relative;" class="fa-solid fa-thumbs-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style=" ">
+                    <div class="rpi-info" style="border: .1rem solid #eee;
+                    border-radius: 10px; ">
+                        <p style="color: rgb(1, 13, 247);"><i class="fa-brands fa-facebook"></i> <strong>Phạm Đăng</strong></p>
+                        <p style="font-size: 13px; margin-top: -18px;">Khách sạn trông giữ cún mèo ở shop chất lượng lắm nha, mình gửi bé của mình ở đây mà yên tâm lắm, không lo lắng xíu nào luôn á. Nhân viên chu đáo cực kì.</p>
+                        <div class="rpi-body" style="margin-top: -18px; float: right;">
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                             <i style="font-size: 12px;" class="fa-solid fa-star"></i>
+                        </div>
+                        <div style="margin-top: -18px;">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                            <i style="margin-left: 5px;top: 1px; position: relative;" class="fa-solid fa-thumbs-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <a class="btn btn-success btn-rounded" style="border-radius: 20px; margin-top: 10px;" href="get_service.html">Đặt Lịch Ngay</a>
+        </div>
+    </div>
+    
+</div>
+<div class="container-fluid py-5" style="margin-left: 30px;">
+    <div class="container" >
+        <div  class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px; margin-left: -30px;" >
+            <h2 style="color: rgb(142, 194, 79);">DỊCH VỤ KHÁC</h2>
+        </div>
+        <div class="row g-5">
+            <div class="col-md-4 service-item bg-light  p-4">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-2">
+                            <img width="100%" height="100%" src="img/logo_service/car-34714_1280.png" alt="">
+                        </div>
+                        <div class="col">
+                            <h5 class="text-uppercase text-dark" >Taxi thú cưng</h5>
+                        </div>
+                    </div>
+                </div> 
+                <div class="row">    
+                    <p style="height: 80px;">Vận chuyển thú cưng an toàn và tiện lợi, giúp thú cưng của bạn đến bất kỳ đâu.</p>
+                    <a class="text-primary" style="font-size: 14px;" href="service_detail_1.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4 service-item bg-light p-4">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-2">
+                            <img width="100%" height="100%" src="img/logo_service/icon_pet_training.svg" alt="">
+                        </div>
+                        <div class="col">
+                            <h5 class="text-uppercase  text-dark" >Đạo tạo thú cưng</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p style="height: 80px;">Huấn luyện thú cưng giúp thú cưng của bạn nghe lời và thông minh hơn.</p>
+                        <a class="text-primary" style="font-size: 14px;" href="service_detail_4.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 service-item bg-light p-4">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-2">
+                            <img width="100%" height="100%" src="img/logo_service/icon_pet_grooming.svg" alt="">
+                        </div>
+                        <div class="col">
+                            <h5 class="text-uppercase  text-dark">Chăm sóc thú cưng</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p style="height: 80px;">Chăm sóc và làm đẹp kỹ lưỡng cho thú cưng, từ tắm rửa đến cắt tỉa lông</p>
+                        <a class="text-primary" style="font-size: 14px;" href="service_detail_2.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark" style="opacity: 70%;">
+        <div class="container ">
+            <div class="row g-2 ">
+                <div class="col-lg-6 col-md-6 text-white">
+                        <h5 class="text-uppercase  text-white">PETCARE</h5>
+                        <p class="mb-4">Chúng tôi luôn cố gắng cung cấp dịch vụ tốt nhất cho các thành viên bốn chân của bạn. Chất lượng và sự hài lòng là những gì chúng tôi cam kết.</p>
+                        <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>263 QL32, Lai Xá, Hoài Đức, Hà Nội, Việt Nam</p>
+                        <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>acechienn123@gmail.com</p>
+                        <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0795267718</p>
+                    </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">Liên kết nhanh</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                            <a class="text-body mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Trang chủ</a>
+                            <a class="text-body mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Dịch vụ</a>
+                            <a class="text-body mb-2" href="product.html"><i class="bi bi-arrow-right text-primary me-2"></i>Cửa hàng</a>
+                            <a class="text-body mb-2" href="get_service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Đặt lịch nhanh</a>
+                            <a class="text-body mb-2" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Liên hệ</a>
+                        </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">BẢN TIN</h5>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Email của bạn">
+                            <button class="btn btn-primary">Gửi</button>
+                        </div>
+                    </form>
+                    <h6 class="text-uppercase mt-4 mb-3" style="color: white;">Theo giõi</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>  
+</html>

@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa hàng</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+    <!-- Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <img src="img/logo.png" style="width: 180px; margin-left: 20px;" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav py-0" style="margin-left: 160px;">
+                <a href="index.html" class="nav-item nav-link ">Trang chủ</a>
+                <a href="service.html" class="nav-item nav-link">Dịch vụ</a>
+                <a href="product.html" class="nav-item nav-link active">Cửa hàng</a>
+                <a href="get_service.html" class="nav-item nav-link">Đặt lịch nhanh</a>
+                
+            </div>
+            <a href="contact.html"  class="btn btn-primary btn-rounded" style="margin-left: 30px;">Liên hệ <i style="color: black;" class="bi bi-arrow-right"></i></a>
+            <div  class="nav-link dropdown" style="margin-left: 50px;">
+                <button class="cart_btn border-1 btn-danger" type="button" id="cart_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <small style="margin-left: 20px;" class="cart_counter">0</small>
+                    <span><small>Sản phẩm</small></span>
+                </button>
+                    <div class="cart_dropdown dropdown-menu"  style="width: 320px; position: absolute; left: 16px; background-color: whitesmoke; border-radius: 5px;">
+                    <div class="product_list">
+                    </div>
+                    <hr>
+                    <div class="total_price" style="text-align: center;">
+                        <span>Tổng tiền</span>
+                        <strong class="total_amount">$0.00</strong>
+                    </div>
+                    <hr>
+                    <a style="display: flex; justify-content: center; align-items: center; width: 200px; margin-bottom: 5px; margin-left: 50px;" class="btn btn-danger" href="cart_detail.html">Xem giỏ hàng</a>
+                    <a style="display: flex; justify-content: center; width: 200px; margin-left: 50px;" class="btn btn-success" href="cart_detail.html">Thanh toán</a>
+                </div>
+            </div>
+            <div id="user" class="dropdown dropstart" style="margin-left: 220px;">
+                <button  type="button" class="border-0 bg-white" data-bs-toggle="dropdown">
+                    <i style="font-size: 30px; color: rgb(71, 68, 68);" class="fa-solid fa-user"></i>
+                </button>
+                <ul class="dropdown-menu" style="padding: 0; position: absolute; left: -155px; top: 0;">
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="profile.html">Xem hồ sơ</a></li>
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="index_test.html">Đăng xuất</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="product_details ">
+                        <div class="row">
+                            <div class="col col-lg-6">
+                                <img src="img/do_an_cho/item4.jpg" style="width: 100%; height: 100%;" alt="Nhà cây cho mèo">
+                            </div>
+                            <div class="col col-lg-6">
+                                <div class="details_content">
+                                    <h2 class="item_title">Xương cho chó vị thịt bò</h2>
+                                    <p>Xương cho chó vị thịt bò dành cho các giống chó có kích thước trung bình có chứa vị thịt bò.</p>
+                                    <div class="item_review_info d-flex align-items-center">
+                                        <ul class="rating_star d-flex list-unstyled">
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star"></i></li>
+                                            <li><i class="fa-regular fa-star-half-stroke"></i></li>
+                                            <div style="margin-left: 5px; margin-top: 1px;" class="review_counter"><span>2</span> Đánh giá</div>   
+                                        </ul>
+                                        
+                                    </div>
+                                    <div class="item_price" style="margin-top: -10px;"><del>70.000 VNĐ</del> <span style="color: red; font-size: 20px;">35,000 VNĐ</span></div>
+                                    <div class="d-flex justify-content-between align-items-center" style="margin-top: 10px;">
+                                        <label for="#">Số lượng</label>
+                                        <input type="number" class="form-control" min="0" placeholder="0" style="height: 37px; width: 60px" step="1">
+                                        <a class="btn btn-primary " href="product.html"><i class="fa-solid fa-paw"></i> Thêm vào giỏ hàng</a>
+                                    </div>
+
+                                    <ul class="list-unstyled" style="margin-top: 20px;">
+                                        <li><strong>Mã sản phẩm:</strong> <span>TACC04</span></li>
+                                        <li class="categories_tags"><strong>Danh mục:</strong> <span><a href="#!">Thức ăn & Dinh Dưỡng</a> <a href="#!">Khác</a></span></li>
+                                        <li class="categories_tags"><strong>Tags:</strong> <span><a href="#!">Đồ ăn cho cún, Pate</a></span></li>
+                                        <li class="share_links">
+                                            <strong>
+                                                Chia sẻ:
+                                            </strong> 
+                                            <span>
+                                                <a style="margin-right: 10px;" href="#!"><i class="fab fa-instagram"></i></a> 
+                                                <a style="margin-right: 10px;" href="#!"><i class="fab fa-twitter"></i></a> 
+                                                <a style="margin-right: 10px;" href="#!"><i class="fab fa-whatsapp"></i></a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-offer" style="background-image: url(img/offer.jpg); background-repeat: no-repeat; background-size: cover;">
+        <div class="container py-5">
+            <div class="row gx-5 justify-content-start">
+                <div class="col-lg-7">
+                    <div class="border-start border-5 border-dark ps-5 mb-5">
+                        <h6 class="text-dark text-uppercase">Đặt mua hàng Online</h6>
+                        <h1 class="display-5 text-uppercase text-dark mb-0">Ưu đãi lên tới 50%</h1>
+                    </div>
+                    <p class="text-dark mb-4">Mọi người thường tìm kiếm sự tiện lợi và giá trị tốt nhất cho khoản chi tiêu của mình, và đó chính
+                        là lý do tại sao chúng tôi cung cấp ưu đãi đặc biệt này. Hãy tận dụng cơ hội giảm giá 
+                        lên tới 50% cho lần mua hàng đầu tiên của bạn khi sử dụng thẻ tín dụng Petco để mua sắm những sản phẩm chất lượng cao cho thú cưng yêu quý của bạn</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products Start -->
+    <div class="container-fluid py-5" style="margin-left: 10px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="row">
+                        <h5 class="text-dark" >DANH MỤC SẢN PHẨM</h5>
+                    </div>
+                    <div class="row" style="margin-bottom: 20px; width: 100%;">
+                        <span style="width: 100%;" class="selection">   
+                            <select class="form-select  bg-light border-0 px-4" style="width: 100%;" id="product_cat" onchange="toggleContent()">
+                                <option value="cho">Dành cho chó</option>
+                                <option value="meo">Dành cho mèo</option>
+                            </select>  
+                        </span>
+                    </div>
+                    
+                    <div class="row">
+                        <h5 class="text-dark">ĐÁNH GIÁ MỚI NHẤT</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="img/do_an_meo/3.jpg"  style="width: 100%;" alt="">
+                        </div>
+                        <div class="col-9">
+                            <a style="font-size: 13px;" href="#">Pate cho mèo vị cá ngừ trộn thịt cua </a>
+                            <div style="display: flex;">
+                                <style>
+                                    i{
+                                        color: #ef6c00;
+                                    }
+                                </style>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                
+                            </div>
+                            <p style="font-size: 13px;">bởi Thế An</p>
+                        </div>
+                        <hr style="margin-top: -10px;">
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="img/do_an_meo/2.jpg"  style="width: 100%;" alt="">
+                        </div>
+                        <div class="col-9">
+                                <a style="font-size: 13px;" href="#">Bánh thưởng cho chó vị khoai môn</a>
+                            <div style="display: flex;">
+                                <style>
+                                    i{
+                                        color: #ef6c00;
+                                    }
+                                </style>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                
+                            </div>
+                            <p style="font-size: 13px;">bởi Phạm Đăng</p>
+                        </div>
+                        <hr style="margin-top: -10px;">
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="img/do_an_meo/5.jpg"  style="width: 100%;" alt="">
+                        </div>
+                        <div class="col-9">
+                            <a style="font-size: 13px;" href="#">Thức ăn cho mèo con và mèo mẹ</a>
+                            <div style="display: flex;">
+                                <style>
+                                    i{
+                                        color: #ef6c00;
+                                    }
+                                </style>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                
+                            </div>
+                            <p style="font-size: 13px;">bởi Hương phạm</p>
+                        </div>
+                        <hr style="margin-top: -10px;">
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="img/about_img_4.png"  style="width: 100%;" alt="">
+                        </div>
+                        <div class="col-9">
+                            <a style="font-size: 13px;" href="#">Cát cho mèo đi vệ sinh</a>
+                            <div style="display: flex;">
+                                <style>
+                                    i{
+                                        color: #ef6c00;
+                                    }
+                                </style>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                
+                            </div>
+                            <p style="font-size: 13px;">bởi Văn Đức</p>
+                        </div>
+                        <hr style="margin-top: -10px;">
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="img/do_an_cho/item6.jpg"  style="width: 100%;" alt="">
+                        </div>
+                        <div class="col-9">
+                            <a style="font-size: 13px;" href="#">Xúc xích cho chó vị thịt gà</a>
+                            <div style="display: flex;">
+                                <style>
+                                    i{
+                                        color: #ef6c00;
+                                    }
+                                </style>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                <i style="font-size: 13px;" class="fa-solid fa-star"></i>
+                                
+                            </div>
+                            <p style="font-size: 13px;">bởi An Thuyên</p>
+                        </div>
+                        <hr style="margin-top: -10px;">
+                    </div>
+                    <div class="row" style="border: .1rem solid #eee;
+                                            border-radius: 10px; 
+                                            background-color: #001848;">
+                        <h4 style="text-align: center; color: white;">Bạn thắc mắc không biết chọn sản phẩm nào phụ hợp cho thú cưng của bạn?</h4>
+                        <a class="btn btn-danger" href="contact.html">Liên hệ tư vấn</a>
+                    </div>
+                    <div class="row" style="border: .1rem solid #eee;
+                                            border-radius: 10px; 
+                                            padding-bottom: 50px;
+                                            margin-top: 20px;
+                                            ">
+                        <div class="row">
+                            <h5>Từ khóa tìm kiếm</h5>
+                        </div>
+                        
+                        <div>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        
+                                        " href="">
+                                        pate
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        " href="">
+                                        sữa bột
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        " href="">
+                                        thuốc xịt ve
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        " href="">
+                                        lược
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        position: relative;
+                                        top: 10px;
+                                        " href="">
+                                        khay vệ sinh
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        position: relative;
+                                        top: 10px;
+                                        " href="">
+                                        thuốc bổ sung Vitamin
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        position: relative;
+                                        top: 20px;
+                                        " href="">
+                                        nệm ngủ
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        position: relative;
+                                        top: 20px;
+                                        " href="">
+                                        bánh
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        position: relative;
+                                        top: 20px;
+                                        " href="">
+                                        vòng cổ
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        position: relative;
+                                        top: 20px;
+                                        " href="">
+                                        xích đeo
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        position: relative;
+                                        top: 30px;
+                                        " href="">
+                                        dung dịch vệ sinh mắt
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        position: relative;
+                                        top: 30px;
+                                        " href="">
+                                        sữa tắm
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        position: relative;
+                                        top: 40px;
+                                        " href="">
+                                        balo
+</a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        position: relative;
+                                        top: 40px;
+                                        " href="">
+                                        chuồng nhốt thú cưng
+                            </a>
+                            <a style="border: .1rem solid #eee;
+                                        border-radius: 6px; 
+                                        padding: 2px;
+                                        margin-right: 3px;
+                                        position: relative;
+                                        top: 40px;
+                                        " href="">
+                                        hạt
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div id="content_cho">
+                        <div class="row">
+                            <div class="border-start border-5 border-primary ps-3 mb-3 d-flex justify-content-between"  style="margin-left: 12px;">
+                                <h6 class="text-primary text-uppercase">Phụ kiện & Đồ dùng</h6>
+                                <form action="">
+                                    <input id="timKiemSP" style="width: 300px;left: -12px; position: relative;" type="text" placeholder="Tìm kiếm sản phẩm">
+                                </form>
+                                <div id="kqua" style="width: 300px; 
+                                            height: 30px; 
+                                             
+                                            position: absolute;
+                                            left: 1118px;
+                                            top: 483px;
+                                            z-index: 1;
+                                            display: none;">
+                                    
+                                </div>
+                            </div>
+                            <div class="owl-carousel product-carousel" style="z-index: 0;">
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img  style="margin-top: -30px"  src="img/phu_kien_cho/item7.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a  class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Balo đựng chó mèo phi hành gia (DDCM03) </a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">530.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_cho/item2.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Mũ cho chó mèo (QACM02)</a>
+                                            </div>
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">99.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_cho/item3.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Vòng cổ chó mèo kèm dây dắt (DDCM01)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">80.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_cho/item5.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Bóng đồ chơi cho chó mèo có chuông nhựa (DCCM01)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">45.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_cho/item6.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Roi huấn luyện chó mèo PAW (DCCM02)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">180.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_cho/item1.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Quần áo cho chó mèo (QACM01)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">180.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                       <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_cho/item8.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Lược chải lông chó mèo đầu lưỡi mềm (DDCM05)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">85.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_cho/item9.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Máy sấy lông chó mèo CHUNZHOU (DDCM06)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">1.790.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_cho/item10.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Nhà nhựa cho chó lớn ngoài trời (DDCM07)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">2.750.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="z-index: 0;">
+                            <div class="border-start border-5 border-primary ps-3 mb-3 d-flex justify-content-between"  style="margin-left: 12px; margin-top: -30px;">
+                                <h6 class="text-primary text-uppercase">Thức ăn & dinh dưỡng</h6>
+                            </div>
+                            
+                            <div class="owl-carousel product-carousel" style="width: 1296px;">
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_cho/item1.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Thức ăn cho chó con cỡ nhỏ Puppy (TACC01) </a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">215.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <a class="btn btn-primary"  href="#"><i class="bi bi-cart"></i></a>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_cho/item2.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Thức ăn cho chó trưởng thành (TACC02)</a>
+                                            </div>
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">190.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_cho/item3.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Pate cho chó vị bò gà nướng sốt cà rốt (TACC03)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">80.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_cho/item4.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Xương cho chó vị thịt bò(TACC04)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">35.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_cho/item5.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" style="font-size: 13px; ">Xương cho chó gặm sạch răng (DCCM02)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">10.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_cho/item6.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Xúc xích cho chó vị thịt gà (TACC06)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">50.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"> <img style="margin-top: -30px" src="img/do_an_cho/item7.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Bánh kem thạch cho chó vị gà cá ngừ (TACC07)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">45.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_cho/item8.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Sữa bột cho chó BBN Goat’s Milk (TACC08)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">320.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="pb-5">
+                                    <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                        <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_cho/item9.jpg" alt=""></a>
+                                        <div style="width: 130%; margin-left: -20px;">
+                                            <div style="height: 43px;">
+                                                <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Sốt thịt cừu hầm lúa mạch rau củ cho chó (TACC09)</a>
+                                            </div>
+                                            
+                                            <div class="d-flex" style="margin-top: 10px;">
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                            </div>
+                                            <p style="margin-top: -15px;" class="text-danger product_price">70.000đ</p>
+                                            <div class="btn-action d-flex justify-content-center">
+                                                <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="z-index: 0;">
+                                <div class="border-start border-5 border-primary ps-3 mb-3 d-flex justify-content-between"  style="margin-left: 12px; margin-top: -30px">
+                                    <h6 class="text-primary text-uppercase">Thuốc thú y</h6>
+                                </div>
+                                <div class="owl-carousel product-carousel">
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/thuoc_cho/item1.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <div style="height: 43px;">
+                                                    <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Thuốc xịt trị ve rận cho chó mèo Frontline (TTY01) </a>
+                                                </div>
+                                                <div class="d-flex" style="margin-top: 10px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">250.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/thuoc_cho/item2.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <div style="height: 43px;">
+                                                    <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Thuốc nhỏ gáy trị ve rận cho chó dưới 10kg (TTY02)</a>
+                                                </div>
+                                                <div class="d-flex" style="margin-top: 10px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                    <p style="margin-top: -15px;" class="text-danger product_price">210.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/thuoc_cho/item3.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <div style="height: 43px;">
+                                                    <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Thuốc trị ve rận cho chó từ 4 – 10kg (TTY03)</a>
+                                                </div>
+                                                
+                                                <div class="d-flex" style="margin-top: 10px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">175.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/thuoc_cho/item4.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <div style="height: 43px;">
+                                                    <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Thuốc trị ve rận cho chó từ 20 đến 40kg (TTY04)</a>
+                                                </div>
+                                                
+                                                <div class="d-flex" style="margin-top: 10px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">250.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/thuoc_cho/item5.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <div style="height: 43px;">
+                                                    <a class="tenSP product_name" style="font-size: 13px; ">Thuốc trị ve rận cho chó từ 2 đến 5kg (TTY05)</a>
+                                                </div>
+                                                
+                                                <div class="d-flex" style="margin-top: 10px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">210.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/thuoc_cho/item6.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <div style="height: 43px;">
+                                                    <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Thuốc trị ve rận cho chó từ 10 đến 20kg (TTY06)</a>
+                                                </div>
+                                                
+                                                <div class="d-flex" style="margin-top: 10px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                    <p style="margin-top: -15px;" class="text-danger product_price">210.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/thuoc_cho/item7.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <div style="height: 43px;">
+                                                    <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Thuốc bổ sung Vitamin tổng hợp cho chó (TTY07)</a>
+                                                </div>
+                                                
+                                                <div class="d-flex" style="margin-top: 10px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">170.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/thuoc_cho/item8.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <div style="height: 43px;">
+                                                    <a class="tenSP product_name" href="product_detail.html" style="font-size: 13px; ">Gel dinh dưỡng cho chó (TTY08)</a>
+                                                </div>
+                                                
+                                                <div class="d-flex" style="margin-top: 10px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">170.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/thuoc_cho/item9.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <div style="height: 43px;">
+                                                    <a class="product_name" href="product_detail.html" style="font-size: 13px; ">Thuốc dưỡng lông cho chó (TTY09)</a>
+                                                </div>
+                                                
+                                                <div class="d-flex" style="margin-top: 10px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">185.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/thuoc_cho/item10.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <div style="height: 43px;">
+                                                    <a class="tenSP product_name" href="" style="font-size: 13px; ">Thuốc dưỡng lông cho chó (TTY010)</a>
+                                                </div>
+                                                
+                                                <div class="d-flex" style="margin-top: 10px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                    <p style="margin-top: -15px;" class="text-danger product_price">190.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                        <div id="content_meo" style="display: none;" >
+                            <div class="row">
+                                <div class="border-start border-5 border-primary ps-3 mb-3 d-flex justify-content-between"  style="margin-left: 12px;" >
+                                    <h6 class="text-primary text-uppercase">Phụ kiện & Đồ dùng</h6>
+                                    <form action="">
+                                        <input id="timKiemSP_1" style="width: 300px;left: -12px; position: relative;" type="text" placeholder="Tìm kiếm sản phẩm">
+                                    </form>
+                                    <div id="kqua_1" style="width: 300px; 
+                                            position: absolute;
+                                            left: 1118px;
+                                            top: 483px;
+                                            z-index: 2;
+                                            display: none;">
+                                    
+                                </div>
+                                </div>
+                                <div class="owl-carousel product-carousel" style="z-index: 1;">
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_meo/item1.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html " style="font-size: 13px;">Bát ăn cho chó mèo bằng cao su (QACM01)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">180.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_meo/item2.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name"  href="product_detail.html " style="font-size: 13px;">Vòng cổ chó mèo hình bàn chân  (QACM02)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">50.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                           <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_meo/item3.jpg" alt=""></a> 
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Túi đựng chó mèo trong suốt  (QACM03)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">495.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_meo/item4.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Đồ chơi cho mèo PAW Happy Pet (QACM04)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                    <p style="margin-top: -15px;" class="text-danger product_price">150.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                           <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_meo/item5.jpg" alt=""></a> 
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Balo đựng chó mèo phi hành gia (QACM05)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">535.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_meo/item6.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Vòng cổ cho chó mèo kèm dây dắt (QACM06)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">255.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                           <a href="product_detail.html"> <img style="margin-top: -30px" src="img/phu_kien_meo/item7.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Bộ đồ chơi cho mèo bằng cói (QACM07)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">60.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                           <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_meo/item8.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Đồ cào móng cho mèo PAW Cat (QACM08)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">220.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_meo/item9.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Mũ cho chó mèo AMBABY PET (QACM09)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">155.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/phu_kien_meo/item10.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Vòng cổ cho chó mèo kèm dây dắt AMBABY PET  (QACM010)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">50.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="z-index: 0;">
+                                <div class="border-start border-5 border-primary ps-3 mb-3 d-flex justify-content-between"  style="margin-left: 12px; margin-top: -30px">
+                                    <h6 class="text-primary text-uppercase">Thức ăn & dinh dưỡng</h6>
+                                </div>
+                                
+                                <div class="owl-carousel product-carousel" style="width: 1296px;">
+                                    
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_meo/1.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Thức ăn cho mèo con (TACM01)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">125.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_meo/2.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Thức ăn cho mèo trưởng thành (TACM02)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">120.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                           <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_meo/3.jpg" alt=""></a> 
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Pate cho mèo vị cá ngừ nguyên chất  (TACM03)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">30.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_meo/4.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Pate cho mèo vị nước sốt cá ngừ (TACM04)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">25.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                           <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_meo/5.jpg" alt=""></a> 
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Xúc xích cho mèo vị cá biển(TACM05)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">70.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                           <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_meo/6.jpg" alt=""></a> 
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Bánh thưởng cho mèo vị cá hồi (TACM06)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">45.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <a href="product_detail.html"><img style="margin-top: -30px" src="img/do_an_meo/7.jpg" alt=""></a>
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Bột dinh dưỡng Canxi cho mèo (TACM07)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">230.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <img style="margin-top: -30px" src="img/do_an_meo/8.jpg" alt="">
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Catnip cho mèo dạng khô (TACM08)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">40.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                            <img style="margin-top: -30px" src="img/do_an_meo/9.jpg" alt="">
+                                            <div style="width: 130%; margin-left: -20px;">
+                                                <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px;">Bánh thưởng cho mèo CIAO vị thịt ức gà (TACM09)</a>
+                                                <div class="d-flex" style="margin-top: 3px;">
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                    <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                </div>
+                                                <p style="margin-top: -15px;" class="text-danger product_price">40.000đ</p>
+                                                <div class="btn-action d-flex justify-content-center">
+                                                    <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                    <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="row" style="z-index: 0;">
+                                    <div class="border-start border-5 border-primary ps-3 mb-3 d-flex justify-content-between"  style="margin-left: 12px; margin-top: -30px">
+                                        <h6 class="text-primary text-uppercase">Thuốc thú y</h6>
+                                    </div>
+                                    <div class="owl-carousel product-carousel">
+                                        <div class="pb-5">
+                                            <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                                <img style="margin-top: -30px" src="img/thuoc_meo/1.jpg" alt="">
+                                                <div style="width: 130%; margin-left: -20px;">
+                                                    <div style="height: 43px;">
+                                                        <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px; ">Thuốc nhỏ gáy trị ve rận cho mèo(TTY01) </a>
+                                                    </div>
+                                                    <div class="d-flex" style="margin-top: 10px;">
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                    </div>
+                                                    <p style="margin-top: -15px;" class="text-danger product_price">250.000đ</p>
+                                                    <div class="btn-action d-flex justify-content-center">
+                                                        <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                        <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="pb-5">
+                                            <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                                <img style="margin-top: -30px" src="img/thuoc_meo/2.jpg" alt="">
+                                                <div style="width: 130%; margin-left: -20px;">
+                                                    <div style="height: 43px;">
+                                                        <a class="tenSP_1 product_name"  href="product_detail.html " style="font-size: 13px; ">Vòng cổ trị ve rận cho mèo (TTY02)</a>
+                                                    </div>
+                                                    <div class="d-flex" style="margin-top: 10px;">
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                    </div>
+                                                        <p style="margin-top: -15px;" class="text-danger product_price">210.000đ</p>
+                                                    <div class="btn-action d-flex justify-content-center">
+                                                        <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                        <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="pb-5">
+                                            <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                                <img style="margin-top: -30px" src="img/thuoc_meo/3.jpg" alt="">
+                                                <div style="width: 130%; margin-left: -20px;">
+                                                    <div style="height: 43px;">
+                                                        <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px; ">Thuốc xịt trị ve rận cho chó mèo (TTY03)</a>
+                                                    </div>
+                                                    
+                                                    <div class="d-flex" style="margin-top: 10px;">
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                    </div>
+                                                    <p style="margin-top: -15px;" class="text-danger product_price">175.000đ</p>
+                                                    <div class="btn-action d-flex justify-content-center">
+                                                        <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                        <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="pb-5">
+                                            <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                                <img style="margin-top: -30px" src="img/thuoc_meo/4.jpg" alt="">
+                                                <div style="width: 130%; margin-left: -20px;">
+                                                    <div style="height: 43px;">
+                                                        <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px; ">Vòng cổ trị ve rận cho mèo (TTY04)</a>
+                                                    </div>
+                                                    
+                                                    <div class="d-flex" style="margin-top: 10px;">
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                    </div>
+                                                    <p style="margin-top: -15px;" class="text-danger product_price">60.000đ</p>
+                                                    <div class="btn-action d-flex justify-content-center">
+                                                        <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                        <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="pb-5">
+                                            <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                                <img style="margin-top: -30px" src="img/thuoc_meo/5.jpg" alt="">
+                                                <div style="width: 130%; margin-left: -20px;">
+                                                    <div style="height: 43px;">
+                                                        <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px; ">Gel dinh dưỡng cho mèo (TTY05)</a>
+                                                    </div>
+                                                    
+                                                    <div class="d-flex" style="margin-top: 10px;">
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                    </div>
+                                                    <p style="margin-top: -15px;" class="text-danger product_price">170.000đ</p>
+                                                    <div class="btn-action d-flex justify-content-center">
+                                                        <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                        <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="pb-5">
+                                            <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                                <img style="margin-top: -30px" src="img/thuoc_meo/6.jpg" alt="">
+                                                <div style="width: 130%; margin-left: -20px;">
+                                                    <div style="height: 43px;">
+                                                        <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px; ">Thuốc trị chống rụng lông cho chó  (TTY06)</a>
+                                                    </div>
+                                                    
+                                                    <div class="d-flex" style="margin-top: 10px;">
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                    </div>
+                                                        <p style="margin-top: -15px;" class="text-danger product_price">420.000đ</p>
+                                                    <div class="btn-action d-flex justify-content-center">
+                                                        <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                        <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="pb-5">
+                                            <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                                <img style="margin-top: -30px" src="img/thuoc_meo/7.jpg" alt="">
+                                                <div style="width: 130%; margin-left: -20px;">
+                                                    <div style="height: 43px;">
+                                                        <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px; ">Gel dinh dưỡng cho mèo hỗ trợ miễn dịch (TTY07)</a>
+                                                    </div>
+                                                    
+                                                    <div class="d-flex" style="margin-top: 10px;">
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                    </div>
+                                                    <p style="margin-top: -15px;" class="text-danger product_price">190.000đ</p>
+                                                    <div class="btn-action d-flex justify-content-center">
+                                                        <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                        <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="pb-5">
+                                            <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                                <img style="margin-top: -30px" src="img/thuoc_meo/8.jpg" alt="">
+                                                <div style="width: 130%; margin-left: -20px;">
+                                                    <div style="height: 43px;">
+                                                        <a class="tenSP_1 product_name" href="product_detail.html "  style="font-size: 13px; ">Gel dinh dưỡng cho mèo trị tiêu búi lông (TTY08)</a>
+                                                    </div>
+                                                    
+                                                    <div class="d-flex" style="margin-top: 10px;">
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                    </div>
+                                                    <p style="margin-top: -15px;" class="text-danger product_price">190.000đ</p>
+                                                    <div class="btn-action d-flex justify-content-center">
+                                                        <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                        <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="pb-5">
+                                            <div class="product-item position-relative bg-white  d-flex flex-column ">
+                                                <img style="margin-top: -30px" src="img/thuoc_meo/9.jpg" alt="">
+                                                <div style="width: 130%; margin-left: -20px;">
+                                                    <div style="height: 43px;">
+                                                        <a class="tenSP_1 product_name"  href="product_detail.html " style="font-size: 13px; ">Gel dinh dưỡng cho mèo con GIMCAT (TTY09)</a>
+                                                    </div>
+                                                    
+                                                    <div class="d-flex" style="margin-top: 10px;">
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <i style="font-size: 12px;" class="fa-regular fa-star"></i>
+                                                        <p style="font-size: 12px; margin-top: -2px; margin-left: 3px;">(0)</p>
+                                                    </div>
+                                                    <p style="margin-top: -15px;" class="text-danger product_price">200.000đ</p>
+                                                    <div class="btn-action d-flex justify-content-center">
+                                                        <p class="btn btn-primary"><i class="bi bi-cart"></i></p>
+                                                        <p class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-eye"></i></p>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>     
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark" style="opacity: 70%; margin-top: -100px;" >
+        <div class="container ">
+            <div class="row g-2 ">
+<div class="col-lg-6 col-md-6 text-white">
+                        <h5 class="text-uppercase  text-white">PETCARE</h5>
+                        <p class="mb-4">Chúng tôi luôn cố gắng cung cấp dịch vụ tốt nhất cho các thành viên bốn chân của bạn. Chất lượng và sự hài lòng là những gì chúng tôi cam kết.</p>
+                        <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>263 QL32, Lai Xá, Hoài Đức, Hà Nội, Việt Nam</p>
+                        <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>acechienn123@gmail.com</p>
+                        <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0795267718</p>
+                    </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">Liên kết nhanh</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                            <a class="text-body mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Trang chủ</a>
+                            <a class="text-body mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Dịch vụ</a>
+                            <a class="text-body mb-2" href="product.html"><i class="bi bi-arrow-right text-primary me-2"></i>Cửa hàng</a>
+                            <a class="text-body mb-2" href="get_service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Đặt lịch nhanh</a>
+                            <a class="text-body mb-2" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Liên hệ</a>
+                        </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">BẢN TIN</h5>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Email của bạn">
+                            <button class="btn btn-primary">Gửi</button>
+                        </div>
+                    </form>
+                    <h6 class="text-uppercase mt-4 mb-3" style="color: white;">Theo giõi</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i style="color: #a2cc6e;" class="bi bi-twitter"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i style="color: #a2cc6e;" class="bi bi-facebook"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i style="color: #a2cc6e;" class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-outline-primary btn-square" href="#"><i style="color: #a2cc6e;" class="bi bi-instagram"></i></a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
+    <script>
+        function toggleContent() {
+            var selectedOption = document.getElementById("product_cat").value;
+            var contentCho = document.getElementById("content_cho");
+            var contentMeo = document.getElementById("content_meo");
+            
+            if (selectedOption === "cho") {
+                contentCho.style.display = "block";
+                contentMeo.style.display = "none";
+            } else if (selectedOption === "meo") {
+                contentCho.style.display = "none";
+                contentMeo.style.display = "block";
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#timKiemSP").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                var matches = $(".tenSP").filter(function() {
+                    return $(this).text().toLowerCase().indexOf(value) > -1;
+                });
+    
+                // Xóa kết quả trước đó
+                $("#kqua").empty();
+    
+                if (value && matches.length > 0) {
+                    // Sử dụng Set để theo dõi các kết quả duy nhất
+                    var resultsSet = new Set();
+                    var regex = new RegExp('('+ value +')', 'gi'); // Regex để tìm từ khóa
+    
+                    matches.each(function() {
+                        var productName = $(this).text();
+                        if (!resultsSet.has(productName)) {
+                            resultsSet.add(productName);
+                            var highlightedName = productName.replace(regex, '<span style="color: red;">$1</span>');
+                            $("#kqua").append("<div class='search-result' style='cursor: pointer; color: #7ab730'>" + highlightedName + "</div>");
+                        }
+                    });
+    
+                    // Thêm sự kiện click cho mỗi kết quả tìm kiếm
+                    $(".search-result").on("click", function() {
+                        window.location.href = "product_detail.html";
+                    });
+    
+                    $("#kqua").show();
+                } else {
+                    $("#kqua").hide();
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#timKiemSP_1").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                var matches = $(".tenSP_1").filter(function() {
+                    return $(this).text().toLowerCase().indexOf(value) > -1;
+                });
+    
+                // Xóa kết quả trước đó
+                $("#kqua_1").empty();
+    
+                if (value && matches.length > 0) {
+                   // Sử dụng Set để theo dõi các kết quả duy nhất
+                    var resultsSet = new Set();
+                    var regex = new RegExp('('+ value +')', 'gi'); // Regex để tìm từ khóa
+    
+                    matches.each(function() {
+                        var productName = $(this).text();
+                        if (!resultsSet.has(productName)) {
+                            resultsSet.add(productName);
+                            var highlightedName = productName.replace(regex, '<span style="color: red;">$1</span>');
+                            $("#kqua_1").append("<div class='search-result' style='cursor: pointer; color: #7ab730'>" + highlightedName + "</div>");
+                        }
+                    });
+    
+                    // Thêm sự kiện click cho mỗi kết quả tìm kiếm
+                    $(".search-result").on("click", function() {
+                        window.location.href = "product_detail.html";
+                    });
+    
+                    $("#kqua_1").show();
+                } else {
+                    $("#kqua_1").hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

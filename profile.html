@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ cá nhân</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+    <!-- Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <img src="img/logo.png" style="width: 180px; margin-left: 20px;" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav py-0" style="margin-left: 160px;">
+                <a href="index.html" class="nav-item nav-link active">Trang chủ</a>
+                <a href="service.html" class="nav-item nav-link">Dịch vụ</a>
+                <a href="product.html" class="nav-item nav-link">Cửa hàng</a>
+                <a href="get_service.html" class="nav-item nav-link">Đặt lịch nhanh</a>
+                
+            </div>
+            <a href="contact.html"  class="btn btn-primary btn-rounded" style="margin-left: 30px;">Liên hệ <i class="bi bi-arrow-right"></i></a>
+            <div  class="nav-link dropdown" style="margin-left: 50px;">
+                <button class="cart_btn border-1 btn-danger" type="button" id="cart_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <small style="margin-left: 20px;" class="cart_counter">0</small>
+                    <span><small>Sản phẩm</small></span>
+                </button>
+                <div class="cart_dropdown dropdown-menu"  style="width: 320px; position: absolute; left: 16px; background-color: whitesmoke; border-radius: 5px;">
+                    
+                    <hr>
+                    <div class="total_price" style="text-align: center;">
+                        <span>Tổng tiền</span>
+                        <strong>$70.51</strong>
+                    </div>
+                    <hr>
+                    <a style="display: flex; justify-content: center; align-items: center; width: 200px; margin-bottom: 5px; margin-left: 50px;" class="btn btn-danger" href="cart_detail.html">Xem giỏ hàng</a>
+                    <a style="display: flex; justify-content: center; width: 200px; margin-left: 50px;" class="btn btn-success" href="cart_detail.html">Thanh toán</a>
+                </div>
+            </div>
+            <div id="user" class="dropdown dropstart" style="margin-left: 220px;">
+                <button  type="button" class="border-0 bg-white" data-bs-toggle="dropdown">
+                    <i style="font-size: 30px; color: rgb(71, 68, 68);" class="fa-solid fa-user"></i>
+                </button>
+                <ul class="dropdown-menu" style="padding: 0; position: absolute; left: -155px; top: 0;">
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="profile.html">Xem hồ sơ</a></li>
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="index_test.html">Đăng xuất</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <div class="container-fluid">
+        <div class="container my-5" style="height: 770px;">
+            <div class="row">
+                <div class="col-3" style=" border-radius: 10px; background-color: aliceblue; margin-right: 20px;">
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-3">
+                            <i style="font-size: 40px; color: rgb(71, 68, 68); border: 1px solid black; padding: 10px;" class="fa-solid fa-user rounded-circle"></i>
+                        </div>
+                        <div class="col" style="margin-top: 7px;">
+                            <p><small>Tài khoản</small></p>
+                            <p style="margin-top: -15px;">Nguyễn Văn Chiến</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ul class="nav nav-pills flex-column" role="tablist">
+                            <li style="padding-right: -20px;" class="nav-item">
+                                <a class="nav-link active" style="margin-right: -12px;" data-bs-toggle="pill" href="#menu1">Thông tin cá nhân</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="margin-right: -12px;" data-bs-toggle="pill" href="#menu2">Hồ sơ thú cưng</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="margin-right: -12px;" data-bs-toggle="pill" href="#menu3">Lịch sử hoạt động</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="margin-right: -12px;" data-bs-toggle="pill" href="#menu4">Thông báo</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6" style="border-radius: 10px; background-color: aliceblue;">
+                    <div class="tab-content">
+                        <div id="menu1" class="container tab-pane active">
+                            <div class="row py-3" style="margin-top: 10px; margin-left: 130px;">
+                                <div class="col-2" style="border: 1px solid black;border-radius: 100%;  width: 80px; height: 75px;">
+                                    <img src="#" alt="User Image" class="profile-img d-none">
+                                </div>
+                                <div class="col" style="margin-top: 20px; margin-left: 10px;">
+                                    <input type="file" id="fileInput" style="display: none;">
+                                    <a class="btn btn-primary" href="#" id="uploadBtn">Cập nhật ảnh đại diện</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <form id="profileForm">
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label for="#">Họ tên</label>
+                                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="Nguyễn Văn Chiến" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="#">Email</label>
+                                            <input type="email" class="form-control bg-light border-0 px-4" placeholder="acechienn123@gmail.com" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="#">Số điện thoại</label>
+                                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="0868803800" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="#">Địa chỉ</label>
+                                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="Đại học Công nghiệp Hà Nội" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="#">Tên đăng nhập</label>
+                                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="user123" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="#">Mật khẩu</label>
+                                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="123456789" style="height: 55px;">
+                                            <a class="justify-content-end" style="float: right;" href="#">Đổi mật khẩu</a>
+                                        </div>
+                        
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100 py-3" type="submit">LƯU THÔNG TIN</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <div  id="menu2" class="container tab-pane">
+                            <div class="row py-3" style="margin-top: 10px; margin-left: 130px;">
+                                <div class="col-2" style="border: 1px solid black;border-radius: 100%;  width: 80px; height: 75px;">
+                                    <img src="#" alt="User Image" class="thuCung-img d-none">
+                                </div>
+                                <div class="col" style="margin-top: 20px; margin-left: 10px;">
+                                    <input type="file" id="fileInput_1" style="display: none;">
+                                    <a class="btn btn-primary" href="#" id="thuCungBtn">Cập nhật ảnh thú cưng</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <form id="thuCungForm">
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label for="#">Tên</label>
+                                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="Mic" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="#">Loài</label>
+                                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="Alaska" style="height: 55px;">
+                                        </div>
+                                        <div class="d-flex" style="width: 100%;">
+                                            <div class="col" style="width: 100%;">
+                                                <label for="#">Tuổi (Năm)</label>
+                                                <input type="number" class="form-control bg-light border-0 px-4" placeholder="1" min="1"  style="height: 55px; width: 98%;" step="1">
+                                            </div>
+                                            <div class="col" style="position: relative; left: 13px;">
+                                                <label for="#">Trọng lượng</label>
+                                                <input type="number" class="form-control bg-light border-0 px-4" min="1" style="height: 55px; width: 98%;" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="#">Ngày sinh</label>
+                                            <input type="text" class="form-control bg-light border-0 px-4" placeholder="10/04/2023" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100 py-3" type="submit">LƯU THÔNG TIN</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div  id="menu3" class="container tab-pane">
+                            <div class="row" style="width: 140px;">
+                                <select class=" bg-light" style=" height: 25px;">
+                                    <option  selected="selected"><p style="font-size: 12px;">1 tuần trước</p></option>
+                                </select>
+                            </div>
+                            <div class="row" style="margin-top: 10px;">
+                                <p style="margin-top: 10px; margin-left: -10px;"><strong>Nguyễn Văn Chiến</strong> đã thay đổi mật khẩu vào 23:00 ngày 13/04/2024.</p>
+                                <hr style="margin-top: -10px;">
+                            </div>
+                            <div class="row" style="margin-top: -10px;">
+                                <p style="margin-top: 10px; margin-left: -10px;"><strong>Nguyễn Văn Chiến</strong> đã chia sẻ một sản phẩm.</p>
+                                <hr style="margin-top: -10px;">
+                            </div>
+                            <div class="row" style="margin-top: -10px;">
+                                <p style="margin-top: 10px; margin-left: -10px;">Bạn đã Đặt lịch cho dịch vụ Chăm sóc thú cưng vào 13:23 ngày 14/04/2024.</p>
+                                <hr style="margin-top: -10px;">
+                            </div>
+                            <div class="row" style="margin-top: -10px;">
+                                <p style="margin-top: 10px; margin-left: -10px;"><strong>Nguyễn Văn Chiến</strong> đã cập nhật một ảnh đại diện mới.</p>
+                                <hr style="margin-top: -10px;">
+                            </div>
+                            <div class="row" style="margin-top: -10px;">
+                                <p style="margin-top: 10px; margin-left: -10px;">Bạn đã tạo đơn hàng (FE3723743) thành công.</p>
+                                <hr style="margin-top: -10px;">
+                            </div>
+                        </div>
+
+                        <div id="menu4" class="container tab-pane">
+                            <div class="col" style="margin-top: 20px; margin-left: 200px;">
+                                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loiNhacModal" href="#"> + Lời nhắc mới</a>
+                            </div>  
+                            <div id="reminderList">
+                                <!-- Existing reminders -->
+                                <div class="row reminder-item" style="margin-top: 10px;">
+                                    <div class="col-1">
+                                        <button style="width: 20px; height: 20px; background-color: black; border-radius: 100%;"></button>
+                                    </div>
+                                    <div class="col" style="margin-top: -5px;margin-left: -20px;">
+                                        <div class="row d-flex">
+                                            <p class="tieuDe" style="font-size: 15px;"><span style="color: red;">!!!</span> Tiêm Vaccin</p>
+                                            <p class="thoiGian" style="font-size: 13px; margin-top: -20px;">20/06/2024</p>
+                                            <hr style="margin-top: -15px;">
+                                            <i style="color: #ffd43b; position: relative; left: 500px; top: -50px;" class="fa-solid fa-flag"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row reminder-item" style="margin-top: 10px;">
+                                    <div class="col-1">
+                                        <button style="width: 20px; height: 20px; background-color: black; border-radius: 100%;"></button>
+                                    </div>
+                                    <div class="col" style="margin-top: -5px;margin-left: -20px;">
+                                        <div class="row d-flex">
+                                            <p class="tieuDe" style="font-size: 15px;"><span style="color: red;">!!!</span> Spa</p>
+                                            <p class="thoiGian" style="font-size: 13px; margin-top: -20px;">10/06/2024 - Cuối tháng</p>
+                                            <hr style="margin-top: -15px;">
+                                            <i style="color: #ffd43b; position: relative; left: 500px; top: -50px;" class="fa-solid fa-flag"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="loiNhacModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <h4 class="modal-title" style="position: relative; left: 150px;">TẠO THÔNG BÁO</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body border-0">
+                                            <form id="loiNhacForm">
+                                                <div class="row g-3">
+                                                    <div class="col-12">
+                                                        <label for="title">Tiêu đề</label>
+                                                        <input type="text" id="title" class="form-control bg-light border-0 px-4" style="height: 35px;">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label for="phone">Thông báo gửi đến SĐT</label>
+                                                        <input type="text" id="phone" class="form-control bg-light border-0 px-4" placeholder="10/04/2023" style="height: 35px;">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label for="date">Thời gian <span style="color: red;">*</span></label>
+                                                        <input style="height: 35px;" class="form-control bg-light border-0 px-4" type="date" id="date" name="date" required>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label for="note">Chú thích</label>
+                                                        <input type="text" id="note" class="form-control bg-light border-0 px-4" placeholder="Alaska" style="height: 55px;">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer border-0">
+                                            <button type="button" class="btn btn-success" id="saveReminderBtn" data-bs-dismiss="modal">OK</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Footer Start -->
+<div class="container-fluid bg-dark" style="opacity: 70%;">
+    <div class="container ">
+        <div class="row g-2 ">
+            <div class="col-lg-6 col-md-6 text-white">
+                <h5 class="text-uppercase  text-white">PETCARE</h5>
+                <p class="mb-4">Chúng tôi luôn cố gắng cung cấp dịch vụ tốt nhất cho các thành viên bốn chân của bạn. Chất lượng và sự hài lòng là những gì chúng tôi cam kết.</p>
+                <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>263 QL32, Lai Xá, Hoài Đức, Hà Nội, Việt Nam</p>
+                <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>acechienn123@gmail.com</p>
+                <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0795267718</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">Liên kết nhanh</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Trang chủ</a>
+                    <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Dịch vụ</a>
+                    <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Cửa hàng</a>
+                    <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Đặt lịch nhanh</a>
+                    <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Liên hệ</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">BẢN TIN</h5>
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control p-3" placeholder="Email của bạn">
+                        <button class="btn btn-primary">Gửi</button>
+                    </div>
+                </form>
+                <h6 class="text-uppercase mt-4 mb-3" style="color: white;">Theo giõi</h6>
+                <div class="d-flex">
+                    <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                    <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                    <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                    <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>        
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#uploadBtn").click(function(e) {
+                e.preventDefault();
+                $("#fileInput").click();
+            });
+        
+            $("#fileInput").change(function() {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $(".profile-img").attr("src", e.target.result).removeClass("d-none");
+                }
+                reader.readAsDataURL(this.files[0]);
+            });
+        
+            $("#profileForm").on("submit", function(e) {
+                e.preventDefault();
+                
+                $("input").each(function() {
+                    var value = $(this).val();
+                    if (value) {
+                        $(this).attr("placeholder", value);
+                    }
+                });
+        
+                alert("Thông tin đã được lưu!");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#thuCungBtn").click(function(e) {
+                e.preventDefault();
+                $("#fileInput_1").click();
+            });
+        
+            $("#fileInput_1").change(function() {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $(".thuCung-img").attr("src", e.target.result).removeClass("d-none");
+                }
+                reader.readAsDataURL(this.files[0]);
+            });
+        
+            $("#thuCungForm").on("submit", function(e) {
+                e.preventDefault();
+                
+                $("input").each(function() {
+                    var value = $(this).val();
+                    if (value) {
+                        $(this).attr("placeholder", value);
+                    }
+                });
+        
+                alert("Thông tin đã được lưu!");
+            });
+        });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#saveReminderBtn').click(function() {
+                    var title = $('#title').val();
+                    var date = $('#date').val();
+                    var note = $('#note').val();
+            
+                    var newReminder = `
+                        <div class="row reminder-item" style="margin-top: 10px;">
+                            <div class="col-1">
+                                <button style="width: 20px; height: 20px; background-color: black; border-radius: 100%;"></button>
+                            </div>
+                            <div class="col" style="margin-top: -5px;margin-left: -20px;">
+                                <div class="row d-flex">
+                                    <p class="tieuDe" style="font-size: 15px;"><span style="color: red;">!!!</span> ${title}</p>
+                                    <p class="thoiGian" style="font-size: 13px; margin-top: -20px;">${date} - ${note}</p>
+                                    <hr style="margin-top: -15px;">
+                                    <i style="color: #ffd43b; position: relative; left: 500px; top: -50px;" class="fa-solid fa-flag"></i>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+            
+                    $('#reminderList').append(newReminder);
+            
+                    // Clear form fields
+                    $('#title').val('');
+                    $('#phone').val('');
+                    $('#date').val('');
+                    $('#note').val('');
+                });
+            });
+            </script>
+</body>
+
+</html>

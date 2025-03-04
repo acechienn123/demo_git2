@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt lịch nhanh</title>
+
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+
+    <!-- Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <img src="img/logo.png" style="width: 180px; margin-left: 20px;" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav py-0" style="margin-left: 160px;">
+                <a href="index.html" class="nav-item nav-link ">Trang chủ</a>
+                <a href="service.html" class="nav-item nav-link">Dịch vụ</a>
+                <a href="product.html" class="nav-item nav-link">Cửa hàng</a>
+                <a href="get_service.html" class="nav-item nav-link active">Đặt lịch nhanh</a>
+                
+            </div>
+            <a href="contact.html"  class="btn btn-primary btn-rounded" style="margin-left: 30px;">Liên hệ <i class="bi bi-arrow-right"></i></a>
+            <div  class="nav-link dropdown" style="margin-left: 50px;">
+                <button class="cart_btn border-1 btn-danger" type="button" id="cart_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <small style="margin-left: 20px;" class="cart_counter">0</small>
+                    <span><small>Sản phẩm</small></span>
+                </button>
+                <div class="cart_dropdown dropdown-menu"  style="width: 320px; position: absolute; left: 16px; background-color: whitesmoke; border-radius: 5px;">
+                    
+                    <hr>
+                    <div class="total_price" style="text-align: center;">
+                        <span>Tổng tiền</span>
+                        <strong>$70.51</strong>
+                    </div>
+                    <hr>
+                    <a style="display: flex; justify-content: center; align-items: center; width: 200px; margin-bottom: 5px; margin-left: 50px;" class="btn btn-danger" href="cart_detail.html">Xem giỏ hàng</a>
+                    <a style="display: flex; justify-content: center; width: 200px; margin-left: 50px;" class="btn btn-success" href="cart_detail.html">Thanh toán</a>
+                </div>
+            </div>
+            <div id="user" class="dropdown dropstart" style="margin-left: 220px;">
+                <button  type="button" class="border-0 bg-white" data-bs-toggle="dropdown">
+                    <i style="font-size: 30px; color: rgb(71, 68, 68);" class="fa-solid fa-user"></i>
+                </button>
+                <ul class="dropdown-menu" style="padding: 0; position: absolute; left: -155px; top: 0;">
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="profile.html">Xem hồ sơ</a></li>
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="index_test.html">Đăng xuất</a></li>
+                </ul>
+              </div>
+            
+        </div>
+    </nav>
+    <!-- Navbar End -->
+<div class="container my-5">
+    <div class="container">
+        <div class="row">
+            <div class="row" style="margin-bottom: 50px;" >
+                <div class="border-start border-5 border-primary ps-5" style="max-width: 600px;">
+                    <h6 class="text-primary text-uppercase">Đặt lịch nhanh</h6>
+                    <h1 class="display-5 text-uppercase mb-0">Lựa chọn dịch vụ bất kì cho thú cưng của bạn</h1>
+                </div>
+            </div>
+            <div class="row" >
+                <p>Đặt Lịch Nhanh</p>
+                <p style="margin-top: -20px;">Các trường được đánh dấu <span style="color: red;">*</span> là bắt buộc</p>
+                <p style="font-size: 20px;">YÊU CẦU DỊCH VỤ <span style="color: red;">*</span></p>
+                <p style="font-size: 11px; margin-top: -12px;">Vui lòng chọn 1 dịch vụ bạn đang cần để PETCARE có thể chuẩn bị, và phục vụ các bé một cách chu đáo nhất nhé!</p>
+            </div>
+            <div class="row">
+                <form>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <select class="form-select   bg-light border-0 px-4" style=" height: 55px;">
+                                <option  selected="selected">Taxi thú cưng</option>
+                                <option >Đi dạo và trông giữ</option>
+                                <option >Đào tạo thú cưng</option>
+                                <option >Chăm sóc thú cưng</option>
+                                <option >Chăm sóc sức khỏe</option>
+                                <option >Khách sạn thú cưng</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="#">Họ tên <span style="color: red;">*</span></label>
+                            <input type="text" class="form-control bg-light border-0 px-4"  style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                            <label for="#">Số điện thoại <span style="color: red;">*</span></label>
+                            <input type="text" class="form-control bg-light border-0 px-4"  style="height: 55px;">
+                        </div>
+                        <div class="d-flex" style="width: 100%;">
+                            <div class="col" style="width: 100%;">
+                                <label for="#">Địa chỉ <span style="color: red;">*</span></label>
+                                <input type="email" class="form-control bg-light border-0 px-4"  style="height: 55px; width: 98%;">
+                            </div>
+                            <div class="col" style="position: relative; left: 13px;">
+                                <label for="#">Email <span style="color: red;">*</span></label>
+                                <input type="text" class="form-control bg-light border-0 px-4"  style="height: 55px;  width: 98%;">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="#">Thời gian <span style="color: red;">*</span></label>
+                            <input style="height: 55px;" class="form-control bg-light border-0 px-4" type="date" id="date" name="date" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="#">Tên thú cưng <span style="color: red;">*</span></label>
+                            <input type="text" class="form-control bg-light border-0 px-4"  style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                            <label for="#">Loài <span style="color: red;">*</span></label>
+                            <select class="form-select  bg-light border-0 px-4" style=" height: 55px;">
+                                <option  selected="selected">Chó</option>
+                                <option >Mèo</option>
+                                <option >Khác</option>
+                            </select>
+                        </div>
+                        <div class="d-flex" style="width: 100%;">
+                            <div class="col" style="width: 100%;">
+                                <label for="#">Tuổi (Năm) <span style="color: red;">*</span></label>
+                                <input type="number" class="form-control bg-light border-0 px-4"  style="height: 55px; width: 98%;" step="0.1">
+                            </div>
+                            <div class="col" style="position: relative; left: 13px;">
+                                <label for="#">Trọng lượng <span style="color: red;">*</span></label>
+                                <input type="number" class="form-control bg-light border-0 px-4" min="1" style="height: 55px; width: 98%;" step="1">
+                            </div>
+                        </div>
+                        <div class="col-12 flex-row">
+                            <label for="#">Ghi chú <span style="color: red;">*</span></label>
+                            <textarea class="form-control bg-light border-0 px-4" style="height: 200px; width: 100%;" placeholder="Nhập một vài môt tả về tình trạng của các bé để các chuyên viên của chúng tôi có thể hỗ trợ bạn tốt nhất..." autocomplete="on"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center my-3">
+            <a class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#guiYeuCau"  style="width: 200px;" href="">GỬI YÊU CẦU</a>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="guiYeuCau" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-0">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-dark" id="exampleModalLabel" >Gửi yêu cầu thành công!</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark" style="opacity: 70%;">
+        <div class="container ">
+            <div class="row g-2 ">
+                <div class="col-lg-6 col-md-6 text-white">
+                        <h5 class="text-uppercase  text-white">PETCARE</h5>
+                        <p class="mb-4">Chúng tôi luôn cố gắng cung cấp dịch vụ tốt nhất cho các thành viên bốn chân của bạn. Chất lượng và sự hài lòng là những gì chúng tôi cam kết.</p>
+                        <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>263 QL32, Lai Xá, Hoài Đức, Hà Nội, Việt Nam</p>
+                        <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>acechienn123@gmail.com</p>
+                        <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0795267718</p>
+                    </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">Liên kết nhanh</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                            <a class="text-body mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Trang chủ</a>
+                            <a class="text-body mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Dịch vụ</a>
+                            <a class="text-body mb-2" href="product.html"><i class="bi bi-arrow-right text-primary me-2"></i>Cửa hàng</a>
+                            <a class="text-body mb-2" href="get_service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Đặt lịch nhanh</a>
+                            <a class="text-body mb-2" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Liên hệ</a>
+                        </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">BẢN TIN</h5>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Email của bạn">
+                            <button class="btn btn-primary">Gửi</button>
+                        </div>
+                    </form>
+                    <h6 class="text-uppercase mt-4 mb-3" style="color: white;">Theo giõi</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/main.js"></script>
+</html>

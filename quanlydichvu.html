@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý dịch vụ</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="lni lni-grid-alt"></i>
+                </button>
+                <div class="sidebar-logo">
+                  <a href="thongke.html">Admin </a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="thongke.html" class="sidebar-link">
+                        <i class="lni lni-cog"></i>
+                        <span>Thống kê</span>
+                    </a>
+                </li>
+
+                <!-- <li class="sidebar-item">
+                    <a href="hangtonkho.html" class="sidebar-link">
+                        <i class="lni lni-agenda"></i>
+                        <span>Hàng tồn kho</span>
+                    </a>
+                </li> -->
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                        <i class="lni lni-protection"></i>
+                        <span>Quản lý</span>
+                    </a>
+                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="quanlynguoidung.html" class="sidebar-link">Người dùng</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlydichvu.html" class="sidebar-link">Dịch vụ</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlysanpham.html" class="sidebar-link">Sản phẩm</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlydonhang.html" class="sidebar-link">Đơn hàng</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlylichhen.html" class="sidebar-link">Lịch hẹn</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlythucung.html" class="sidebar-link">Thú cưng</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="hotrokhachhang.html" class="sidebar-link">
+                        <i class="lni lni-popup"></i>
+                        <span>Hỗ trợ khách hàng</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" data-bs-toggle="modal" data-bs-target="#userAccountModal">
+                        <i class="lni lni-user"></i>
+                        <span>Thông tin tài khoản</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="index_test.html" class="sidebar-link">
+                        <i class="lni lni-exit"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </div> -->
+        </aside>
+        <div class="main">
+            <nav class="navbar navbar-expand px-4 py-3">
+                <form action="" class="d-none d-sm-inline-block">
+  <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Tìm kiếm dịch vụ">
+                    <button class="btn btn-primary" onclick="searchService()">Tìm kiếm</button>
+                </div>
+                </form>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div>
+                                <a type="button" class=" position-relative" style="margin-right: 20px;">
+                                    <i class="fa-solid fa-message fs-5"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        10+
+                                    </span>
+                                </a>
+                                <a type="button" class=" position-relative" style="margin-right: 20px;">
+                                    <i class="fa-solid fa-bell fs-5"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        10+
+                                    </span>
+                                </a>
+                                <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                    <img src="account.png" class="avatar img-fluid" alt="">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end rounded">
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#activityLogModal">Lịch sử hoạt động</a>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#changePasswordModal">Đổi mật khẩu</a>
+                                </div>
+                            </div>
+
+
+                        </li>
+                    </ul>
+                </div>
+                                <!-- Activity Log Modal -->
+                                <div class="modal fade" id="activityLogModal" tabindex="-1" aria-labelledby="activityLogModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="activityLogModalLabel">Lịch sử hoạt động</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Dữ liệu mẫu cho lịch sử hoạt động -->
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Thời gian</th>
+                                                        <th>Hoạt động</th>
+                                                        <th>Chi tiết</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2024-06-01 10:00</td>
+                                                        <td>Đăng nhập</td>
+                                                        <td>Admin đã đăng nhập vào hệ thống</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2024-06-01 10:15</td>
+                                                        <td>Thêm người dùng mới</td>
+                                                        <td>Admin đã thêm người dùng Bùi Tiến Đạt</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2024-06-01 11:00</td>
+                                                        <td>Thay đổi mật khẩu</td>
+                                                        <td>Admin đã thay đổi mật khẩu của mình</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2024-06-01 11:30</td>
+                                                        <td>Xóa người dùng</td>
+                                                        <td>Admin đã xóa người dùng Nguyễn Ngọc Vũ</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <!-- Change Password Modal -->
+                            <div class="modal fade" id="changePasswordModal" tabindex="-1"
+                                aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="changePasswordModalLabel">Đổi mật khẩu</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Form đổi mật khẩu -->
+                                            <form id="changePasswordForm">
+                                                <div class="mb-3">
+                                                    <label for="currentPassword" class="form-label">Mật khẩu hiện tại</label>
+                                                    <input type="password" class="form-control" id="currentPassword" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="newPassword" class="form-label">Mật khẩu mới</label>
+                                                    <input type="password" class="form-control" id="newPassword" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="confirmNewPassword" class="form-label">Xác nhận mật khẩu mới</label>
+                                                    <input type="password" class="form-control" id="confirmNewPassword" required>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            </nav>
+            <div class="modal fade" id="userAccountModal" tabindex="-1" aria-labelledby="userAccountModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="userAccountModalLabel">Thông tin tài khoản</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <form id="userAccountForm">
+                              <div class="mb-3">
+                                  <label for="userName" class="form-label">Tên người dùng</label>
+                                  <input type="text" class="form-control" id="userName" value="Nguyễn Thế An" readonly>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="userEmail" class="form-label">Email</label>
+                                  <input type="email" class="form-control" id="userEmail" value="annguyenthe2003@gmail.com" readonly>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="userPhone" class="form-label">Số điện thoại</label>
+                                  <input type="text" class="form-control" id="userPhone" value="0123456789" readonly>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="userAddress" class="form-label">Địa chỉ</label>
+                                  <input type="text" class="form-control" id="userAddress" value="123 Đường ABC, Phường XYZ, Hà Nội" readonly>
+                              </div>
+                              <div id="editButtons" class="d-none">
+                                  <button type="button" class="btn btn-primary" onclick="saveUserInfo()">Lưu</button>
+                                  <button type="button" class="btn btn-secondary" onclick="toggleEdit(false)">Hủy</button>
+                              </div>
+                              <div id="viewButton">
+                                  <button type="button" class="btn btn-warning" onclick="toggleEdit(true)">Chỉnh sửa</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+            <main>
+              <div class="container mt-5">
+                <h1 class="mb-4">Quản lý Dịch vụ</h1>
+        
+                <!-- Search bar -->
+                <!-- <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Tìm kiếm dịch vụ">
+                    <button class="btn btn-primary" onclick="searchService()">Tìm kiếm</button>
+                </div> -->
+        
+                <!-- Add Service Button -->
+                <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addServiceModal">Thêm Dịch vụ</button>
+        
+                <!-- Service Table -->
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Số thứ tự</th>
+                            <th>Tên Dịch vụ</th>
+                            <th>Mô tả</th>
+                            <th>Giá</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="serviceTableBody">
+                        <!-- Service rows will be added here dynamically -->
+                    </tbody>
+                </table>
+                <!-- <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#" id="prevPage">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#" id="nextPage">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#" id="nextPage">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#" id="nextPage">4</a></li>
+                    </ul>
+                  </nav> -->
+            </div>
+        
+            <!-- Add Service Modal -->
+            <div class="modal fade" id="addServiceModal" tabindex="-1" aria-labelledby="addServiceModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addServiceModalLabel">Thêm Dịch vụ mới</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="addServiceForm">
+                                <div class="mb-3">
+                                    <label for="serviceName" class="form-label">Tên Dịch vụ</label>
+                                    <input type="text" class="form-control" id="serviceName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="serviceDescription" class="form-label">Mô tả</label>
+                                    <input type="text" class="form-control" id="serviceDescription" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="servicePrice" class="form-label">Giá</label>
+                                    <input type="number" class="form-control" id="servicePrice" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Lưu</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Edit Service Modal -->
+            <div class="modal fade" id="editServiceModal" tabindex="-1" aria-labelledby="editServiceModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editServiceModalLabel">Chỉnh sửa Dịch vụ</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editServiceForm">
+                                <input type="hidden" id="editServiceId">
+                                <div class="mb-3">
+                                    <label for="editServiceName" class="form-label">Tên Dịch vụ</label>
+                                    <input type="text" class="form-control" id="editServiceName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editServiceDescription" class="form-label">Mô tả</label>
+                                    <input type="text" class="form-control" id="editServiceDescription" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editServicePrice" class="form-label">Giá</label>
+                                    <input type="number" class="form-control" id="editServicePrice" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Lưu</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              </main>
+              <script>
+let services = [
+    { name: 'Taxi thú cưng', description: 'Vận chuyển thú cưng an toàn và tiện lợi', price: 200000 },
+    { name: 'Đào tạo thú cưng', description: 'Huấn luyện thú cưng nghe lời và thông minh hơn', price: 300000 },
+    { name: 'Chăm sóc thú cưng', description: 'Chăm sóc và làm đẹp cho thú cưng', price: 700000 },
+    { name: 'Khách sạn thú cưng', description: 'Cung cấp chỗ ở tạm thời cho thú cưng', price: 500000 },
+    { name: 'Chăm sóc sức khoẻ', description: 'Kiểm tra và chăm sóc sức khoẻ cho thú cưng', price: 400000 },
+    { name: 'Đi dạo và trông giữ', description: 'Dắt dạo và trông giữ thú cưng', price: 100000 }
+];
+let editServiceIndex = -1;
+
+document.addEventListener('DOMContentLoaded', function() {
+    displayServices();
+});
+
+document.getElementById('addServiceForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    addService();
+});
+
+document.getElementById('editServiceForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    updateService();
+});
+
+function addService() {
+    const name = document.getElementById('serviceName').value;
+    const description = document.getElementById('serviceDescription').value;
+    const price = document.getElementById('servicePrice').value;
+
+    services.push({ name, description, price });
+    displayServices();
+    clearForm('addServiceForm');
+    new bootstrap.Modal(document.getElementById('addServiceModal')).hide();
+}
+
+function displayServices() {
+    const serviceTableBody = document.getElementById('serviceTableBody');
+    serviceTableBody.innerHTML = '';
+
+    services.forEach((service, index) => {
+        serviceTableBody.innerHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${service.name}</td>
+                <td>${service.description}</td>
+                <td>${service.price}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="editService(${index})">Sửa</button>
+                    <button class="btn btn-danger btn-sm" onclick="confirmDeleteService(${index})">Xóa</button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+function clearForm(formId) {
+    document.getElementById(formId).reset();
+}
+
+function editService(index) {
+    editServiceIndex = index;
+    const service = services[index];
+
+    document.getElementById('editServiceId').value = index;
+    document.getElementById('editServiceName').value = service.name;
+    document.getElementById('editServiceDescription').value = service.description;
+    document.getElementById('editServicePrice').value = service.price;
+
+    new bootstrap.Modal(document.getElementById('editServiceModal')).show();
+}
+
+function updateService() {
+    const index = document.getElementById('editServiceId').value;
+    const name = document.getElementById('editServiceName').value;
+    const description = document.getElementById('editServiceDescription').value;
+    const price = document.getElementById('editServicePrice').value;
+
+    services[index] = { name, description, price };
+    displayServices();
+    clearForm('editServiceForm');
+    new bootstrap.Modal(document.getElementById('editServiceModal')).hide();
+}
+
+function confirmDeleteService(index) {
+    const serviceToDelete = services[index];
+    if (confirm(`Bạn có chắc chắn muốn xoá dịch vụ: ${serviceToDelete.name}?`)) {
+        deleteService(index);
+    }
+}
+
+function deleteService(index) {
+    services.splice(index, 1);
+    displayServices();
+}
+
+function searchService() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const filteredServices = services.filter(service =>
+        service.name.toLowerCase().includes(query) ||
+        service.description.toLowerCase().includes(query)
+    );
+    displayFilteredServices(filteredServices);
+}
+
+function displayFilteredServices(filteredServices) {
+    const serviceTableBody = document.getElementById('serviceTableBody');
+    serviceTableBody.innerHTML = '';
+
+    filteredServices.forEach((service, index) => {
+        serviceTableBody.innerHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${service.name}</td>
+                <td>${service.description}</td>
+                <td>${service.price}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="editService(${index})">Sửa</button>
+                    <button class="btn btn-danger btn-sm" onclick="confirmDeleteService(${index})">Xóa</button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+            </script>
+        </div>
+    </div>
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+    <!-- Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .hero-header{
+            background-image: url(img/shape_banner_bg.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position:30ch;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <img src="img/logo.png" style="width: 180px; margin-left: 20px;" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav py-0" style="margin-left: 160px;">
+                <a href="index.html" class="nav-item nav-link active">Trang chủ</a>
+                <a href="service.html" class="nav-item nav-link">Dịch vụ</a>
+                <a href="product.html" class="nav-item nav-link">Cửa hàng</a>
+                <a href="get_service.html" class="nav-item nav-link">Đặt lịch nhanh</a>
+                
+            </div>
+            <a href="contact.html"  class="btn btn-primary btn-rounded" style="margin-left: 30px;">Liên hệ <i class="bi bi-arrow-right"></i></a>
+            
+            <div style="margin-left: 260px;">
+                <a class="btn" data-bs-toggle="modal" id="dang_ki" data-bs-target="#dangKi" href="#">Đăng kí</a>
+                <a style="border-radius: 20px; border: 1px solid red;" data-bs-toggle="modal" data-bs-target="#dangNhap"  class="btn  btn-rounded" href="">Đăng nhập</a>
+            </div>
+            
+        </div>
+    </nav>
+
+    <div class="container-fluid mb-5 hero-header">
+        <div class="container py-5">
+            <div class="row justify-content-center" >
+                <div class="col">
+                    <h1 class="display-1 text-uppercase text-dark mb-lg-4">PetCare</h1>
+                    <h1 class="text-uppercase text-dark mb-lg-4" style="z-index: 1;">Dịch vụ chăm sóc thú cưng <br>
+                         tốt nhất thế giới</h1>
+                    <p class="fs-6 text-dark mb-lg-4"><small>Dựa trên nhu cầu ngày càng tăng về việc chăm sóc và yêu thương thú cưng, chúng tôi tạo ra một nền tảng trực tuyến được thiết kế đặc biệt để hỗ trợ việc quản lý và cung cấp các dịch vụ liên quan đến thú cưng.</small></p>
+                    <div class="d-flex align-items-center justify-content-center pt-5">
+                        <a href="#about" class="btn btn-outline-primary border-2 py-md-3 px-md-5 me-5">Tìm hiểu thêm</a>
+                        <button type="button" class="btn-play" data-bs-toggle="modal"
+                            data-src="https://youtu.be/dn3y7sFA_lQ?si=-e0k8G5SZi1ZnSMC" data-bs-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="font-weight-normal text-dark m-0 ms-4 d-none d-sm-block">Xem Video</h5>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="img/dogs_img_1.png" alt="" width="600px" style="margin-top: -30px; margin-left: 70px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="dangKi">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content rounded-3" style="padding-bottom: 30px; background-image: url(img/bakground_log_in.jpg); background-size: cover;">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="width: 100%;" id="register">
+                        <!-- Form đăng ký -->
+                        <form action="" style="width: 450px; display: flex; flex-direction: column; align-items: center;">
+                            <h1 style="text-align: center; color: white;">ĐĂNG KÍ</h1>
+                            <div class="login__inputs">
+                                <div class="login__box">
+                                    <input id="inputEmail" type="text" placeholder="Email" required class="login__input">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span id="errorEmail" class="error" style="display:none; color: red;">Email không hợp lệ</span>
+                                </div>
+                                <div class="login__box">
+                                    <input id="inputPass" type="password" placeholder="Mật khẩu" required class="login__input">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <span id="errorPass" class="error" style="display:none; color: red;">Mật khẩu phải ít nhất 6 kí tự</span>
+                                </div>
+                                <div class="login__box">
+                                    <input id="inputConfirmPass" type="password" placeholder="Xác nhận mật khẩu" required class="login__input">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <span id="errorConfirmPass" class="error" style="display:none; color: red;">Mật khẩu không trùng khớp</span>
+                                </div>
+                            </div>
+                            <div class="login__check" style="position: relative; top: -15px; left: -90px;">
+                                <div class="login__check-box">
+                                    <input style="position: relative; top: 12px;" type="checkbox" class="login__check-input" id="user-check">
+                                    <label style="font-size: 14px; position: relative; top: 10px;">Đồng ý điều khoản</label>
+                                    <span id="errorDK" class="error" style="display: none; color: red; position: absolute; top: 13px; width: 200px; left: 150px;">Bạn chưa đồng ý điều khoản</span>
+                                </div>
+                            </div>
+                            <button id="registerBtn" class="border-0" style="width: 72%; height: 40px; border-radius: 20px; margin-left: 2px;">
+                                <a id="registerLink" href="#">Xác nhận</a>
+                            </button>
+                        </form>
+                    </div>
+                    <div style="width: 100%; display: none;" id="confirm_register">
+                        <!-- Form confirm register -->
+                        <form action="" style="width: 450px; display: flex; flex-direction: column; align-items: center;">
+                            <h4 style="text-align: center; color: white;">Nhập mã xác thực được gửi về Email</h4>
+                            <style>
+                                .ma_xn input {
+                                    text-align: center; 
+                                    font-size: 24px; /* Điều chỉnh cỡ chữ ở đây */
+                                }
+                            </style>
+                            <div class="ma_xn" style="display: flex; margin-top: 50px; margin-bottom: 50px;">
+                                <div style="width: 70px; height: 70px; margin-right: 15px;">
+                                    <input class="pin1" id="txt1" type="text" style="width: 100%; height: 100%; border-radius: 10px; border: none;">
+                                </div>
+                                <div style="width: 70px; height: 70px; margin-right: 15px;">
+                                    <input class="pin2" id="txt1" type="text" style="width: 100%; height: 100%; border-radius: 10px; border: none;">
+                                </div>
+                                <div style="width: 70px; height: 70px; margin-right: 15px;">
+                                    <input class="pin3" id="txt1" type="text" style="width: 100%; height: 100%; border-radius: 10px; border: none;">
+                                </div>
+                                <div style="width: 70px; height: 70px; margin-right: 15px;">
+                                    <input class="pin4" id="txt1" type="text" style="width: 100%; height: 100%; border-radius: 10px; border: none;">
+                                </div>
+                            </div>
+                            <span id="errorMaXN" class="error" style="display: none; color: red; position: relative; top: -40px; left: -65px;">Mã xác nhận không được để trống</span>
+                            <button id="dang_ki_button" class="border-0" style="width: 72%; height: 40px; border-radius: 20px; margin-left: 2px; margin-bottom: 25px;">
+                                <a id="dang_ki_1" href="#">Đăng Kí</a>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="modal fade" id="dang_ki_success" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content rounded-0">
+                                <div class="modal-header border-0">
+                                    <h5 class="modal-title text-dark" id="exampleModalLabel">Đăng kí thành công!</h5>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="dangNhap">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content rounded-3" style="padding-bottom: 30px; background-image: url(img/bakground_log_in.jpg); background-size: cover;">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="width: 100%;" id="login">
+                        <!-- Form đăng nhập -->
+                        <form action="" style="width: 450px; display: flex; flex-direction: column; align-items: center;">
+                            <h1 style="text-align: center; color: white;">ĐĂNG NHẬP</h1>
+                            <div class="login__inputs">
+                                <div class="login__box">
+                                    <input id="loginEmail" type="email" placeholder="Email hoặc SĐT" required class="login__input">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span id="loginErrorEmail" class="error">Email không hợp lệ</span>
+                                </div>
+                                <div class="login__box">
+                                    <input id="loginPass" type="password" placeholder="Mật khẩu" required class="login__input">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <span id="loginErrorPass" class="error">Mật khẩu phải ít nhất 6 kí tự</span>
+                                </div>
+                            </div>
+                            <div class="login__check" style="position: relative; top: -15px; left: -90px;">
+                                <div class="login__check-box">
+                                    <input style="position: relative; top: 10px;" type="checkbox" class="login__check-input" id="user-check">
+                                    <label style="font-size: 14px; position: relative; top: 9px;">Duy trì đăng nhập</label>
+                                    <a href="#" style="font-size: 14px; position: absolute; right: -180px;">Quên mật khẩu</a>
+                                </div>
+                            </div>
+                            <button id="loginBtn" class="border-0" style="width: 72%; height: 40px; border-radius: 20px; margin-left: 2px;">
+                                <a id="loginLink" href="#">Đăng nhập</a>
+                            </button>
+                            <div class="row">
+                                <div class="col d-flex" style="position: relative; top: 15px; left: -65px;">
+                                    <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                                    <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                                    <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                                </div>
+                                <div class="col d-flex" style="position: relative; top: 22px; left: 40px;">
+                                    <a id="showAdminForm" href="#" style="font-size: 14px; color: red;">ADMIN</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div style="width: 100%; display: none;" id="login_admin">
+                        <!-- Form đăng nhập admin -->
+                        <form action="" style="width: 450px; display: flex; flex-direction: column; align-items: center;">
+                            <h1 style="text-align: center; color: white;">ĐĂNG NHẬP ADMIN</h1>
+                            <div class="login__inputs">
+                                <div class="login__box">
+                                    <input id="adminEmail" type="email" placeholder="Email hoặc SĐT" required class="login__input">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span id="adminErrorEmail" class="error">Email không hợp lệ</span>
+                                </div>
+                                <div class="login__box">
+                                    <input id="adminPass" type="password" placeholder="Mật khẩu" required class="login__input">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <span id="adminErrorPass" class="error">Mật khẩu phải ít nhất 6 kí tự</span>
+                                </div>
+                                <div class="login__box">
+                                    <input id="adminPin" type="password" placeholder="Mã PIN" required class="login__input">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <span id="pinError" class="error">Mã PIN phải ít nhất 6 kí tự là số</span>
+                                </div>
+                            </div>
+                            <button id="loginAdminBtn" class="border-0" style="width: 72%; height: 40px; border-radius: 20px; margin-left: 2px;">
+                                <a id="loginAdminLink" href="#">Đăng nhập</a>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="exampleModalLabel">Youtube Video</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/dn3y7sFA_lQ?si=-e0k8G5SZi1ZnSMC" title="YouTube video player" 
+                       frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                       referrerpolicy="strict-origin-when-cross-origin" allowscriptaccess="always" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
+
+    <!-- About Start -->
+    <div id="about" class="container-fluid py-5">
+        <div class="container" style="padding-top: 40px;" >
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img  src="img/cat_img_2.png" style="object-fit: cover; width: 400px; margin-top: 40px;">
+                    </div>
+                </div>
+                <div class="col-lg-7" style="height: 630px;">
+                    <div class="row border-start border-5 border-primary ps-5 mb-5">
+                        <h6 class="text-primary text-uppercase">Về chúng tôi</h6>
+                        <h1 class="display-5 text-uppercase mb-0">Chào Mừng Đến Với Gia Đình Chúng Tôi</h1>
+                    </div>
+                    <div class="row">
+                            <div class="section_title">
+                                <p>Không có gì là không thể khi bạn cùng nhau nỗ lực. Chúng tôi luôn cố gắng cung cấp dịch vụ tốt nhất cho các thành viên bốn chân của bạn. Chất lượng và sự hài lòng là những gì chúng tôi cam kết.</p>
+                            </div>
+                            <div class="accordion" id="faq_accordion">
+                                <div class="accordion-item border-0">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq_collapse_1" aria-expanded="true" aria-controls="faq_collapse_1"><i style="margin-right: 20px; color: rgb(110, 165, 43);" class="fa-solid fa-circle-check"></i>Bắt đầu của Pet Care</button>
+                                    <div id="faq_collapse_1" class="accordion-collapse collapse show" data-bs-parent="#faq_accordion">
+                                        <div class="accordion-body">
+                                            <p class="m-0">Hành trình bắt đầu từ niềm đam mê với động vật. Chúng tôi luôn cố gắng mang đến dịch vụ tốt nhất, chăm sóc từng chi tiết nhỏ cho thú cưng của bạn.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border-0">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_collapse_2" aria-expanded="false" aria-controls="faq_collapse_2"><i style="margin-right: 20px; color: rgb(110, 165, 43);" class="fa-solid fa-circle-check"></i>Sứ Mệnh Của Chúng Tôi</button>
+                                    <div id="faq_collapse_2" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
+                                        <div class="accordion-body">
+                                            <p class="m-0">Chúng tôi nỗ lực không ngừng để cải thiện chất lượng cuộc sống cho thú cưng và chủ nhân của chúng. Mục tiêu của chúng tôi là tạo ra một môi trường yêu thương, an toàn và khỏe mạnh cho mọi thú cưng.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border-0">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_collapse_3" aria-expanded="false" aria-controls="faq_collapse_3"><i style="margin-right: 20px; color: rgb(110, 165, 43);" class="fa-solid fa-circle-check"></i>Giá Trị Gia Tăng Từ Dịch Vụ</button>
+                                    <div id="faq_collapse_3" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
+                                        <div class="accordion-body">
+                                            <p class="m-0">Mỗi dịch vụ của chúng tôi đều mang lại giá trị gia tăng đáng kể cho thú cưng và chủ nhân. Chúng tôi luôn tìm kiếm phương pháp mới để cải thiện và đổi mới các dịch vụ, đảm bảo sự hài lòng tối đa.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item border-0">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq_collapse_4" aria-expanded="false" aria-controls="faq_collapse_4"><i style="margin-right: 20px; color: rgb(110, 165, 43);" class="fa-solid fa-circle-check"></i>Trách Nhiệm Xã Hội</button>
+                                    <div id="faq_collapse_4" class="accordion-collapse collapse" data-bs-parent="#faq_accordion">
+                                        <div class="accordion-body">
+                                            <p class="m-0">Chúng tôi cam kết với trách nhiệm xã hội bằng cách tham gia vào các hoạt động từ thiện, hỗ trợ cộng đồng và bảo vệ môi trường. Sức khỏe và hạnh phúc của thú cưng là ưu tiên hàng đầu của chúng tôi.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    <div id="about" class="container-fluid py-5" >
+        <div class="container">
+            <div class="row" style="text-align: center;">
+                <p><small>Chúng tôi sẽ làm gì?</small></p>
+                <h1 class="banner_title ">Cung cấp dịch vụ tốt nhất</h1>
+            </div>
+            <div class="row" style="text-align: center;" >
+                Tất cả dịch vụ được thực hiện bởi các chuyên gia hàng đầu việt nam không chỉ là những người yêu thú cưng, mà còn là những người hiểu rõ về cách nuôi dưỡng, chăm sóc và bảo vệ sức khỏe cho các vị khách bốn chân.
+            </div>
+            <div class="row my-5">
+                <div id="services_home" class="col" style="text-align: center; background-color: whitesmoke;">
+                    <div class="row">
+                        <button style="width: 35px; height: 35px; position: relative; border: none; right: -100px; top: -15px;" class="btn-primary rounded-circle">1</button>
+                        <i class="fa-solid fa-gift display-4 d-flex justify-content-center align-items-center"></i>
+                    </div>
+                    <p class="fs-5"><strong>Đăng kí miễn phí</strong></p>
+                    <p><small>Tạo hồ sơ cho bạn và thú cưng của bạn bằng cách Đăng kí tài khoản để tìm kiếm sản phẩm và dịch vụ thích hợp.</small></p>
+                    <a style="font-size: 11px;" href="#" class="nav-link">Tìm hiểu thêm <i style="margin-left: 10px;" class="fa-solid fa-arrow-right"></i></a>
+                </div>
+               <div id="services_home" class="col" style="text-align: center; background-color: whitesmoke;">
+                    <div class="row">
+                        <button style="width: 35px; height: 35px; position: relative; border: none; right: -100px; top: -15px;" class="btn-primary rounded-circle">2</button>
+                        <i class="fa-solid fa-paw display-4 d-flex justify-content-center align-items-center"></i>
+                    </div>
+                    <p class="fs-5"><strong>Dịch vụ chuyên nghiệp</strong></p>
+                    <p><small>Dịch vụ chăm sóc đa dạng, phù hợp với nhiều loại thú cưng. Đảm bảo cho thú cưng của bạn được chăm sóc và duy trì trạng thái sức khỏe một cách tốt nhất.</small></p>
+                    <a style="font-size: 11px;" href="#" class="nav-link">Tìm hiểu thêm <i style="margin-left: 10px;" class="fa-solid fa-arrow-right"></i></a>
+                </div>
+               <div id="services_home" class="col" style="text-align: center; background-color: whitesmoke;">
+                    <div class="row">
+                        <button style="width: 35px; height: 35px; position: relative; border: none; right: -100px; top: -15px;" class="btn-primary rounded-circle">3</button>
+                        <i class="fa-solid fa-store display-4 d-flex justify-content-center align-items-center"></i>
+                    </div>
+                    <p class="fs-5"><strong>Cửa hàng trực tuyến</strong></p>
+                    <p><small>Thỏa sức mua sắm cho thú cưng của bạn các sản phẩm chất lượng với giá thành rẻ. Thanh toán dễ dàng, nhanh chóng</small></p>
+                    <a style="font-size: 11px;" href="#" class="nav-link">Tìm hiểu thêm <i style="margin-left: 10px;" class="fa-solid fa-arrow-right"></i></a>
+                </div>
+               <div id="services_home" class="col" style="text-align: center; background-color: whitesmoke;">
+                    <div class="row">
+                        <button style="width: 35px; height: 35px; position: relative; border: none; right: -100px; top: -15px;" class="btn-primary rounded-circle">4</button>
+                        <i class="fa-solid fa-headset display-4 d-flex justify-content-center align-items-center"></i>
+                    </div>
+                    <p class="fs-5"><strong>Hỗ trợ 24/7</strong></p>
+                    <p><small>Tạo hồ sơ cho bạn và thú cưng của bạn bằng cách Đăng kí tài khoản để tìm kiếm sản phẩm và dịch vụ thích hợp.</small></p>
+                    <a style="font-size: 11px;" href="#" class="nav-link">Tìm hiểu thêm <i style="margin-left: 10px;" class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="row" style="display: flex; justify-content: center; align-items: center;">
+                <a class="btn btn-outline-primary border-2 rounded" style="width: 200px; border-radius: 25px;" href="service.html">Xem tất cả dịch vụ</a>
+            </div> 
+        </div>
+    </div>
+    <div style="background-image: url(img/offer.jpg); background-repeat: no-repeat; background-size: cover;" >
+        <div class="container-fluid">
+            <div class="container">
+                    <div class="row" >
+                        <div class="col-6 my-5">
+                            <div class="border-start border-5 border-primary ps-5 mb-5">
+                                <h6 class="text-white text-uppercase">Ưu đãi dành cho bạn</h6>
+                                <h1 class="display-5 text-white text-uppercase mb-0">Giảm Giá lên tới 50% Cho Lần Mua Đầu Tiên Khi Sử Dụng Thẻ Tín Dụng Petco</h1>
+                            </div>
+                            <p class="mb-4 text-white" style="z-index: 1;">Mọi người thường tìm kiếm sự tiện lợi và giá trị tốt nhất cho khoản chi tiêu của mình, và đó chính là lý do tại sao chúng tôi cung cấp ưu đãi đặc biệt này. Hãy tận dụng cơ hội giảm giá 20% cho lần mua hàng đầu tiên của bạn khi sử dụng thẻ tín dụng Petco để mua sắm những sản phẩm chất lượng cao cho thú cưng yêu quý của bạn. Đăng ký ngay hôm nay để không bỏ lỡ bất kỳ ưu đãi đặc biệt nào từ chúng tôi!</p>
+                            <a href="product.html" class="btn btn-outline-light py-md-3 px-md-5">Mua sắm ngay</a> 
+                        </div>         
+                    </div>
+             </div>
+        </div>
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark" style="opacity: 70%;">
+            <div class="container ">
+                <div class="row g-2 ">
+                    <div class="col-lg-6 col-md-6 text-white">
+                        <h5 class="text-uppercase  text-white">PETCARE</h5>
+                        <p class="mb-4">Chúng tôi luôn cố gắng cung cấp dịch vụ tốt nhất cho các thành viên bốn chân của bạn. Chất lượng và sự hài lòng là những gì chúng tôi cam kết.</p>
+                        <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>263 QL32, Lai Xá, Hoài Đức, Hà Nội, Việt Nam</p>
+                        <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>acechienn123@gmail.com</p>
+                        <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0795267718</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">Liên kết nhanh</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-body mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Trang chủ</a>
+                            <a class="text-body mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Dịch vụ</a>
+                            <a class="text-body mb-2" href="product.html"><i class="bi bi-arrow-right text-primary me-2"></i>Cửa hàng</a>
+                            <a class="text-body mb-2" href="get_service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Đặt lịch nhanh</a>
+                            <a class="text-body mb-2" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Liên hệ</a>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">BẢN TIN</h5>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control p-3" placeholder="Email của bạn">
+                                <button class="btn btn-primary">Gửi</button>
+                            </div>
+                        </form>
+                        <h6 class="text-uppercase mt-4 mb-3" style="color: white;">Theo giõi</h6>
+                        <div class="d-flex">
+                            <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                            <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                            <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#registerBtn').click(function (e) {
+                e.preventDefault(); // Prevent default form submission
+                let isValid = true;
+    
+                // Validate email or phone number
+                const contactInfo = $('#inputEmail').val().trim();
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (contactInfo === "") {
+                    $('#errorEmail').text("Email không được để trống").show();
+                    isValid = false;
+                } else if (emailPattern.test(contactInfo)) {
+                    $('#errorEmail').hide();
+                } else {
+                    $('#errorEmail').text("Email không hợp lệ").show();
+                    isValid = false;
+                }
+    
+                // Validate password length
+                const password = $('#inputPass').val().trim();
+                if (password === "") {
+                    $('#errorPass').text("Mật khẩu không được để trống").show();
+                    isValid = false;
+                } else if (password.length < 6) {
+                    $('#errorPass').text("Mật khẩu phải ít nhất 6 kí tự").show();
+                    isValid = false;
+                } else {
+                    $('#errorPass').hide();
+                }
+    
+                // Validate password confirmation
+                const confirmPassword = $('#inputConfirmPass').val().trim();
+                if (password !== confirmPassword) {
+                    $('#errorConfirmPass').show();
+                    isValid = false;
+                } else {
+                    $('#errorConfirmPass').hide();
+                }
+    
+                // Validate checkbox
+                if (!$('#user-check').is(':checked')) {
+                    $('#errorDK').show();
+                    isValid = false;
+                } else {
+                    $('#errorDK').hide();
+                }
+    
+                // If all validations pass, show the confirm register form
+                if (isValid) {
+                    $('#register').hide();
+                    $('#confirm_register').show();
+                }
+            });
+    
+            $('#dang_ki_1').click(function (e) {
+                e.preventDefault(); // Prevent default form submission
+                let isValid = true;
+    
+                // Validate confirmation code inputs
+                const confirmationCodeInputs = $('.ma_xn input');
+                confirmationCodeInputs.each(function () {
+                    const input = $(this).val().trim();
+                    if (input === "") {
+                        $('#errorMaXN').text("Mã xác nhận không được để trống").show();
+                        isValid = false;
+                    } else if (!/^\d+$/.test(input)) {
+                        $('#errorMaXN').text("Mã xác nhận chỉ được chứa chữ số").show();
+                        isValid = false;
+                    } else {
+                        $('#errorMaXN').hide();
+                    }
+                });
+    
+                // If all validations pass, redirect to index.html
+                if (isValid) {
+                    $('#errorMaXN').hide();
+                    $('#dang_ki_success').modal('show');
+                } else {
+                    $('#errorMaXN').show();
+                }
+            });
+        });
+    </script>
+    
+    
+    
+    
+    <script>
+        $(document).ready(function () {
+            $('#loginBtn').click(function (e) {
+                e.preventDefault(); // Prevent default form submission
+                let isValid = true;
+
+                // Validate email
+                const email = $('#loginEmail').val();
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    $('#loginErrorEmail').show();
+                    isValid = false;
+                } else {
+                    $('#loginErrorEmail').hide();
+                }
+
+                // Validate password length
+                const password = $('#loginPass').val();
+                if (password.length < 6) {
+                    $('#loginErrorPass').show();
+                    isValid = false;
+                } else {
+                    $('#loginErrorPass').hide();
+                }
+
+                // If all validations pass, redirect to test.html
+                if (isValid) {
+                    window.location.href = 'index.html';
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#showAdminForm').click(function (e) {
+                e.preventDefault();
+                $('#login').hide();
+                $('#login_admin').show();
+            });
+
+            $('#loginBtn').click(function (e) {
+                e.preventDefault(); // Prevent default form submission
+                let isValid = true;
+
+                // Validate email
+                const email = $('#loginEmail').val();
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    $('#loginErrorEmail').show();
+                    isValid = false;
+                } else {
+                    $('#loginErrorEmail').hide();
+                }
+
+                // Validate password length
+                const password = $('#loginPass').val();
+                if (password.length < 6) {
+                    $('#loginErrorPass').show();
+                    isValid = false;
+                } else {
+                    $('#loginErrorPass').hide();
+                }
+
+                // If all validations pass, redirect to test.html
+                if (isValid) {
+                    window.location.href = 'index.html';
+                }
+            });
+
+            $('#loginAdminBtn').click(function (e) {
+                e.preventDefault(); // Prevent default form submission
+                let isValid = true;
+
+                // Validate email
+                const email = $('#adminEmail').val();
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    $('#adminErrorEmail').show();
+                    isValid = false;
+                } else {
+                    $('#adminErrorEmail').hide();
+                }
+
+                // Validate password length
+                const password = $('#adminPass').val();
+                if (password.length < 6) {
+                    $('#adminErrorPass').show();
+                    isValid = false;
+                } else {
+                    $('#adminErrorPass').hide();
+                }
+
+                // Validate PIN length and if it's a number
+                const pin = $('#adminPin').val();
+                if (pin.length < 6 || isNaN(pin)) {
+                    $('#pinError').show();
+                    isValid = false;
+                } else {
+                    $('#pinError').hide();
+                }
+
+                // If all validations pass, redirect to admin.html
+                if (isValid) {
+                    window.location.href = 'thongke.html'; // Thay service.html để lnik admin
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

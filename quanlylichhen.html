@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin PetCare</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="lni lni-grid-alt"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="thongke.html">Admin </a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="thongke.html" class="sidebar-link">
+                        <i class="lni lni-cog"></i>
+                        <span>Thống kê</span>
+                    </a>
+                </li>
+
+                <!-- <li class="sidebar-item">
+                    <a href="hangtonkho.html" class="sidebar-link">
+                        <i class="lni lni-agenda"></i>
+                        <span>Hàng tồn kho</span>
+                    </a>
+                </li> -->
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                        <i class="lni lni-protection"></i>
+                        <span>Quản lý</span>
+                    </a>
+                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="quanlynguoidung.html" class="sidebar-link">Người dùng</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlydichvu.html" class="sidebar-link">Dịch vụ</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlysanpham.html" class="sidebar-link">Sản phẩm</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlydonhang.html" class="sidebar-link">Đơn hàng</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlylichhen.html" class="sidebar-link">Lịch hẹn</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlythucung.html" class="sidebar-link">Thú cưng</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="hotrokhachhang.html" class="sidebar-link">
+                        <i class="lni lni-popup"></i>
+                        <span>Hỗ trợ khách hàng</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" data-bs-toggle="modal" data-bs-target="#userAccountModal">
+                        <i class="lni lni-user"></i>
+                        <span>Thông tin tài khoản</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="index_test.html" class="sidebar-link">
+                        <i class="lni lni-exit"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </div> -->
+        </aside>
+        <div class="main">
+            <nav class="navbar navbar-expand px-4 py-3">
+                <form action="" class="d-none d-sm-inline-block">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Nhập từ khóa tìm kiếm">
+                        <button class="btn btn-primary" id="searchButton">Tìm kiếm</button>
+                    </div>
+                </form>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div>
+                                <a type="button" class=" position-relative" style="margin-right: 20px;">
+                                    <i class="fa-solid fa-message fs-5"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        10+
+                                    </span>
+                                </a>
+                                <a type="button" class=" position-relative" style="margin-right: 20px;">
+                                    <i class="fa-solid fa-bell fs-5"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        10+
+                                    </span>
+                                </a>
+                                <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                    <img src="account.png" class="avatar img-fluid" alt="">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end rounded">
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#activityLogModal">Lịch sử hoạt động</a>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#changePasswordModal">Đổi mật khẩu</a>
+                                </div>
+                            </div>
+
+
+                        </li>
+                    </ul>
+                </div>
+                                <!-- Activity Log Modal -->
+                                <div class="modal fade" id="activityLogModal" tabindex="-1" aria-labelledby="activityLogModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="activityLogModalLabel">Lịch sử hoạt động</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Dữ liệu mẫu cho lịch sử hoạt động -->
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Thời gian</th>
+                                                        <th>Hoạt động</th>
+                                                        <th>Chi tiết</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2024-06-01 10:00</td>
+                                                        <td>Đăng nhập</td>
+                                                        <td>Admin đã đăng nhập vào hệ thống</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2024-06-01 10:15</td>
+                                                        <td>Thêm người dùng mới</td>
+                                                        <td>Admin đã thêm người dùng Bùi Tiến Đạt</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2024-06-01 11:00</td>
+                                                        <td>Thay đổi mật khẩu</td>
+                                                        <td>Admin đã thay đổi mật khẩu của mình</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2024-06-01 11:30</td>
+                                                        <td>Xóa người dùng</td>
+                                                        <td>Admin đã xóa người dùng Nguyễn Ngọc Vũ</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <!-- Change Password Modal -->
+                            <div class="modal fade" id="changePasswordModal" tabindex="-1"
+                                aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="changePasswordModalLabel">Đổi mật khẩu</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Form đổi mật khẩu -->
+                                            <form id="changePasswordForm">
+                                                <div class="mb-3">
+                                                    <label for="currentPassword" class="form-label">Mật khẩu hiện tại</label>
+                                                    <input type="password" class="form-control" id="currentPassword" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="newPassword" class="form-label">Mật khẩu mới</label>
+                                                    <input type="password" class="form-control" id="newPassword" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="confirmNewPassword" class="form-label">Xác nhận mật khẩu mới</label>
+                                                    <input type="password" class="form-control" id="confirmNewPassword" required>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            </nav>
+            <div class="modal fade" id="userAccountModal" tabindex="-1" aria-labelledby="userAccountModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="userAccountModalLabel">Thông tin tài khoản</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="userAccountForm">
+                                <div class="mb-3">
+                                    <label for="userName" class="form-label">Tên người dùng</label>
+                                    <input type="text" class="form-control" id="userName" value="Nguyễn Thế An" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="userEmail" value="annguyenthe2003@gmail.com" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userPhone" class="form-label">Số điện thoại</label>
+                                    <input type="text" class="form-control" id="userPhone" value="0123456789" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userAddress" class="form-label">Địa chỉ</label>
+                                    <input type="text" class="form-control" id="userAddress" value="123 Đường ABC, Phường XYZ, Hà Nội" readonly>
+                                </div>
+                                <div id="editButtons" class="d-none">
+                                    <button type="button" class="btn btn-primary" onclick="saveUserInfo()">Lưu</button>
+                                    <button type="button" class="btn btn-secondary" onclick="toggleEdit(false)">Hủy</button>
+                                </div>
+                                <div id="viewButton">
+                                    <button type="button" class="btn btn-warning" onclick="toggleEdit(true)">Chỉnh sửa</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <main>
+                <div class="container mt-5">
+                    <h1 class="mb-4">Quản lý Lịch hẹn - PetCare</h1>
+            
+                    <!-- Add Appointment Button -->
+                    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addAppointmentModal">Thêm Lịch hẹn</button>
+            
+                    <!-- Appointment Table -->
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Số thứ tự</th>
+                                <th>Thời gian</th>
+                                <th>Dịch vụ</th>
+                                <th>Người đặt</th>
+                                <th>Số điện thoại</th>
+                                <th>Ghi chú</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentTableBody">
+                            <!-- Appointment rows will be added here dynamically -->
+                        </tbody>
+                    </table>
+            
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination ">
+                            <li class="page-item" id="prevPageBtn">
+                                <a class="page-link" href="#" tabindex="-1" onclick="prevPage()">1</a>
+                            </li>
+                            <li class="page-item" id="nextPageBtn">
+                                <a class="page-link" href="#" onclick="nextPage()">2</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            
+                <!-- Add Appointment Modal -->
+                <div class="modal fade" id="addAppointmentModal" tabindex="-1" aria-labelledby="addAppointmentModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addAppointmentModalLabel">Thêm Lịch hẹn mới</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="addAppointmentForm">
+                                    <div class="mb-3">
+                                        <label for="appointmentTime" class="form-label">Thời gian</label>
+                                        <input type="datetime-local" class="form-control" id="appointmentTime" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="serviceType" class="form-label">Dịch vụ</label>
+                                        <select class="form-select" id="serviceType" required>
+                                            <option value="Taxi thú cưng">Taxi thú cưng</option>
+                                            <option value="Đào tạo thú cưng">Đào tạo thú cưng</option>
+                                            <option value="Chăm sóc thú cưng">Chăm sóc thú cưng</option>
+                                            <option value="Khách sạn thú cưng">Khách sạn thú cưng</option>
+                                            <option value="KChăm sóc sức khoẻ">Chăm sóc sức khoẻ</option>
+                                            <option value="Đi dạo và trông giữ">Đi dạo và trông giữ</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="customerName" class="form-label">Tên người đặt</label>
+                                        <input type="text" class="form-control" id="customerName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="customerPhone" class="form-label">Số điện thoại người đặt</label>
+                                        <input type="text" class="form-control" id="customerPhone" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="appointmentNote" class="form-label">Ghi chú</label>
+                                        <textarea class="form-control" id="appointmentNote" rows="3"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Lưu</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Edit Appointment Modal -->
+                <div class="modal fade" id="editAppointmentModal" tabindex="-1" aria-labelledby="editAppointmentModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editAppointmentModalLabel">Chỉnh sửa Lịch hẹn</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editAppointmentForm">
+                                    <input type="hidden" id="editAppointmentIndex">
+                                    <div class="mb-3">
+                                        <label for="editAppointmentTime" class="form-label">Thời gian</label>
+                                        <input type="datetime-local" class="form-control" id="editAppointmentTime" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editServiceType" class="form-label">Dịch vụ</label>
+                                        <select class="form-select" id="editServiceType" required>
+                                            <option value="Taxi thú cưng">Taxi thú cưng</option>
+                                            <option value="Đào tạo thú cưng">Đào tạo thú cưng</option>
+                                            <option value="Chăm sóc thú cưng">Chăm sóc thú cưng</option>
+                                            <option value="Khách sạn thú cưng">Khách sạn thú cưng</option>
+                                            <option value="KChăm sóc sức khoẻ">Chăm sóc sức khoẻ</option>
+                                            <option value="Đi dạo và trông giữ">Đi dạo và trông giữ</option>
+                                        </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="editCustomerName" class="form-label">Tên người đặt</label>
+                                            <input type="text" class="form-control" id="editCustomerName" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="editCustomerPhone" class="form-label">Số điện thoại người đặt</label>
+                                            <input type="text" class="form-control" id="editCustomerPhone" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="editAppointmentNote" class="form-label">Ghi chú</label>
+                                            <textarea class="form-control" id="editAppointmentNote" rows="3"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Lưu</button>
+                                        </form>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+            </main>
+            <script>
+                // Sample appointment data
+                let appointments = [
+                    {
+                        time: "2024-06-01T08:30",
+                        service: "Chăm sóc thú cưng",
+                        customerName: "Nguyễn Văn A",
+                        customerPhone: "0123456789",
+                        note: "Chải lông và làm đẹp cho mèo của tôi nhẹ nhàng"
+                    },
+                    {
+                        time: "2024-06-02T10:45",
+                        service: "Chăm sóc sức khoẻ",
+                        customerName: "Trần Thị B",
+                        customerPhone: "0987654321",
+                        note: "Tiêm phòng bệnh dại"
+                    },
+                    {
+                        time: "2024-06-03T09:00",
+                        service: "Chăm sóc thú cưng",
+                        customerName: "Nguyễn Văn A",
+                        customerPhone: "0912345678",
+                        note: "Không sử dụng dầu thơm"
+                    },
+                    {
+                        time: "2024-06-03T14:30",
+                        service: "Chăm sóc sức khỏe",
+                        customerName: "Lê Thị C",
+                        customerPhone: "0923456789",
+                        note: "Kiểm tra tai"
+                    },
+                    {
+                        time: "2024-06-04T08:15",
+                        service: "Chăm sóc sức khoẻ",
+                        customerName: "Phạm Văn D",
+                        customerPhone: "0934567890",
+                        note: "Tẩy giun, chó đã ăn sáng"
+                    },
+                    {
+                        time: "2024-06-04T13:00",
+                        service: "Khách sạn thú cưng",
+                        customerName: "Đặng Thị E",
+                        customerPhone: "0945678901",
+                        note: "Dùng đồ ăn tươi"
+                    },
+                    {
+                        time: "2024-06-05T11:45",
+                        service: "Taxi thú cưng",
+                        customerName: "Hoàng Văn F",
+                        customerPhone: "0956789012",
+                        note: "Không gian rộng rãi, thoải mái"
+                    },
+                    {
+                        time: "2024-06-05T15:30",
+                        service: "Đào tạo thú cưng",
+                        customerName: "Trần Thị B",
+                        customerPhone: "0987654321",
+                        note: "Huấn luyện thú cưng biết bắt tay"
+                    }
+                ];
+            
+                let currentPage = 1;
+                const appointmentsPerPage = 6;
+            
+                function displayAppointments() {
+                    const startIndex = (currentPage - 1) * appointmentsPerPage;
+                    const endIndex = startIndex + appointmentsPerPage;
+                    const displayedAppointments = appointments.slice(startIndex, endIndex);
+            
+                    const appointmentTableBody = document.getElementById('appointmentTableBody');
+                    appointmentTableBody.innerHTML = '';
+            
+                    displayedAppointments.forEach((appointment, index) => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${startIndex + index + 1}</td>
+                            <td>${appointment.time}</td>
+                            <td>${appointment.service}</td>
+                            <td>${appointment.customerName}</td>
+                            <td>${appointment.customerPhone}</td>
+                            <td>${appointment.note}</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm" onclick="editAppointment(${startIndex + index})">Sửa</button>
+                                <button class="btn btn-danger btn-sm" onclick="deleteAppointment(${startIndex + index})">Xóa</button>
+                            </td>
+                        `;
+                        appointmentTableBody.appendChild(row);
+                    });
+            
+                    updatePagination();
+                }
+            
+                function updatePagination() {
+                    const totalPages = Math.ceil(appointments.length / appointmentsPerPage);
+                    const prevPageBtn = document.getElementById('prevPageBtn');
+                    const nextPageBtn = document.getElementById('nextPageBtn');
+            
+                    prevPageBtn.classList.toggle('disabled', currentPage === 1);
+                    nextPageBtn.classList.toggle('disabled', currentPage === totalPages || totalPages === 0);
+                }
+            
+                function prevPage() {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        displayAppointments();
+                    }
+                }
+            
+                function nextPage() {
+                    const totalPages = Math.ceil(appointments.length / appointmentsPerPage);
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        displayAppointments();
+                    }
+                }
+            
+                // Initial display
+                displayAppointments();
+            
+                // Add Appointment
+                document.getElementById('addAppointmentForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    addAppointment();
+                });
+            
+                // Edit Appointment
+                document.getElementById('editAppointmentForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    updateAppointment();
+                });
+            
+                // Add Appointment
+                function addAppointment() {
+                    const time = document.getElementById('appointmentTime').value;
+                    const service = document.getElementById('serviceType').value;
+                    const customerName = document.getElementById('customerName').value;
+                    const customerPhone = document.getElementById('customerPhone').value;
+                    const note = document.getElementById('appointmentNote').value;
+            
+                    appointments.push({
+                        time,
+                        service,
+                        customerName,
+                        customerPhone,
+                        note
+                    });
+            
+                    displayAppointments();
+            
+                    // Close modal
+                    const modal = new bootstrap.Modal(document.getElementById('addAppointmentModal'));
+                    modal.hide();
+                }
+            
+                // Edit Appointment
+                function editAppointment(index) {
+                    const appointment = appointments[index];
+            
+                    document.getElementById('editAppointmentIndex').value = index;
+                    document.getElementById('editAppointmentTime').value = appointment.time;
+                    document.getElementById('editServiceType').value = appointment.service;
+                    document.getElementById('editCustomerName').value = appointment.customerName;
+                    document.getElementById('editCustomerPhone').value = appointment.customerPhone;
+                    document.getElementById('editAppointmentNote').value = appointment.note;
+            
+                    const modal = new bootstrap.Modal(document.getElementById('editAppointmentModal'));
+                    modal.show();
+                }
+            
+                // Update Appointment
+                function updateAppointment() {
+                    const index = document.getElementById('editAppointmentIndex').value;
+                    const time = document.getElementById('editAppointmentTime').value;
+                    const service = document.getElementById('editServiceType').value;
+                    const customerName = document.getElementById('editCustomerName').value;
+                    const customerPhone = document.getElementById('editCustomerPhone').value;
+                    const note = document.getElementById('editAppointmentNote').value;
+            
+                    appointments[index] = {
+                        time,
+                        service,
+                        customerName,
+                        customerPhone,
+                        note
+                    };
+            
+                    displayAppointments();
+            
+                    // Close modal
+                    const modal = new bootstrap.Modal(document.getElementById('editAppointmentModal'));
+                    modal.hide();
+                }
+            
+                // Delete Appointment
+                function deleteAppointment(index) {
+                    if (confirm("Bạn có chắc chắn muốn xóa lịch hẹn này không?")) {
+                        appointments.splice(index, 1);
+                        displayAppointments();
+                    }
+                }
+            </script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    // Function to perform search
+                    function searchAppointments() {
+                        var searchTerm = $('#searchInput').val().toLowerCase().trim();
+        
+                        // Iterate through each row in the table
+                        $('#appointmentTableBody tr').each(function() {
+                            var rowText = $(this).text().toLowerCase();
+        
+                            // Show or hide the row based on search term
+                            $(this).toggle(rowText.indexOf(searchTerm) > -1);
+                        });
+                    }
+        
+                    // Trigger search when the button is clicked
+                    $('#searchButton').on('click', function() {
+                        searchAppointments();
+                    });
+        
+                    // Optional: Trigger search when pressing Enter key in the search input
+                    $('#searchInput').on('keypress', function(e) {
+                        if (e.which == 13) { // Enter key
+                            searchAppointments();
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </div>
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

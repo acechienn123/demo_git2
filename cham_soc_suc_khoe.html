@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chăm sóc sức khỏe</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+    
+    <!-- Icon  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+    <img src="img/logo.png" style="width: 180px; margin-left: 20px;" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav py-0" style="margin-left: 160px;">
+                <a href="index.html" class="nav-item nav-link ">Trang chủ</a>
+                <a href="service.html" class="nav-item nav-link active">Dịch vụ</a>
+                <a href="product.html" class="nav-item nav-link">Cửa hàng</a>
+                <a href="get_service.html" class="nav-item nav-link">Đặt lịch nhanh</a>
+                
+            </div>
+            <a href="contact.html"  class="btn btn-primary btn-rounded" style="margin-left: 30px;">Liên hệ <i class="bi bi-arrow-right"></i></a>
+            <div  class="nav-link dropdown" style="margin-left: 50px;">
+                <button class="cart_btn border-1 btn-danger" type="button" id="cart_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <small style="margin-left: 20px;" class="cart_counter">0</small>
+                    <span><small>Sản phẩm</small></span>
+                </button>
+                <div class="cart_dropdown dropdown-menu"  style="width: 320px; position: absolute; left: 16px; background-color: whitesmoke; border-radius: 5px;">
+                    
+                    <hr>
+                    <div class="total_price" style="text-align: center;">
+                        <span>Tổng tiền</span>
+                        <strong>$70.51</strong>
+                    </div>
+                    <hr>
+                    <a style="display: flex; justify-content: center; align-items: center; width: 200px; margin-bottom: 5px; margin-left: 50px;" class="btn btn-danger" href="cart_detail.html">Xem giỏ hàng</a>
+                    <a style="display: flex; justify-content: center; width: 200px; margin-left: 50px;" class="btn btn-success" href="cart_detail.html">Thanh toán</a>
+                </div>
+            </div>
+            <div id="user" class="dropdown dropstart" style="margin-left: 220px;">
+                <button  type="button" class="border-0 bg-white" data-bs-toggle="dropdown">
+                    <i style="font-size: 30px; color: rgb(71, 68, 68);" class="fa-solid fa-user"></i>
+                </button>
+                <ul class="dropdown-menu" style="padding: 0; position: absolute; left: -155px; top: 0;">
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="profile.html">Xem hồ sơ</a></li>
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="index_test.html">Đăng xuất</a></li>
+                </ul>
+            </div>
+        </div>
+</nav>
+    <div class="container-fluid" style="margin-top: 30px;">
+        <div class="container">
+            <div class="row">
+                <div class="row">   
+                    <div class="d-flex">
+                        <a href="service.html">Dịch vụ </a>
+                        <p>/</p>
+                        <a href="service_details_2.html">Dịch vụ Chăm sóc sức khỏe </a>
+                    </div>
+                    <h2 style="color: rgb(142, 194, 79);" class="border-start border-5 border-primary ps-5 mb-5">DỊCH VỤ CHĂM SÓC SỨC KHỎE</h2>
+                    <div style="
+                                /* border-style: dotted;
+                                border-width: 1px 0px 1px 0px;
+                                border-color: #afafaf; */
+                                " >
+                        <div>
+                            <div class="d-flex">
+                                <i style=" color: black; font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-solid fa-phone-volume"></i>
+                                <p class="text-dark">0795267718</p>
+                            </div>
+                            <div  class="d-flex text-dark">
+                                <i style="font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-regular fa-pen-to-square"></i>
+                                <p>26 Tháng 5 2024 </p>
+                            </div>
+                            <div  class="d-flex text-dark">
+                                <i style="font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-regular fa-clock"></i>
+                                <p>3:06</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3" >
+                    <div class="row" style="border: .1rem solid #eee; border-radius: 15px;">
+                        <ul class="nav nav-pills flex-column" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="pill" href="#menu1">Tiêm phòng Vaccin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="pill" href="#menu2">Khám % Điều trị bệnh</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="pill" href="#menu3">Triệt sản thẩm mỹ</a>
+                            </li>
+                        </ul>
+                    </div>
+                   
+                </div>
+                <div class="col-md-9" style="margin-top: -20px; margin-bottom: 10px;">
+                    <div class="tab-content">
+                        <div id="menu1" class="container tab-pane active"><br>
+                            <h4>DỊCH VỤ TIÊM PHÒNG VACCINE</h4>
+                            <hr>
+                            <p>
+                                Hiện tại tiêm phòng vaccine vẫn là biện pháp hữu hiệu nhất để bảo vệ thú cưng khỏi
+                                các bệnh truyền nhiễm nguy hiểm và nguy cơ lây lan. PetCare cung cấp dịch vụ tiêm
+                                phòng vaccine uy tín và chất lượng cho thú cưng của bạn. Tiêm phòng đầy đủ sẽ tạo 
+                                ra hệ miễn dịch chủ động và phòng ngừa nguy cơ tử vong do mắc các bệnh truyền nhiễm
+                                 nguy hiểm cho thú cưng. Khi được tiêm vaccine, cơ thể thú cưng sẽ tự sản xuất kháng 
+                                 thể để chống lại các virus gây bệnh. Điều này đảm bảo sức khỏe và tính mạng của thú 
+                                 cưng được bảo vệ một cách hiệu quả.
+                            </p>
+                            <p>
+                                Chúng tôi luôn đặt sức khỏe thú cưng lên hàng đầu và đảm bảo quy trình tiêm phòng
+                                 an toàn. Trước khi tiêm vaccine, chúng tôi tư vấn về các biện pháp chuẩn bị
+                                  cần thiết, như tẩy giun và kiểm tra sức khỏe tổng quát của thú cưng. 
+                                  Sau khi tiêm vaccine, chúng tôi sẽ hướng dẫn bạn về cách chăm sóc sau tiêm, 
+                                  giúp thú cưng của bạn đạt được hiệu quả cao nhất và hồi phục nhanh chóng.
+                            </p>
+                            <p>
+                                Dưới đây là lịch trình tiêm vaccine được sử dụng tại PetCare
+                            </p>
+
+                            <h5>Lịch tiêm vaccine cho chó:</h5>
+                            <ul>
+                                <li>Chó 2 tháng tuổi: Tiêm vaccine tổng hợp 5 bệnh như Bệnh Care, Bệnh  Parvo, Bệnh viêm gan truyền nhiễm, Bệnh ho cũi chó và Bệnh phó cúm.</li>
+                                <li>Sau mũi 1 21 ngày: Tiêm mũi 2 vaccine tổng hợp 7 bệnh, bao gồm cả Bệnh Leptospirosis và Bệnh Corona.</li>
+                                <li>Sau mũi 2 28 ngày: Tiêm mũi 3 vaccine tổng hợp 7 bệnh để đảm bảo sự bảo vệ toàn diện cho chó yêu quý của bạn.</li>
+                                <li>Chó 3 tháng tuổi trở lên: Tiêm 1 mũi vaccine phòng bệnh dại.</li>
+                                <li>Chó đã chích ngừa đầy đủ cũng cần tiêm nhắc lại định kỳ hàng năm: 1 mũi vaccine tổng hợp 7 bệnh và 1 mũi vaccine phòng bệnh dại.</li>
+                            </ul>
+
+                            <h5>Lịch tiêm vaccine cho mèo:</h5>
+                            <ul>
+                                <li>Mèo từ 2 tháng tuổi: Tiêm vaccine tổng hợp 4 bệnh như Bệnh Giảm bạch cầu, Bệnh Viêm mũi – khí quản truyền nhiễm và Bệnh Hô hấp do Herpevirus.</li>
+                                <li>Sau mũi 1 28 ngày: Tiêm mũi 2 vaccine tổng hợp 4 bệnh để đảm bảo hiệu quả phòng ngừa bệnh tốt nhất.</li>
+                                <li>Sau mũi 2 28 ngày: Tiêm mũi 3 vaccine tổng hợp 4 bệnh để bảo vệ sức khỏe mèo yêu của bạn.</li>
+                                <li>Mèo từ 3 tháng tuổi trở lên có thể tiêm vaccine phòng bệnh dại.</li>
+                                <li>Nên hoàn thành việc tiêm vaccine trước khi mèo tròn 1 năm tuổi. Sau đó, tiêm nhắc lại hàng năm với tất cả các loại vaccine.</li>
+                            </ul>
+
+                            <h5>Tại PetCare, chúng tôi cam kết</h5>
+                            <ul>
+                                <li>Đội ngũ bác sĩ thú y giàu kinh nghiệm, tận tâm và yêu động vật.</li>
+                                <li>Sử dụng vaccine chất lượng cao từ các nhà sản xuất của Mỹ và Châu Âu.</li>
+                                <li>SĐảm bảo tiêm vaccine đúng lịch trình và an toàn tuyệt đối cho thú cưng của bạn.</li>
+                                <li>Tư vấn chuyên nghiệp về lịch trình vaccine và các vấn đề liên quan đến sức khỏe của thú cưng.</li>
+                                <li>Tạo môi trường thân thiện, an toàn và thoải mái cho thú cưng của bạn.</li>
+                            </ul>
+                            <div class="row">
+                                <a class="btn btn-success btn-rounded" style="border-radius: 20px; margin-top: 10px;" href="get_service.html">Đặt Lịch Ngay</a>
+                            </div>
+                            <div class="row">
+                                <a class="btn btn-danger btn-rounded" style="border-radius: 20px; margin-top: 10px;" href="contact.html">Tư vấn hỗ trợ</a>
+                            </div>
+                        </div>
+                        <div id="menu2" class="container tab-pane fade"><br>
+                            <h4>DỊCH VỤ KHÁM & ĐIỀU TRỊ BỆNH</h4>
+                            <hr>
+                            <p>
+                                Bạn đang tìm kiếm một địa điểm tin cậy để <strong>khám và điều trị bệnh </strong> cho thú cưng của mình? 
+                                Hãy đến với PetCare, nơi chúng tôi tận tâm chăm sóc sức khỏe của bạn và mang đến sự an tâm tuyệt đối.
+                            </p>
+                            <p>
+                                Với đội ngũ bác sĩ thú y chuyên môn cao và giàu kinh nghiệm, chúng tôi tự hào 
+                                cung cấp dịch vụ khám và điều trị bệnh tốt nhất cho thú cưng yêu quý của bạn. Chúng tôi hiểu rằng sức khỏe
+                                 của thú cưng là ưu tiên hàng đầu và cam kết đảm bảo sự chăm sóc toàn diện và chuyên nghiệp.
+                            </p>
+                            <ul style="margin-left: 10px;">
+                                <li> <strong>Khám sàng lọc và khám chuyên khoa:</strong> Tại PetCare, chúng tôi cung cấp các dịch vụ
+                                     khám sàng lọc định kỳ để đảm bảo sức khỏe tổng thể cho thú cưng của bạn. Đội ngũ bác
+                                      sĩ thú y sẽ tiến hành kiểm tra tổng quát, xem xét vấn đề dinh dưỡng, tình trạng da
+                                       lông, răng miệng, và các khía cạnh khác của sức khỏe. Ngoài ra, chúng tôi cung cấp
+                                        các dịch vụ khám chuyên khoa, như tim mạch, hô hấp, tiêu hóa và nhiều lĩnh vực khác, 
+                                        để phát hiện sớm các vấn đề tiềm ẩn và đưa ra các biện pháp phòng ngừa và điều trị phù hợp.
+                                </li>
+                                <li> <strong>Chẩn đoán và xét nghiệm:</strong> với trang thiết bị y tế tiên tiến và 
+                                    các phương pháp chẩn đoán hiện đại, chúng tôi có thể đưa ra các đánh giá chính xác
+                                     về tình trạng sức khỏe của thú cưng. Tại PetCare, chúng tôi thực hiện các xét nghiệm máu, 
+                                     xét nghiệm nội soi, siêu âm, chụp X-quang và các phương pháp chẩn đoán khác để đưa ra đánh giá
+                                      chi tiết về sức khỏe của thú cưng. Điều này giúp chúng tôi phát hiện và
+                                     chẩn đoán chính xác các vấn đề y tế, từ đó đề xuất phương pháp điều trị phù hợp.
+                               </li>
+                               <li> <strong>Phẫu thuật và điều trị:</strong> Tại PetCare, chúng tôi thực hiện 
+                                các phẫu thuật thú y chuyên nghiệp và an toàn. Đội ngũ bác sĩ thú y của chúng
+                                 tôi đã có nhiều kinh nghiệm trong cả phẫu thuật tiểu phẫu và đại phẫu. 
+                                 Chúng tôi sử dụng trang thiết bị y tế tiên tiến và tuân thủ các tiêu chuẩn cao
+                                  nhất để đảm bảo quy trình phẫu thuật an toàn và hiệu quả. Chúng tôi không chỉ 
+                                  quan tâm đến quá trình phẫu thuật mà còn đảm bảo sự chăm sóc sau phẫu thuật tốt
+                                   nhất cho thú cưng của bạn. Chúng tôi sẽ cung cấp hướng dẫn về chăm sóc sau phẫu thuật, 
+                                   thuốc uống và lịch trình tái
+                                 khám để đảm bảo thú cưng của bạn hồi phục một cách nhanh chóng và an toàn.
+                                </li>
+                            <li> <strong>Điều trị bằng thuốc: </strong> Bên cạnh phẫu thuật, chúng tôi cung cấp 
+                                các phương pháp điều trị bằng thuốc để đáp ứng các nhu cầu y tế của thú cưng. Đội
+                                ngũ chuyên gia y tế của chúng tôi sẽ xác định và đề xuất những phác đồ điều trị phù hợp
+                                 để đảm bảo thú cưng của bạn nhận được chăm sóc tối ưu. Chúng tôi hiểu rõ về các loại thuốc
+                                  và hiệu quả của chúng, và sử dụng những sản phẩm chất lượng cao để đảm bảo sức khỏe và an 
+                                  toàn cho thú cưng của bạn. Với sự kết hợp giữa kiến thức chuyên môn và kinh nghiệm,
+                                 chúng tôi cam kết mang lại cho thú cưng của bạn những phương pháp điều trị hiệu quả nhất.
+                                </li>
+                                <li> <strong>Điều trị nội trú và ngoại trú:  </strong>Tại PetCare, chúng tôi
+                                     cung cấp cả dịch vụ điều trị nội trú và ngoại trú để đáp ứng mọi nhu cầu y tế của thú cưng.
+                                     Với điều trị nội trú, thú cưng của bạn sẽ được theo dõi chặt chẽ và điều trị chuyên sâu trong một
+                                      môi trường an toàn và thoải mái. Đối với điều trị ngoại trú, chúng tôi cung cấp các liệu pháp và thuốc điều trị để bạn có thể 
+                                    chăm sóc thú cưng tại nhà và đảm bảo sự phục hồi nhanh chóng.
+                                    </li>
+                            </ul>
+
+                            <p>
+                                Tại PetCare, chúng tôi không chỉ là những bác sĩ thú y đầy kinh nghiệm, 
+                                mà còn là những người yêu động vật. Chúng tôi cam kết đem đến dịch vụ khám và điều trị bệnh toàn diện, 
+                                tận tâm và chất lượng cho thú cưng của bạn. Chúng tôi luôn sẵn lòng lắng nghe, tư vấn và hỗ trợ bạn
+                                 trong việc quản lý sức khỏe của thú cưng. Đặt lịch hẹn khám và điều trị ngay hôm nay
+                                 để trải nghiệm sự chuyên nghiệp và chất lượng mà PetCare mang lại cho thú cưng của bạn!
+                            </p>
+                            <div class="row">
+                                <a class="btn btn-success btn-rounded" style="border-radius: 20px; margin-top: 10px;" href="">Đặt Lịch Ngay</a>
+                            </div>
+                            <div class="row">
+                                <a class="btn btn-danger btn-rounded" style="border-radius: 20px; margin-top: 10px;" href="">Tư vấn hỗ trợ</a>
+                            </div>
+                        </div>
+                        <div id="menu3" class="container tab-pane fade"><br>
+                            <h4>DỊCH VỤ TRIỆT SẢN THẨM MỸ:</h4>
+                            <hr>
+                            <p>
+                                Triệt sản thú cưng là một việc cần thiết bạn nên làm để tạo điều kiện sống thuận 
+                                lợi và bảo vệ sức khỏe cho thú cưng của mình. Việc này không chỉ giúp chúng phát
+                                 triển khoẻ mạnh mà còn đóng vai trò quan trọng trong việc kéo dài tuổi thọ. Bệnh
+                                  viện Thú y PetCare là một địa chỉ uy tín tại Hà Nội chuyên cung cấp dịch vụ triệt sản thẩm mỹ thú cưng với
+                                 cam kết đem lại cuộc phẫu thuật an toàn và không gây đau cho thú cưng của bạn.
+                            </p>
+                            <p>
+                                Nhiều người thường có lo ngại khi nghĩ đến việc triệt sản cho các bé Cún, Miu của mình.
+                                 Họ lo ngại rằng quá trình này có thể ảnh hưởng đến bản năng và tính cách của thú cưng,
+                                  cũng như đề phòng về nguy cơ không an toàn nếu thực hiện tại các địa chỉ không đáng tin 
+                                  cậy hoặc bởi các bác sĩ thú y không có đủ kinh nghiệm. Tuy nhiên, việc tìm kiếm một bệnh
+                                   viện thú y đáng tin cậy, trang bị thiết bị hiện đại và có đội ngũ bác sĩ chuyên nghiệp 
+                                   là chìa khóa để đảm bảo dịch vụ triệt sản chó mèo mang lại nhiều lợi ích, từ an toàn cho 
+                                   thú cưng đến sự yên tâm cho chủ nhân.
+                            </p>
+
+                            <h5>Một số lợi ích khi triệt sản thú cưng</h5>
+                            <ul style="margin-left: 10px;">
+                                <li> Giảm nguy cơ vấn đề sức khỏe do mang thai.
+                                </li>
+                                <li>Phòng ngừa bệnh ung thư vú ở động vật cái.
+                               </li>
+                               <li> Kiểm soát bản năng sinh dục tự nhiên, giảm nguy cơ tình trạng đi tiểu lung tung và đánh dấu lãnh thổ của các chú chó, mèo đực.
+                                </li>
+                                <li>Tiện lợi trong việc chăm sóc và di chuyển vật nuôi, đồng thời giảm khả năng động dục.
+                                </li>
+                                <li> Thân thiện với môi trường hơn bằng cách hạn chế sự tăng trưởng không kiểm soát của các loài thú cưng.
+                                </li>
+                                <li> Giảm nguy cơ thú cưng bị bỏ rơi hoặc không có chỗ ở, giúp giảm áp lực cho các trung tâm cứu hộ động vật và các cơ sở bảo vệ thú cưng.
+                                </li>
+                                <li> Triệt sản giúp giảm tiếng kêu không mong muốn của thú cưng khi chúng tìm kiếm đối tác sinh sản.
+                                </li>
+                            </ul>
+                            <h5>Quy trình Triệt sản cho thú cưng tại Bệnh viện Thú y PetCare:</h5>
+                            <p><strong>Bước 1: Kiểm tra sức khỏe tổng quan:</strong></p>
+                            <ul>
+                                <li>Thực hiện kiểm tra lâm sàng sức khỏe thú cưng để đánh giá tình trạng sức khỏe chung.</li>
+                                <li>Thực hiện các xét nghiệm máu để đánh giá sức khoẻ thú cưng có đủ điều kiện phẫu thuật hay không.</li>
+                            </ul>
+                            <p><strong>Bước 2: Gây mê an toàn:</strong> Sử dụng thuốc gây mê an toàn để đảm bảo sự thoải mái và theo dõi sát sao chỉ số sinh tồn trong quá trình phẫu thuật.</p>
+                            <p><strong>Bước 3: Chuẩn bị và thực hiện phẫu thuật: :</strong> Rửa sạch bộ phận sinh dục bằng dung dịch sát khuẩn và thực hiện quá trình cắt bỏ buồng trứng và tử cung ở con cái hoặc tinh hoàn ở con đực.</p>
+                            <p><strong>Bước 4: Chăm sóc sau phẫu thuật: :</strong> Tiêm thuốc giảm đau và phòng tránh nhiễm trùng, sau đó thực hiện việc khâu lớp, đặt băng và khâu vết mổ.</p>
+                            <p><strong>Bước 5: Theo dõi sức khỏe và hướng dẫn chăm sóc:</strong></p>
+                            <ul>
+                                <li>Thực hiện theo dõi sức khỏe trong 5 – 7 ngày đầu và cung cấp chăm sóc đặc biệt khi cần thiết.</li>
+                                <li>Hướng dẫn chủ của thú cưng chăm sóc, vệ sinh vết mổ để đảm bảo sự hồi phục tốt nhất cho thú cưng khi sử dụng dịch vụ Triệt sản thẩm mỹ tại Bệnh viện thú y PetCare.</li>
+                            </ul>
+                            <p>Bệnh viện Thú y PetCare là hệ thống chăm sóc sức khỏe thú cưng toàn diện, với các dịch vụ được thực hiện bởi đội ngũ bác sĩ được đào tạo chuyên môn sâu và có nhiều năm kinh nghiệm trong lĩnh vực. Khi đến với Bệnh viện Thú y PetCare, thú cưng của bạn sẽ được chăm sóc và nâng niu trong môi trường tốt nhất. Đặc biệt, đội ngũ nhân viên tại đây không chỉ có kiến thức chuyên môn mà còn mang trong mình tình yêu thương lớn lao đối với động vật, đảm bảo mang đến cho thú cưng của bạn sự chăm sóc tối ưu nhất.</p>
+                            <div class="row">
+                                <a class="btn btn-success btn-rounded" style="border-radius: 20px; margin-top: 10px;" href="">Đặt Lịch Ngay</a>
+                            </div>
+                            <div class="row">
+                                <a class="btn btn-danger btn-rounded" style="border-radius: 20px; margin-top: 10px;" href="">Tư vấn hỗ trợ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-5" style="margin-left: 30px;">
+        <div class="container" >
+            <div  class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px; margin-left: -30px;" >
+                <h2 style="color: rgb(142, 194, 79);">DỊCH VỤ KHÁC</h2>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-4 service-item bg-light  p-4">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-2">
+                                <img width="100%" height="100%" src="img/logo_service/car-34714_1280.png" alt="">
+                            </div>
+                            <div class="col">
+                                <h5 class="text-uppercase text-dark" >Taxi thú cưng</h5>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="row">    
+                        <p style="height: 80px;">Vận chuyển thú cưng an toàn và tiện lợi, giúp thú cưng của bạn đến bất kỳ đâu.</p>
+                        <a class="text-primary" style="font-size: 14px;" href="service_detail_1.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 service-item bg-light p-4">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-2">
+                                <img width="100%" height="100%" src="img/logo_service/icon_pet_training.svg" alt="">
+                            </div>
+                            <div class="col">
+                                <h5 class="text-uppercase  text-dark" >Đạo tạo thú cưng</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p style="height: 80px;">Huấn luyện thú cưng giúp thú cưng của bạn nghe lời và thông minh hơn.</p>
+                            <a class="text-primary" style="font-size: 14px;" href="service_detail_4.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 service-item bg-light p-4">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-2">
+                                <img width="100%" height="100%" src="img/logo_service/icon_pet_grooming.svg" alt="">
+                            </div>
+                            <div class="col">
+                                <h5 class="text-uppercase  text-dark">Chăm sóc thú cưng</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p style="height: 80px;">Chăm sóc và làm đẹp kỹ lưỡng cho thú cưng, từ tắm rửa đến cắt tỉa lông</p>
+                            <a class="text-primary" style="font-size: 14px;" href="service_detail_2.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark" style="opacity: 70%;">
+        <div class="container ">
+            <div class="row g-2 ">
+                <div class="col-lg-6 col-md-6 text-white">
+                        <h5 class="text-uppercase  text-white">PETCARE</h5>
+                        <p class="mb-4">Chúng tôi luôn cố gắng cung cấp dịch vụ tốt nhất cho các thành viên bốn chân của bạn. Chất lượng và sự hài lòng là những gì chúng tôi cam kết.</p>
+                        <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>263 QL32, Lai Xá, Hoài Đức, Hà Nội, Việt Nam</p>
+                        <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>acechienn123@gmail.com</p>
+                        <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0795267718</p>
+                    </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">Liên kết nhanh</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-body mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Trang chủ</a>
+                        <a class="text-body mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Dịch vụ</a>
+                        <a class="text-body mb-2" href="product.html"><i class="bi bi-arrow-right text-primary me-2"></i>Cửa hàng</a>
+                        <a class="text-body mb-2" href="get_service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Đặt lịch nhanh</a>
+                        <a class="text-body mb-2" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Liên hệ</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">BẢN TIN</h5>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Email của bạn">
+                            <button class="btn btn-primary">Gửi</button>
+                        </div>
+                    </form>
+                    <h6 class="text-uppercase mt-4 mb-3" style="color: white;">Theo giõi</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>  
+</html>

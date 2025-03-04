@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin PetCare</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="lni lni-grid-alt"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="thongke.html">Admin </a>
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="thongke.html" class="sidebar-link">
+                        <i class="lni lni-cog"></i>
+                        <span>Thống kê</span>
+                    </a>
+                </li>
+
+                <!-- <li class="sidebar-item">
+                    <a href="hangtonkho.html" class="sidebar-link">
+                        <i class="lni lni-agenda"></i>
+                        <span>Hàng tồn kho</span>
+                    </a>
+                </li> -->
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                        <i class="lni lni-protection"></i>
+                        <span>Quản lý</span>
+                    </a>
+                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="quanlynguoidung.html" class="sidebar-link">Người dùng</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlydichvu.html" class="sidebar-link">Dịch vụ</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlysanpham.html" class="sidebar-link">Sản phẩm</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlydonhang.html" class="sidebar-link">Đơn hàng</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlylichhen.html" class="sidebar-link">Lịch hẹn</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="quanlythucung.html" class="sidebar-link">Thú cưng</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="hotrokhachhang.html" class="sidebar-link">
+                        <i class="lni lni-popup"></i>
+                        <span>Hỗ trợ khách hàng</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" data-bs-toggle="modal" data-bs-target="#userAccountModal">
+                        <i class="lni lni-user"></i>
+                        <span>Thông tin tài khoản</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="index_test.html" class="sidebar-link">
+                        <i class="lni lni-exit"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </div> -->
+        </aside>
+        <div class="main">
+            <nav class="navbar navbar-expand px-4 py-3">
+                <form action="" class="d-none d-sm-inline-block">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm" id="searchInput">
+                        <button class="btn btn-primary" type="button" id="searchButton">Tìm kiếm</button>
+                    </div>
+                </form>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <div>
+                                <a type="button" class=" position-relative" style="margin-right: 20px;">
+                                    <i class="fa-solid fa-message fs-5"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        10+
+                                    </span>
+                                </a>
+                                <a type="button" class=" position-relative" style="margin-right: 20px;">
+                                    <i class="fa-solid fa-bell fs-5"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        10+
+                                    </span>
+                                </a>
+                                <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                    <img src="account.png" class="avatar img-fluid" alt="">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end rounded">
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#activityLogModal">Lịch sử hoạt động</a>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#changePasswordModal">Đổi mật khẩu</a>
+                                </div>
+                            </div>
+
+
+                        </li>
+                    </ul>
+                </div>
+                                <!-- Activity Log Modal -->
+                                <div class="modal fade" id="activityLogModal" tabindex="-1" aria-labelledby="activityLogModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="activityLogModalLabel">Lịch sử hoạt động</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Dữ liệu mẫu cho lịch sử hoạt động -->
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Thời gian</th>
+                                                        <th>Hoạt động</th>
+                                                        <th>Chi tiết</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2024-06-01 10:00</td>
+                                                        <td>Đăng nhập</td>
+                                                        <td>Admin đã đăng nhập vào hệ thống</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2024-06-01 10:15</td>
+                                                        <td>Thêm người dùng mới</td>
+                                                        <td>Admin đã thêm người dùng Bùi Tiến Đạt</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2024-06-01 11:00</td>
+                                                        <td>Thay đổi mật khẩu</td>
+                                                        <td>Admin đã thay đổi mật khẩu của mình</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2024-06-01 11:30</td>
+                                                        <td>Xóa người dùng</td>
+                                                        <td>Admin đã xóa người dùng Nguyễn Ngọc Vũ</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <!-- Change Password Modal -->
+                            <div class="modal fade" id="changePasswordModal" tabindex="-1"
+                                aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="changePasswordModalLabel">Đổi mật khẩu</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Form đổi mật khẩu -->
+                                            <form id="changePasswordForm">
+                                                <div class="mb-3">
+                                                    <label for="currentPassword" class="form-label">Mật khẩu hiện tại</label>
+                                                    <input type="password" class="form-control" id="currentPassword" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="newPassword" class="form-label">Mật khẩu mới</label>
+                                                    <input type="password" class="form-control" id="newPassword" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="confirmNewPassword" class="form-label">Xác nhận mật khẩu mới</label>
+                                                    <input type="password" class="form-control" id="confirmNewPassword" required>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            </nav>
+            <div class="modal fade" id="userAccountModal" tabindex="-1" aria-labelledby="userAccountModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="userAccountModalLabel">Thông tin tài khoản</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="userAccountForm">
+                                <div class="mb-3">
+                                    <label for="userName" class="form-label">Tên người dùng</label>
+                                    <input type="text" class="form-control" id="userName" value="Nguyễn Thế An" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="userEmail" value="annguyenthe2003@gmail.com" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userPhone" class="form-label">Số điện thoại</label>
+                                    <input type="text" class="form-control" id="userPhone" value="0123456789" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userAddress" class="form-label">Địa chỉ</label>
+                                    <input type="text" class="form-control" id="userAddress" value="123 Đường ABC, Phường XYZ, Hà Nội" readonly>
+                                </div>
+                                <div id="editButtons" class="d-none">
+                                    <button type="button" class="btn btn-primary" onclick="saveUserInfo()">Lưu</button>
+                                    <button type="button" class="btn btn-secondary" onclick="toggleEdit(false)">Hủy</button>
+                                </div>
+                                <div id="viewButton">
+                                    <button type="button" class="btn btn-warning" onclick="toggleEdit(true)">Chỉnh sửa</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <main>
+                <div class="container mt-5">
+                    <h1 class="mb-4">Quản lý Đơn hàng - PetCare</h1>
+            
+                    <!-- Add Order Button -->
+                    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addOrderModal">Thêm Đơn hàng</button>
+            
+                    <!-- Order Table -->
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>STT</th>
+                                <th>Thời gian</th>
+                                <th>Hình thức thanh toán</th>
+                                <th>Sản phẩm/Số lượng</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                                <th>Thông tin người nhận</th>
+                                <th>Ghi chú</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderTableBody">
+                            <!-- Order rows will be added here dynamically -->
+                        </tbody>
+                    </table>
+            
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination ">
+                            <li class="page-item" id="prevPageBtn">
+                                <a class="page-link" href="#" tabindex="-1" onclick="prevPage()">1</a>
+                            </li>
+                            <li class="page-item" id="nextPageBtn">
+                                <a class="page-link" href="#" onclick="nextPage()">2</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            
+                <!-- Add Order Modal -->
+                <div class="modal fade" id="addOrderModal" tabindex="-1" aria-labelledby="addOrderModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addOrderModalLabel">Thêm Đơn hàng mới</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="addOrderForm">
+                                    <div class="mb-3">
+                                        <label for="orderTime" class="form-label">Thời gian</label>
+                                        <input type="datetime-local" class="form-control" id="orderTime" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="paymentMethod" class="form-label">Hình thức thanh toán</label>
+                                        <select class="form-select" id="paymentMethod" required>
+                                            <option value="Tiền mặt">Tiền mặt</option>
+                                            <option value="Thẻ ngân hàng">Thẻ ngân hàng</option>
+                                            <option value="Thanh toán trực tuyến">Thanh toán trực tuyến</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="productName" class="form-label">Tên sản phẩm</label>
+                                        <input type="text" class="form-control" id="productName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="productQuantity" class="form-label">Số lượng</label>
+                                        <input type="number" class="form-control" id="productQuantity" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="productPrice" class="form-label">Giá tiền (VNĐ)</label>
+                                        <input type="number" class="form-control" id="productPrice" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="orderStatus" class="form-label">Trạng thái</label>
+                                        <select class="form-select" id="orderStatus" required>
+                                            <option value="Đang xử lý">Đang xử lý</option>
+                                            <option value="Đã giao hàng">Đã giao hàng</option>
+                                            <option value="Đã hủy">Đã hủy</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipientName" class="form-label">Tên người nhận</label>
+                                        <input type="text" class="form-control" id="recipientName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipientAddress" class="form-label">Địa chỉ người nhận</label>
+                                        <input type="text" class="form-control" id="recipientAddress" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipientPhone" class="form-label">Số điện thoại người nhận</label>
+                                        <input type="text" class="form-control" id="recipientPhone" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="orderNote" class="form-label">Ghi chú</label>
+                                        <textarea class="form-control" id="orderNote" rows="3"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Lưu</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Edit Order Modal -->
+                <div class="modal fade" id="editOrderModal" tabindex="-1" aria-labelledby="editOrderModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editOrderModalLabel">Chỉnh sửa Đơn hàng</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editOrderForm">
+                                    <input type="hidden" id="editOrderIndex">
+                                    <div class="mb-3">
+                                        <label for="editOrderTime" class="form-label">Thời gian</label>
+                                        <input type="datetime-local" class="form-control" id="editOrderTime" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editPaymentMethod" class="form-label">Hình thức thanh toán</label>
+                                        <select class="form-select" id="editPaymentMethod" required>
+                                            <option value="Tiền mặt">Tiền mặt</option>
+                                            <option value="Thẻ ngân hàng">Thẻ ngân hàng</option>
+                                            <option value="Thanh toán trực tuyến">Thanh toán trực tuyến</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editProductName" class="form-label">Tên sản phẩm</label>
+                                        <input type="text" class="form-control" id="editProductName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editProductQuantity" class="form-label">Số lượng</label>
+                                        <input type="number" class="form-control" id="editProductQuantity" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editProductPrice" class="form-label">Giá tiền (VNĐ)</label>
+                                        <input type="number" class="form-control" id="editProductPrice" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editOrderStatus" class="form-label">Trạng thái</label>
+                                        <select class="form-select" id="editOrderStatus" required>
+                                            <option value="Đang xử lý">Đang xử lý</option>
+                                            <option value="Đã giao hàng">Đã giao hàng</option>
+                                            <option value="Đã hủy">Đã hủy</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editRecipientName" class="form-label">Tên người nhận</label>
+                                        <input type="text" class="form-control" id="editRecipientName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editRecipientAddress" class="form-label">Địa chỉ người nhận</label>
+                                        <input type="text" class="form-control" id="editRecipientAddress" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editRecipientPhone" class="form-label">Số điện thoại người nhận</label>
+                                        <input type="text" class="form-control" id="editRecipientPhone" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editOrderNote" class="form-label">Ghi chú</label>
+                                        <textarea class="form-control" id="editOrderNote" rows="3"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Lưu</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <script>
+               let orders = [
+            {
+                time: "2024-06-01T08:30",
+                paymentMethod: "Tiền mặt",
+                products: [
+                    {
+                        name: "Thức ăn cho chó",
+                        quantity: 2,
+                        price: 50000
+                    },
+                    {
+                        name: "Bồn tắm cho chó",
+                        quantity: 1,
+                        price: 100000
+                    }
+                ],
+                total: 200000,
+                status: "Đã huỷ",
+                recipientInfo: {
+                    name: "Nguyễn Văn A",
+                    address: "123 Đường ABC, Quận XYZ, Thành phố HCM",
+                    phone: "0123456789"
+                },
+                note: "Giao hàng vào buổi sáng"
+            },
+            {
+                time: "2024-06-02T10:45",
+                paymentMethod: "Thẻ ngân hàng",
+                products: [
+                    {
+                        name: "Đồ chơi cho mèo",
+                        quantity: 3,
+                        price: 10000
+                    }
+                ],
+                total: 30000,
+                status: "Đang xử lý",
+                recipientInfo: {
+                    name: "Trần Thị B",
+                    address: "456 Đường XYZ, Quận ABC, Thành phố Hà Nội",
+                    phone: "0987654321"
+                },
+                note: "Yêu cầu giao hàng sau 16h"
+            },
+            {
+                time: "2024-06-02T22:45",
+                paymentMethod: "Tiền mặt",
+                products: [
+                    {
+                        name: "Lược chải lông cho mèo",
+                        quantity: 3,
+                        price: 30000
+                    }
+                ],
+                total: 90000,
+                status: "Đang xử lý",
+                recipientInfo: {
+                    name: "Trần Thị Thu Hiền",
+                    address: "456 Đường XYZ, Quận ABC, Thành phố Hà Nội",
+                    phone: "0987654321"
+                },
+                note: "Giao hàng giờ hành chính"
+            },            {
+                time: "2024-06-02T16:45",
+                paymentMethod: "Thanh toán trực tuyến",
+                products: [
+                    {
+                        name: "Sữa tắm cho mèo",
+                        quantity: 1,
+                        price: 200000
+                    }
+                ],
+                total: 200000,
+                status: "Đã giao hàng",
+                recipientInfo: {
+                    name: "Bùi Tiến Đạt",
+                    address: "456 Đường XYZ, Quận ABC, Thành phố Hà Nội",
+                    phone: "0987654321"
+                },
+                note: "Kiểm hàng trước khi nhận"
+            }
+        ];
+
+        // Hiển thị dữ liệu mẫu ban đầu
+        displayOrders();
+
+        // Thêm và Sửa Đơn hàng
+        document.getElementById('addOrderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            addOrder();
+        });
+
+        document.getElementById('editOrderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            updateOrder();
+        });
+
+        // Hàm hiển thị đơn hàng
+        function displayOrders() {
+            const orderTableBody = document.getElementById('orderTableBody');
+            orderTableBody.innerHTML = '';
+
+            orders.forEach((order, index) => {
+                // Tạo biến để lưu thông tin sản phẩm
+                let productInfo = '';
+                order.products.forEach(product => {
+                    productInfo += `${product.name} (x${product.quantity}), `;
+                });
+                // Loại bỏ dấu ',' ở cuối chuỗi
+                productInfo = productInfo.slice(0, -2);
+
+                // Hiển thị các thông tin của đơn hàng
+                orderTableBody.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${order.time}</td>
+                        <td>${order.paymentMethod}</td>
+                        <td>${productInfo}</td>
+                        <td>${order.total}</td>
+                        <td>${order.status}</td>
+                        <td>${order.recipientInfo.name}<br>${order.recipientInfo.address}<br>${order.recipientInfo.phone}</td>
+                        <td>${order.note}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm" onclick="editOrder(${index})">Sửa</button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteOrder(${index})">Xóa</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // Thêm Đơn hàng
+        function addOrder() {
+            const time = document.getElementById('orderTime').value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const productName = document.getElementById('productName').value;
+            const productQuantity = document.getElementById('productQuantity').value;
+            const productPrice = document.getElementById('productPrice').value;
+            const orderStatus = document.getElementById('orderStatus').value;
+            const recipientName = document.getElementById('recipientName').value;
+            const recipientAddress = document.getElementById('recipientAddress').value;
+            const recipientPhone = document.getElementById('recipientPhone').value;
+            const orderNote = document.getElementById('orderNote').value;
+
+            // Tạo đối tượng đơn hàng mới
+            const newOrder = {
+                time,
+                paymentMethod,
+                products: [{ name: productName, quantity: productQuantity, price: productPrice }],
+                total: productQuantity * productPrice,
+                status: orderStatus,
+                recipientInfo: { name: recipientName, address: recipientAddress, phone: recipientPhone },
+                note: orderNote
+            };
+
+            // Thêm đơn hàng vào mảng
+            orders.push(newOrder);
+
+            // Hiển thị lại đơn hàng
+            displayOrders();
+
+            // Đóng modal thêm đơn hàng
+            document.getElementById('addOrderModal').classList.remove('show');
+            document.getElementById('addOrderModal').style.display = 'none';
+            document.getElementsByClassName('modal-backdrop')[0].style.display = 'none';
+        }
+
+        // Sửa Đơn hàng
+        function editOrder(index) {
+            const order = orders[index];
+
+            // Điền thông tin vào modal chỉnh sửa
+            document.getElementById('editOrderIndex').value = index;
+            document.getElementById('editOrderTime').value = order.time;
+            document.getElementById('editPaymentMethod').value = order.paymentMethod;
+            document.getElementById('editProductName').value = order.products[0].name;
+            document.getElementById('editProductQuantity').value = order.products[0].quantity;
+            document.getElementById('editProductPrice').value = order.products[0].price;
+            document.getElementById('editOrderStatus').value = order.status;
+            document.getElementById('editRecipientName').value = order.recipientInfo.name;
+            document.getElementById('editRecipientAddress').value = order.recipientInfo.address;
+            document.getElementById('editRecipientPhone').value = order.recipientInfo.phone;
+            document.getElementById('editOrderNote').value = order.note;
+
+            // Hiển thị modal chỉnh sửa
+            new bootstrap.Modal(document.getElementById('editOrderModal')).show();
+        }
+
+        // Cập nhật Đơn hàng sau khi sửa
+        function updateOrder() {
+            const index = document.getElementById('editOrderIndex').value;
+            const time = document.getElementById('editOrderTime').value;
+            const paymentMethod = document.getElementById('editPaymentMethod').value;
+            const productName = document.getElementById('editProductName').value;
+            const productQuantity = document.getElementById('editProductQuantity').value;
+            const productPrice = document.getElementById('editProductPrice').value;
+            const orderStatus = document.getElementById('editOrderStatus').value;
+            const recipientName = document.getElementById('editRecipientName').value;
+            const recipientAddress = document.getElementById('editRecipientAddress').value;
+            const recipientPhone = document.getElementById('editRecipientPhone').value;
+            const orderNote = document.getElementById('editOrderNote').value;
+
+            // Cập nhật thông tin đơn hàng
+            orders[index] = {
+                time,
+                paymentMethod,
+                products: [{ name: productName, quantity: productQuantity, price: productPrice }],
+                total: productQuantity * productPrice,
+                status: orderStatus,
+                recipientInfo: { name: recipientName, address: recipientAddress, phone: recipientPhone },
+                note: orderNote
+            };
+
+            // Hiển thị lại đơn hàng
+            displayOrders();
+
+            // Đóng modal chỉnh sửa
+            document.getElementById('editOrderModal').classList.remove('show');
+            document.getElementById('editOrderModal').style.display = 'none';
+            document.getElementsByClassName('modal-backdrop')[0].style.display = 'none';
+        }
+
+        // Xóa Đơn hàng
+        function deleteOrder(index) {
+            if (confirm("Bạn có chắc chắn muốn xóa đơn hàng này không?")) {
+                orders.splice(index, 1);
+                displayOrders();
+            }
+        }
+
+        // Phân trang
+        let currentPage = 1;
+        const ordersPerPage = 3;
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayOrders();
+            }
+        }
+
+        function nextPage() {
+            const totalPages = Math.ceil(orders.length / ordersPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayOrders();
+            }
+        }
+
+        // Lắng nghe sự kiện click nút Tìm kiếm
+document.getElementById('searchButton').addEventListener('click', function() {
+    const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+
+    // Lọc danh sách đơn hàng dựa trên thông tin tìm kiếm
+    const filteredOrders = orders.filter(order => {
+        // Kiểm tra nếu thông tin tìm kiếm xuất hiện trong bất kỳ trường nào của đơn hàng
+        for (const key in order) {
+            if (order.hasOwnProperty(key)) {
+                if (typeof order[key] === 'string' && order[key].toLowerCase().includes(searchQuery)) {
+                    return true;
+                } else if (Array.isArray(order[key])) {
+                    for (const item of order[key]) {
+                        if (typeof item === 'string' && item.toLowerCase().includes(searchQuery)) {
+                            return true;
+                        }
+                    }
+                } else if (typeof order[key] === 'object') {
+                    for (const subKey in order[key]) {
+                        if (order[key].hasOwnProperty(subKey) && typeof order[key][subKey] === 'string' && order[key][subKey].toLowerCase().includes(searchQuery)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    });
+
+    // Hiển thị danh sách đơn hàng đã lọc
+    displayFilteredOrders(filteredOrders);
+});
+
+// Hàm hiển thị danh sách đơn hàng đã lọc
+function displayFilteredOrders(filteredOrders) {
+    const orderTableBody = document.getElementById('orderTableBody');
+    orderTableBody.innerHTML = '';
+
+    filteredOrders.forEach((order, index) => {
+        // Tạo biến để lưu thông tin sản phẩm
+        let productInfo = '';
+        order.products.forEach(product => {
+            productInfo += `${product.name} (x${product.quantity}), `;
+        });
+        // Loại bỏ dấu ',' ở cuối chuỗi
+        productInfo = productInfo.slice(0, -2);
+
+        // Hiển thị các thông tin của đơn hàng
+        orderTableBody.innerHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${order.time}</td>
+                <td>${order.paymentMethod}</td>
+                <td>${productInfo}</td>
+                <td>${order.total}</td>
+                <td>${order.status}</td>
+                <td>${order.recipientInfo.name}<br>${order.recipientInfo.address}<br>${order.recipientInfo.phone}</td>
+                <td>${order.note}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="editOrder(${index})">Sửa</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteOrder(${index})">Xóa</button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+    </script>
+
+        </div>
+    </div>
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

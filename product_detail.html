@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+    <!-- Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <img src="img/logo.png" style="width: 180px; margin-left: 20px;" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav py-0" style="margin-left: 160px;">
+                <a href="index.html" class="nav-item nav-link ">Trang chủ</a>
+                <a href="service.html" class="nav-item nav-link">Dịch vụ</a>
+                <a href="product.html" class="nav-item nav-link active">Cửa hàng</a>
+                <a href="get_service.html" class="nav-item nav-link">Đặt lịch nhanh</a>
+                
+            </div>
+            <a href="contact.html"  class="btn btn-primary btn-rounded" style="margin-left: 30px;">Liên hệ <i class="bi bi-arrow-right"></i></a>
+            <div  class="nav-link dropdown" style="margin-left: 50px;">
+                <button class="cart_btn border-1 btn-danger" type="button" id="cart_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <small style="margin-left: 20px;" class="cart_counter">0</small>
+                    <span><small>Sản phẩm</small></span>
+                </button>
+                    <div class="cart_dropdown dropdown-menu"  style="width: 320px; position: absolute; left: 16px; background-color: whitesmoke; border-radius: 5px;">
+                    <div class="product_list">
+                    </div>
+                    <hr>
+                    <div class="total_price" style="text-align: center;">
+                        <span>Tổng tiền</span>
+                        <strong class="total_amount">$0.00</strong>
+                    </div>
+                    <hr>
+                    <a style="display: flex; justify-content: center; align-items: center; width: 200px; margin-bottom: 5px; margin-left: 50px;" class="btn btn-danger" href="cart_detail.html">Xem giỏ hàng</a>
+                    <a style="display: flex; justify-content: center; width: 200px; margin-left: 50px;" class="btn btn-success" href="cart_detail.html">Thanh toán</a>
+                </div>
+            </div>
+            <div id="user" class="dropdown dropstart" style="margin-left: 220px;">
+                <button  type="button" class="border-0 bg-white" data-bs-toggle="dropdown">
+                    <i style="font-size: 30px; color: rgb(71, 68, 68);" class="fa-solid fa-user"></i>
+                </button>
+                <ul class="dropdown-menu" style="padding: 0; position: absolute; left: -155px; top: 0;">
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="profile.html">Xem hồ sơ</a></li>
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="index_test.html">Đăng xuất</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>    
+    <!-- Navbar End -->
+    <div class="container-fluid my-5">
+        <div class="container" style="margin-left: 200px;">
+            <div class="row" >
+                <div class="col col-lg-5" >
+                    <img style="margin-left: 100px; border: .1rem solid #eee; border-radius: 10px;" width="60%" src="img/do_an_cho/item4.jpg" alt="Nhà cây cho mèo">
+                </div>
+                <div class="col col-lg-5">
+                    <div class="details_content">
+                        <h2 class="item_title">Xương cho chó vị thịt bò</h2>
+                        <p>Xương cho chó vị thịt bò dành cho các giống chó có kích thước trung bình có chứa vị thịt bò.</p>
+                        <div class="item_review_info d-flex align-items-center">
+                            <ul class="rating_star d-flex list-unstyled">
+                                <li><i style="color: #ffda47;"  class="fa-solid fa-star"></i></li>
+                                <li><i style="color: #ffda47;" class="fa-solid fa-star"></i></li>
+                                <li><i style="color: #ffda47;" class="fa-solid fa-star"></i></li>
+                                <li><i style="color: #ffda47;" class="fa-solid fa-star"></i></li>
+                                <li><i style="color: #ffda47;" class="fa-regular fa-star-half-stroke"></i></li>
+                                <div style="margin-left: 5px; margin-top: 1px;" class="review_counter"><span>2</span> Đánh giá</div>   
+                            </ul>
+                            
+                        </div>
+                        <div class="item_price" style="margin-top: -10px;"><del>70.000 VNĐ</del> <span style="color: red; font-size: 20px;">35,000 VNĐ</span></div>
+                        <div class="d-flex justify-content-between align-items-center" style="margin-top: 10px; width: 400px;">
+                            <label for="#">Số lượng</label>
+                            <input type="number" class="form-control" min="0" placeholder="0" style="height: 37px; width: 60px" step="1">
+                            <a class="btn btn-primary " href="product.html"><i class="fa-solid fa-paw"></i> Thêm vào giỏ hàng</a>
+                        </div>
+
+                        <ul class="list-unstyled" style="margin-top: 20px;">
+                            <li><strong>Mã sản phẩm:</strong> <span>TACC04</span></li>
+                            <li class="categories_tags"><strong>Danh mục:</strong> <span><a href="#!">Thức ăn & Dinh Dưỡng</a> <a href="#!">Khác</a></span></li>
+                            <li class="categories_tags"><strong>Tags:</strong> <span><a href="#!">Đồ ăn cho cún, Pate</a></span></li>
+                            <li class="share_links">
+                                <strong>
+                                    Chia sẻ:
+                                </strong> 
+                                <span>
+                                    <a style="margin-right: 10px;" href="#!"><i class="fab fa-instagram"></i></a> 
+                                    <a style="margin-right: 10px;" href="#!"><i class="fab fa-twitter"></i></a> 
+                                    <a style="margin-right: 10px;" href="#!"><i class="fab fa-whatsapp"></i></a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 100px;">
+                <ul class="nav nav-pills" role="tablist">
+                    <li style="margin-right: 20px;" class="nav-item">
+                      <a style="border-radius: 10px; border: 2px solid #eee;" class="nav-link active" data-bs-toggle="pill" href="#mota">Mô tả</a>
+                    </li>
+                    <li class="nav-item">
+                      <a style="border-radius: 10px;" class="nav-link" data-bs-toggle="pill" href="#danhGia">Đánh giá</a>
+                    </li>
+                  </ul>
+                <div class="tab-content" style="margin-top: 20px; margin-left: -10px; max-width: 1000px; margin-bottom: 100px;">
+                    <div class="tab-pane fade show active" id="mota" role="tabpanel">
+                        <div>
+                            <h5 style="color: black !important;">Thành phần dinh dưỡng</h5>
+                            <p>
+                                Protein ≥ 18%, Lysine ≥ 0.3%, Bột tro ≤ 5%, Chất xơ ≤ 5%, Hàm lượng nước ≤ 15%, Muối 0.3-1.5%.
+                            </p>
+                            <p>
+                                Sản phẩm hình xương giàu chất dinh dưỡng được chế biến từ thịt bò tươi ngon chất lượng ngon, giàu vitamin và protein, có thể tăng cường thể chất cũng như làm sạch răng.
+                            </p>
+                            <ul>
+                                <li>Thịt bò chất lượng tốt.</li>
+                                <li>Lượng Protein cao.</li>
+                                <li>Giàu nguyên tố vi lượng</li>
+                                <li>Không có chất bảo quản, chất kích thích ăn, sắc tố.</li>
+                                <li>Tuyệt đối không cho chất hóa học.   </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 style="color: black !important;">Hướng dẫn cho ăn</h5>
+                            <table class="table table-bordered" style="width: 100%;">
+                                <thead>
+                                  <tr>
+                                    <td>Kích thước</td>
+                                    <td>Lượt dùng mỗi ngày</td>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Chó con</td>
+                                    <td>1 cái/ngày</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Chó kích thước nhỏ</td>
+                                    <td>1-2 cái/ngày</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Chó kích thước lớn</td>
+                                    <td>3-4 cái/ngày</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Chó kích thước lớn</td>
+                                    <td>4-6 cái/ngày</td>
+                                  </tr> 
+
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="danhGia" role="tabpanel" style="max-width: 900px; margin-bottom: 100px;">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="row">
+                                    <h5 style="color: black !important;">Đánh giá của khách hàng</h5>
+                                </div>
+                                <div class="row" style="margin-left: -50px; margin-top: 10px;">
+                                    <div class="col-3" style="position: relative; left: 60px;">
+                                        <i style="border-radius: 100%; border: .1rem solid #eee; padding: 15px; font-size: 20px;" class="fa-solid fa-user"></i>
+                                        <p style="color: #0142f8;">Thế An</p>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p style="font-size: 13px;">10:30 ngày 12/05/2024</p>
+                                            </div>
+                                            <div class="col">
+                                                <ul class="rating_star d-flex list-unstyled">
+                                                    <li><i style="color: #ffda47;" class="fa-solid fa-star"></i style="color: #ffda47;"></li>
+                                                    <li><i style="color: #ffda47;" class="fa-solid fa-star"></i style="color: #ffda47;"></li>
+                                                    <li><i style="color: #ffda47;" class="fa-solid fa-star"></i style="color: #ffda47;"></li>
+                                                    <li><i style="color: #ffda47;" class="fa-solid fa-star"></i style="color: #ffda47;"></li>
+                                                    <li><i style="color: #ffda47;" class="fa-regular fa-star-half-stroke"></i></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-top: -10px;">
+                                            <p>Tại đây bán rất phong phú về đồ ăn, spa cho chó mèo cũng như phụ kiện dành cho thú cưng.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-left: 30px;">
+                                    <div class="col-3"  style="position: relative; left: 60px;">
+                                        <i style="border-radius: 100%; border: .1rem solid #eee; padding: 15px; font-size: 20px;" class="fa-solid fa-user"></i>
+                                        <p style="color: #0142f8;">Thế An</p>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p style="font-size: 13px;">10:30 ngày 12/05/2024</p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-top: -10px;">
+                                            <p>Chuẩn luôn</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-left: -50px; margin-top: 10px;" >
+                                    <div class="col-3" style="position: relative; left: 60px;" >
+                                        <i style="border-radius: 100%; border: .1rem solid #eee; padding: 15px; font-size: 20px;" class="fa-solid fa-user"></i>
+                                        <p style="color: #0142f8;">Thế An</p>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p style="font-size: 13px;">10:30 ngày 12/05/2024</p>
+                                            </div>
+                                            <div class="col">
+                                                <ul class="rating_star d-flex list-unstyled">
+                                                    <li><i style="color: #ffda47;" class="fa-solid fa-star"></i style="color: #ffda47;"></li>
+                                                    <li><i style="color: #ffda47;" class="fa-solid fa-star"></i style="color: #ffda47;"></li>
+                                                    <li><i style="color: #ffda47;" class="fa-solid fa-star"></i style="color: #ffda47;"></li>
+                                                    <li><i style="color: #ffda47;" class="fa-solid fa-star"></i style="color: #ffda47;"></li>
+                                                    <li><i style="color: #ffda47;" class="fa-regular fa-star-half-stroke"></i></li> 
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-top: -10px;">
+                                            <p>Thích shop lắm nha, đánh giá 5 sao luôn, mình sẽ giới thiệu thêm bạn bè quần áo hay phụ kiện ở đây đều xinh hết.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <h5 style="color: black !important;">Đánh giá của bạn</h5>
+                                    <ul class="rating_star d-flex list-unstyled">
+                                        <li><i  class="fa-solid fa-star"></i ></li>
+                                        <li><i  class="fa-solid fa-star"></i ></li>
+                                        <li><i  class="fa-solid fa-star"></i ></li>
+                                        <li><i  class="fa-solid fa-star"></i ></li>
+                                        <li><i  class="fa-solid fa-star"></i ></li> 
+                                    </ul>
+                                    <textarea class="form-control bg-light border-0 px-4" style="height: 220px; width: 100%;" placeholder="Nhập đánh giá của bạn" autocomplete="on"></textarea>
+                                    <a class="btn btn-dark" href="#">GỬI ĐÁNH GIÁ</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark" style="opacity: 70%; margin-top: -100px;" >
+        <div class="container ">
+            <div class="row g-2 ">
+<div class="col-lg-6 col-md-6 text-white">
+                        <h5 class="text-uppercase  text-white">PETCARE</h5>
+                        <p class="mb-4">Chúng tôi luôn cố gắng cung cấp dịch vụ tốt nhất cho các thành viên bốn chân của bạn. Chất lượng và sự hài lòng là những gì chúng tôi cam kết.</p>
+                        <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>263 QL32, Lai Xá, Hoài Đức, Hà Nội, Việt Nam</p>
+                        <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>acechienn123@gmail.com</p>
+                        <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0795267718</p>
+                    </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">Liên kết nhanh</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                            <a class="text-body mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Trang chủ</a>
+                            <a class="text-body mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Dịch vụ</a>
+                            <a class="text-body mb-2" href="product.html"><i class="bi bi-arrow-right text-primary me-2"></i>Cửa hàng</a>
+                            <a class="text-body mb-2" href="get_service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Đặt lịch nhanh</a>
+                            <a class="text-body mb-2" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Liên hệ</a>
+                        </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">BẢN TIN</h5>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Email của bạn">
+                            <button class="btn btn-primary">Gửi</button>
+                        </div>
+                    </form>
+                    <h6 class="text-uppercase mt-4 mb-3" style="color: white;">Theo giõi</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

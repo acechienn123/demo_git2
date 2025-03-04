@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khách sạn thú cưng</title>
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+    <!-- Icon-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!--Bootstrap-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <img src="img/logo.png" style="width: 180px; margin-left: 20px;" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav py-0" style="margin-left: 160px;">
+                <a href="index.html" class="nav-item nav-link ">Trang chủ</a>
+                <a href="service.html" class="nav-item nav-link active">Dịch vụ</a>
+                <a href="product.html" class="nav-item nav-link">Cửa hàng</a>
+                <a href="get_service.html" class="nav-item nav-link">Đặt lịch nhanh</a>
+                
+            </div>
+            <a href="contact.html"  class="btn btn-primary btn-rounded" style="margin-left: 30px;">Liên hệ <i class="bi bi-arrow-right"></i></a>
+            <div  class="nav-link dropdown" style="margin-left: 50px;">
+                <button class="cart_btn border-1 btn-danger" type="button" id="cart_dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <small style="margin-left: 20px;" class="cart_counter">0</small>
+                    <span><small>Sản phẩm</small></span>
+                </button>
+                <div class="cart_dropdown dropdown-menu"  style="width: 320px; position: absolute; left: 16px; background-color: whitesmoke; border-radius: 5px;">
+                    
+                    <hr>
+                    <div class="total_price" style="text-align: center;">
+                        <span>Tổng tiền</span>
+                        <strong>$70.51</strong>
+                    </div>
+                    <hr>
+                    <a style="display: flex; justify-content: center; align-items: center; width: 200px; margin-bottom: 5px; margin-left: 50px;" class="btn btn-danger" href="cart_detail.html">Xem giỏ hàng</a>
+                    <a style="display: flex; justify-content: center; width: 200px; margin-left: 50px;" class="btn btn-success" href="cart_detail.html">Thanh toán</a>
+                </div>
+            </div>
+            <div id="user" class="dropdown dropstart" style="margin-left: 220px;">
+                <button  type="button" class="border-0 bg-white" data-bs-toggle="dropdown">
+                    <i style="font-size: 30px; color: rgb(71, 68, 68);" class="fa-solid fa-user"></i>
+                </button>
+                <ul class="dropdown-menu" style="padding: 0; position: absolute; left: -155px; top: 0;">
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="profile.html">Xem hồ sơ</a></li>
+                  <li><a style="font-size: 14px;" class="dropdown-item" href="index_test.html">Đăng xuất</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <div class="container-fluid" style="margin-top: 30px;">
+        <div class="container" style="margin-bottom: 8px;">
+                <div class="row">   
+                    <div class="row">
+                        <div class="d-flex">
+                            <a href="service.html">Dịch vụ </a>
+                            <p>/</p>
+                            <a href="service_details_2.html">DỊCH VỤ KHÁCH SẠN THÚ CƯNG</a>
+                        </div>
+                        <h2 style="color: rgb(142, 194, 79);" class="border-start border-5 border-primary ps-5 mb-5">DỊCH VỤ KHÁCH SẠN THÚ CƯNG</h2>
+                        <div style="
+                                    /* border-style: dotted;
+                                    border-width: 1px 0px 1px 0px;
+                                    border-color: #afafaf; */
+                                    " >
+                            <div>
+                                <div class="d-flex">
+                                    <i style=" color: black; font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-solid fa-phone-volume"></i>
+                                    <p class="text-dark">0795267718</p>
+                                </div>
+                                <div  class="d-flex text-dark">
+                                    <i style="font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-regular fa-pen-to-square"></i>
+                                    <p>26 Tháng 5 2024 </p>
+                                </div>
+                                <div  class="d-flex text-dark">
+                                    <i style="font-size: 12; margin-top: 4px; margin-right: 15px;" class="fa-regular fa-clock"></i>
+                                    <p>3:06</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" row" style="border: .1rem solid #eee;
+                                        border-radius: 10px;">
+                            <div>
+                                <h2 style="margin-left: -20px; margin-top: 10px; text-align: center;">KHÁCH SẠN CHÓ MÈO - DỊCH VỤ TRÔNG GIỮ THÚ CƯNG 5⭐️
+                                </h2>
+                            </div>
+                            <p>
+                                Dịch vụ trông giữ chó mèo PetCare không chỉ là một khách sạn thú cưng 
+                                5⭐️ đầu tiên và lớn nhất tại Việt Nam, mà còn là điểm đến tin
+                                cậy cho chất lượng dịch vụ chuyên nghiệp và tiện ích.
+                            </p>
+                            <p>
+                                🤔 Bạn đang quá bận rộn với công việc? KPI thì ngập đầu?
+                            </p>
+                            <p>
+                                🤔 Bạn chuẩn bị có chuyến công tác ngắn ngày?
+                            </p>
+                            <p>
+                                🤔 Bạn đang lên lịch đi du lịch, về quê thăm người thân?
+                            </p>
+                            <p>
+                                🤔 Bạn muốn đưa thú cưng đi cùng nhưng lại sợ bất tiện?
+                            </p>
+                            <p>
+                                🤔 Bạn đang không biết phải gửi bé cưng của mình ở đâu?
+                            </p>
+                            <p>Bạn yên tâm, dịch vụ khách thú cưng sạn với PetCare sẽ giúp bạn chăm sóc các bé yêu.</p>
+                                
+                        
+                        </div>
+                    <div class="row">
+                        <div class="col text-white" style="border: .1rem solid #eee;
+                                                border-radius: 15px;
+                                                margin-left: -12px;
+                                                margin-top: 20px;
+                                                background-color: #001848;">
+                            <div>
+                                <h2 style="color: white; margin-left: -20px; margin-top: 10px; text-align: center;">
+                                    🦮 MÔ HÌNH CHĂM SÓC VÀ HOẠT ĐỘNG
+                                </h2>
+                            </div>
+                            <p>
+                               <strong> Chế độ dinh dưỡng: </strong>Thời gian ăn uống dành cho thú cưng đảm bảo theo khung
+                                giờ khoa học hợp lý. Chế độ dinh dưỡng đảm bảo cân bằng, 
+                               phù hợp và cần thiết cho thú cưng. Cung cấp thực phẩm từ các thương hiệu thức ăn hạt hỗn hợp nổi tiếng.
+                            </p>
+                            <p>
+                                <strong>Chế độ vui chơi thể thao:</strong>  thú cưng sẽ được hoạt động thường xuyên để nâng cao thể lực, tiêu hóa tốt và giao lưu với các thú cưng khác tại khách sạn hàng ngày (Chỉ áp dụng cho chó, không áp dụng cho mèo).
+                            </p>
+                            <p>
+                                <strong>Chế độ vệ sinh: </strong>chăm sóc chải lông, vệ sinh tai, vệ sinh mắt… hàng ngày hoàn toàn miễn phí.
+                            </p>
+                        </div>
+                        <div class="col" style="border: .1rem solid #eee;
+                                                border-radius: 15px;
+                                                margin-left: 20px;
+                                                margin-top: 20px;
+                                                ">
+                            <div>
+                                <h2 style=" margin-left: -20px; margin-top: 10px; text-align: center;">
+                                    ⏱ ĐẶT HẸN THAM QUAN KHÁCH SẠN THÚ CƯNG
+                                </h2>
+                            </div>
+                            <p>
+                                Khách sạn chó mèo PetCare cung cấp những giá trị dịch vụ tốt nhất cho thú cưng
+                                 trong thời gian gửi tại đây bao gồm: <strong>chăm sóc, dinh dưỡng, vệ sinh, tắm rửa, 
+                                    chải chuốt và cả những kế hoạch huấn luyện cơ bản</strong> . Tất cả chó mèo khi gửi tại
+                                  khách sạn của chúng tôi đều được ưu tiên chăm sóc một cách cẩn thận nhất.
+                                   Và chúng tôi sẽ giúp bạn yên tâm khi trao gửi thú cưng cho PetCare.
+
+                            </p>
+                            <p>
+                                Lựa chọn một khách sạn chó mèo không chỉ đơn thuần là việc tìm nơi để thú cưng
+                                 có mái nhà tạm thời. Đó còn là việc tìm ra một nơi thực sự yêu thương và
+                                  chăm sóc thú cưng như chính bạn vẫn làm. Khi bạn chọn PetCare là bạn
+                                   đang chọn một môi trường chăm sóc toàn diện cho thú cưng: từ dinh dưỡng, 
+                                   giải trí, vận động, cho đến tinh thần của những người bạn bốn chân.
+                            </p>
+                            <p>
+                                Để khách hàng có thể hiểu thêm về dịch vụ
+                                 trông giữ chó mèo của PetCare. Chúng tôi chia sẻ chuyến tha
+                                  quan tới bạn bất cứ lúc nào trong khoảng thời gian từ <strong>13 giờ đến 17</strong>
+                                   giờ hàng ngày. Vì vậy, hãy sắp xếp thời gian rảnh rỗi để tham quan trung 
+                                   tâm chăm sóc thú cưng của chúng tôi ngay hôm nay.
+                            </p>
+                            <a class="btn btn-danger btn-rounded" style="width: 100%; border-radius: 15px; margin-bottom: 10px;" href="contact.html">Liên hệ tư vấn</a>
+                        </div>
+                    </div>
+
+                    <div class="row text-white"  style="border: .1rem solid #eee;
+                                            border-radius: 10px;
+                                            background-color: #001848;
+                                            margin-top: 20px;">
+                        <div class=" row">
+                            <div>
+                                <h2 style="margin-left: -20px; margin-top: 10px; color: white;">💲 BẢNG GIÁ PHÒNG KHÁCH SẠN THÚ CƯNG
+                                </h2>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p>
+                                Kích thước của chuồng, phòng chỉ có thể ước lượng và tham khảo. 
+                                Bảng giá trông giữ thực tế có thể thay đổi tùy theo kích cỡ, trọng
+                                 lượng và nhu cầu sử dụng thực tế của khách hàng và thú cưng.
+                            </p>
+                        </div>
+                        <div class="row" style="margin-left: 8px;">
+                            <div class="col rounded"  style="border-radius: 10px; background-color: #ffffff; margin-right: 15px;">
+                                <img src="img/chuong-khach-san-m.jpg" width="100%" alt="">
+                                <p style="color: black; text-align: center;">Chuông M - Dành cho thú cưng tối đa 10KG</p>
+                                <h2 style="color: #001848; text-align: center;">150k /ngày</h2>
+                            </div>
+                            <div class="col rounded"  style="border-radius: 10px; background-color: #ffffff; margin-right: 15px;">
+                                <img src="img/chuong-khach-san-l.jpg" width="100%" alt="">
+                                <p style="color: black; text-align: center;">Chuông L - Dành cho thú cưng tối đa 20KG</p>
+                                <h2 style="color: #001848; text-align: center;">150k /ngày</h2>
+                            </div>
+                            <div class="col rounded"  style="border-radius: 10px; background-color: #ffffff; margin-right: 15px;">
+                                <img src="img/chuong-khach-san-xl.jpg" width="100%" alt="">
+                                <p style="color: black; text-align: center;">Chuông M - Dành cho thú cưng tối đa 30KG</p>
+                                <h2 style="color: #001848; text-align: center;">150k /ngày</h2>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <a class="btn btn-success btn-rounded" style="border-radius: 20px; margin-top: 10px; width: 200px; margin-bottom: 10px;" href="get_service.html">Đặt Lịch Ngay</a>
+                        </div>
+                            
+                                
+                        
+                    </div>
+
+                    <div class="row text-white"  style="border: .1rem solid #eee;
+                                            border-radius: 10px;
+                                            background-color: #6edcfa;
+                                            margin-top: 20px;">
+                        <div class=" row">
+                            <div>
+                                <h2 style="margin-left: -20px; margin-top: 10px; color: white;">🎁 CÁC CHƯƠNG TRÌNH ƯU ĐÃI KHUYẾN MÃI
+                                </h2>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col bg-white text-dark rounded" style="border-radius: 10px; margin-right: 15px; margin-bottom: 20px;" >
+                                <div class="row">
+                                    <p>🔖 Ưu đãi hàng tuần</p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                        Thú cưng gửi khách sạn 1 tuần - <strong>Tặng miễn phí 1 ngày</strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col bg-white text-dark rounded" style="border-radius: 10px; margin-right: 15px; margin-bottom: 20px;" >
+                                <div class="row">
+                                    <p>🔖 Ưu đãi hàng tháng</p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                        Thú cưng gửi khách sạn 1 tháng - <strong>Tặng miễn phí 5 ngày</strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col bg-white text-dark rounded" style="border-radius: 10px; margin-right: 15px; margin-bottom: 20px;" >
+                                <div class="row">
+                                    <p>🔖 Ưu đãi đặc biệt</p>
+                                </div>
+                                <div class="row">
+                                    <p>
+                                        Thú cưng gửi khách sạn 3 ngày - <strong> Tặng 1 lần miễn phí tắm spa</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                            
+                                
+                    </div>
+
+                    </div>
+                </div>
+
+                
+        </div>
+    </div>
+
+    <div class="container-fluid py-5" style="margin-left: 30px;">
+        <div class="container" >
+            <div  class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px; margin-left: -30px;" >
+                <h2 style="color: rgb(142, 194, 79);">DỊCH VỤ KHÁC</h2>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-4 service-item bg-light  p-4">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-2">
+                                <img width="100%" height="100%" src="img/logo_service/car-34714_1280.png" alt="">
+                            </div>
+                            <div class="col">
+                                <h5 class="text-uppercase text-dark" >Taxi thú cưng</h5>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="row">    
+                        <p style="height: 80px;">Vận chuyển thú cưng an toàn và tiện lợi, giúp thú cưng của bạn đến bất kỳ đâu.</p>
+                        <a class="text-primary" style="font-size: 14px;" href="service_detail_1.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 service-item bg-light p-4">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-2">
+                                <img width="100%" height="100%" src="img/logo_service/icon_pet_training.svg" alt="">
+                            </div>
+                            <div class="col">
+                                <h5 class="text-uppercase  text-dark" >Đạo tạo thú cưng</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p style="height: 80px;">Huấn luyện thú cưng giúp thú cưng của bạn nghe lời và thông minh hơn.</p>
+                            <a class="text-primary" style="font-size: 14px;" href="service_detail_4.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 service-item bg-light p-4">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-2">
+                                <img width="100%" height="100%" src="img/logo_service/icon_pet_grooming.svg" alt="">
+                            </div>
+                            <div class="col">
+                                <h5 class="text-uppercase  text-dark">Chăm sóc thú cưng</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p style="height: 80px;">Chăm sóc và làm đẹp kỹ lưỡng cho thú cưng, từ tắm rửa đến cắt tỉa lông</p>
+                            <a class="text-primary" style="font-size: 14px;" href="service_detail_2.html">Chi tiết<i style="margin-left: 4px; margin-top: 1px;" class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark" style="opacity: 70%;">
+        <div class="container ">
+            <div class="row g-2 ">
+                <div class="col-lg-6 col-md-6 text-white">
+                        <h5 class="text-uppercase  text-white">PETCARE</h5>
+                        <p class="mb-4">Chúng tôi luôn cố gắng cung cấp dịch vụ tốt nhất cho các thành viên bốn chân của bạn. Chất lượng và sự hài lòng là những gì chúng tôi cam kết.</p>
+                        <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>263 QL32, Lai Xá, Hoài Đức, Hà Nội, Việt Nam</p>
+                        <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>acechienn123@gmail.com</p>
+                        <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>0795267718</p>
+                    </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">Liên kết nhanh</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                            <a class="text-body mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Trang chủ</a>
+                            <a class="text-body mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Dịch vụ</a>
+                            <a class="text-body mb-2" href="product.html"><i class="bi bi-arrow-right text-primary me-2"></i>Cửa hàng</a>
+                            <a class="text-body mb-2" href="get_service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Đặt lịch nhanh</a>
+                            <a class="text-body mb-2" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Liên hệ</a>
+                        </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4 text-white">BẢN TIN</h5>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-3" placeholder="Email của bạn">
+                            <button class="btn btn-primary">Gửi</button>
+                        </div>
+                    </form>
+                    <h6 class="text-uppercase mt-4 mb-3" style="color: white;">Theo giõi</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
+                        <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>  
+</html>
